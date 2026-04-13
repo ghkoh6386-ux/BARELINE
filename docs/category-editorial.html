@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#9d9d9b",
+                    "error-container": "#ff8b9a",
+                    "primary-fixed": "#e5e2e1",
+                    "tertiary-container": "#f5f3f3",
+                    "surface-dim": "#d6dbd7",
+                    "secondary-dim": "#7d4335",
+                    "on-error": "#fff7f7",
+                    "on-surface-variant": "#5c605d",
+                    "on-surface": "#2f3331",
+                    "surface-variant": "#e0e3e0",
+                    "on-primary-fixed": "#403f3f",
+                    "inverse-surface": "#0d0e0e",
+                    "on-tertiary": "#faf8f8",
+                    "surface-container-low": "#f3f4f1",
+                    "surface-container-high": "#e6e9e6",
+                    "surface-container-highest": "#e0e3e0",
+                    "secondary-fixed-dim": "#ffc8ba",
+                    "tertiary-fixed": "#f5f3f3",
+                    "error": "#9e3f4e",
+                    "tertiary": "#5f5f5f",
+                    "inverse-primary": "#ffffff",
+                    "surface-container": "#edeeeb",
+                    "on-secondary-fixed-variant": "#874b3c",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#666666",
+                    "surface-bright": "#faf9f7",
+                    "primary-fixed-dim": "#d6d4d3",
+                    "on-tertiary-fixed": "#494a4a",
+                    "secondary-container": "#ffdad2",
+                    "background": "#faf9f7",
+                    "on-tertiary-container": "#5b5c5c",
+                    "on-secondary": "#fff7f6",
+                    "on-primary-fixed-variant": "#5c5b5b",
+                    "tertiary-dim": "#535353",
+                    "surface-tint": "#5f5e5e",
+                    "secondary-fixed": "#ffdad2",
+                    "primary-container": "#e5e2e1",
+                    "on-error-container": "#782232",
+                    "on-secondary-fixed": "#653023",
+                    "on-primary": "#faf7f6",
+                    "error-dim": "#4f0116",
+                    "outline": "#777c79",
+                    "on-secondary-container": "#7b4233",
+                    "outline-variant": "#afb3b0",
+                    "on-primary-container": "#525151",
+                    "primary-dim": "#535252",
+                    "surface": "#faf9f7",
+                    "tertiary-fixed-dim": "#e6e5e5",
+                    "primary": "#5f5e5e",
+                    "on-background": "#2f3331",
+                    "secondary": "#8b4f3f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #FAF9F7;
+            color: #2F3331;
+            font-family: 'Manrope', sans-serif;
+            overflow-x: hidden;
+        }
+        .noto-serif { font-family: 'Noto Serif', serif; }
+        .manrope { font-family: 'Manrope', sans-serif; }
+        .ghost-border-b { border-bottom: 0.5px solid rgba(175, 179, 176, 0.2); }
+        .ghost-border-r { border-right: 0.5px solid rgba(175, 179, 176, 0.2); }
+        .ghost-border-t { border-top: 0.5px solid rgba(175, 179, 176, 0.2); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-[#FAF9F7] dark:bg-[#2F3331] flex justify-between items-center w-full px-12 py-6 max-w-[100vw] fixed top-0 z-50 border-b-[0.5px] border-[#AFB3B0]/20">
+<div class="font-noto-serif text-2xl font-light tracking-[0.1em] text-[#2F3331] dark:text-[#FAF9F7]">BARE LINE</div>
+<nav class="hidden md:flex gap-12 items-center">
+<a class="font-noto-serif tracking-[0.02em] uppercase text-sm text-[#2F3331] dark:text-[#FAF9F7] hover:text-[#8B4F3F] transition-colors duration-300" href="#">Home</a>
+<a class="font-noto-serif tracking-[0.02em] uppercase text-sm text-[#8B4F3F] font-medium transition-colors duration-300" href="#">Archive</a>
+<a class="font-noto-serif tracking-[0.02em] uppercase text-sm text-[#2F3331] dark:text-[#FAF9F7] hover:text-[#8B4F3F] transition-colors duration-300" href="#">About</a>
+<a class="font-noto-serif tracking-[0.02em] uppercase text-sm text-[#2F3331] dark:text-[#FAF9F7] hover:text-[#8B4F3F] transition-colors duration-300" href="#">Contact</a>
+</nav>
+<div class="flex gap-6 items-center">
+<span class="material-symbols-outlined text-[#2F3331] dark:text-[#FAF9F7] cursor-pointer scale-95 duration-200">search</span>
+<span class="material-symbols-outlined text-[#2F3331] dark:text-[#FAF9F7] cursor-pointer scale-95 duration-200">menu</span>
+</div>
+</header>
+<!-- SideNavBar (Category Selection) -->
+<aside class="fixed left-0 top-24 w-48 h-screen hidden lg:flex flex-col px-8 py-12 border-r-[0.5px] border-[#AFB3B0]/20">
+<div class="mb-12">
+<p class="font-manrope text-[11px] font-medium tracking-[0.05em] uppercase text-[#6B705C] mb-1">INDEX</p>
+<p class="font-manrope text-[10px] tracking-widest text-[#2F3331]/40">VOLUME NO. 04 / 2024</p>
+</div>
+<nav class="flex flex-col gap-6">
+<a class="font-manrope text-[11px] font-medium tracking-[0.05em] uppercase text-[#2F3331]/60 hover:text-[#6B705C] transition-all duration-300 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[6px]">fiber_manual_record</span> 패션
+            </a>
+<a class="font-manrope text-[11px] font-medium tracking-[0.05em] uppercase text-[#2F3331]/60 hover:text-[#6B705C] transition-all duration-300 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[6px]">fiber_manual_record</span> 공간
+            </a>
+<a class="font-manrope text-[11px] font-medium tracking-[0.05em] uppercase text-[#2F3331]/60 hover:text-[#6B705C] transition-all duration-300 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[6px]">fiber_manual_record</span> 디자이너
+            </a>
+<a class="font-manrope text-[11px] font-medium tracking-[0.05em] uppercase text-[#2F3331]/60 hover:text-[#6B705C] transition-all duration-300 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[6px]">fiber_manual_record</span> 오브제
+            </a>
+<a class="font-manrope text-[11px] font-medium tracking-[0.05em] uppercase text-[#6B705C] border-b border-[#6B705C] pb-0.5 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[6px]">fiber_manual_record</span> 에디토리얼
+            </a>
+</nav>
+</aside>
+<main class="lg:ml-48 pt-32 pb-24 px-8 md:px-16 lg:px-24">
+<!-- Archival Header Component -->
+<div class="flex justify-between items-start mb-24 w-full">
+<div class="space-y-1">
+<p class="font-manrope text-[10px] tracking-[0.2em] uppercase text-outline">카테고리</p>
+<h1 class="font-noto-serif text-5xl md:text-7xl font-light tracking-tight text-on-surface">에디토리얼</h1>
+</div>
+<div class="max-w-xs text-right">
+<p class="font-manrope text-[10px] tracking-[0.2em] uppercase text-outline mb-2">DESCRIPTION</p>
+<p class="font-manrope text-sm leading-relaxed text-on-surface/80">절제된 시선으로 정리한 디자인과 생각에 대한 글</p>
+</div>
+</div>
+<!-- Featured Section -->
+<section class="grid grid-cols-12 gap-8 mb-32">
+<div class="col-span-12 lg:col-span-7">
+<div class="relative overflow-hidden aspect-[4/5] bg-surface-container">
+<img alt="Minimalist still life with soft shadows" class="w-full h-full object-cover" data-alt="conceptual minimalist image of an open book on a clean travertine table with harsh shadows and soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5jiUlCSHrI8JNvfow-5569m7GsEXviF0BFmvnaH44n0xebzB1oCu81qCaFI1Qq_qdaoQURierB1LqC69-JGX9gC37kpZBldGWXGOpb2dBwiQWE-pit1WjeMY0AOJiQtUl4K5J2rX5iAOmd6cVFWtV2vJkuA324AY0M_ikfKdUchiSswzt90kfL6aEZtty0xE9BccIHHAQ76LIzRzqxBs8nfZ8eHePjryb1q7SFkmCLpyfep3pUv61HxNgMQnwUDcL5gSsTAsYV8v5"/>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-5 flex flex-col justify-center">
+<p class="font-manrope text-[10px] tracking-[0.3em] uppercase text-secondary mb-6">FEATURED ARTICLE</p>
+<h2 class="font-noto-serif text-3xl md:text-5xl leading-[1.1] mb-8 tracking-tight">공간의 침묵: <br/>여백이 지니는 <br/>구조적 힘에 대하여</h2>
+<p class="font-manrope text-base text-on-surface/70 leading-loose mb-12 max-w-sm">
+                    건축가들이 말하는 '비움'은 단순히 채우지 않음이 아닙니다. 그것은 빛과 공기를 담는 그릇이며, 거주자의 사유를 확장하는 물리적 장치입니다. 본 에디토리얼에서는 0.5px의 선과 면이 만드는 비가시적 질서를 탐구합니다.
+                </p>
+<a class="inline-flex items-center gap-4 font-manrope text-[11px] tracking-widest uppercase border-b border-outline pb-2 hover:border-secondary hover:text-secondary transition-all" href="#">
+                    READ ARTICLE <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Image Grid (Minimalist/Sparse) -->
+<section class="grid grid-cols-12 gap-8 mb-32 items-end">
+<div class="col-span-6 md:col-span-3">
+<div class="aspect-square bg-surface-container mb-4 overflow-hidden">
+<img alt="Detail of white textured fabric" class="w-full h-full object-cover grayscale opacity-80 hover:opacity-100 transition-opacity" data-alt="macro close-up of white linen fabric texture with subtle shadows and high key lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClY8GI_k5vC-98cQjHOsIotiifqqeuwOqmdtBJX1E2GDU9w3JHaCjDj8LFTp_i85OlRtYYZoiAFxm1QXXngfblxliATNKLh9ykaLMPk1EFtlwKW6v63PiifPsFoPEepYqzUImXtpIMsrHPfcJAcKJhqb6zTJ1dBwOC1Q1S3Hkhej211vOTFAqIsDJI6UhjOrR-cqkYOcc1Y9EdH6qYbTch9d-LuRVFyeTlPeM5mUHuhZiffQY102wwwCKbLuAw5wMJ8drTz7BwE9zy"/>
+</div>
+<p class="font-manrope text-[9px] tracking-widest uppercase text-outline">STUDY 01 / TEXTURE</p>
+</div>
+<div class="col-span-12 md:col-span-4 md:offset-1 lg:col-span-3 lg:col-start-6">
+<div class="aspect-[3/4] bg-surface-container mb-4 overflow-hidden">
+<img alt="Shadow on a blank wall" class="w-full h-full object-cover grayscale opacity-80 hover:opacity-100 transition-opacity" data-alt="minimalist architectural shadow cast on a warm cream plastered wall during sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4JCST-5pr2hZtQp7CqHKIRDJ8vGlcDxgtAz1DjwvIAxrCj0cRXQY9Sci7N7MIToHiNemuMSAkbt1W5WDK6W3WTBIFgXnvqOM3i_Rg0Vcpb5HPfmeNMJiH9IGFTePCk3FV8FyVNQL4QtyPEnwV8CuNHmyBBcmjMIbMmY8o_uIQRuUX8FJhT9QtuVhH_t25kHY3gPiV0fHu4MlRLDKcx78J2V4Rci1G0ilAdCCy4RK91RK8YxZbv9MLi9hWDL2CqQB7bR-XX_ropKiF"/>
+</div>
+<p class="font-manrope text-[9px] tracking-widest uppercase text-outline">STUDY 02 / SHADOW</p>
+</div>
+<div class="col-span-6 md:col-span-2 md:col-start-11">
+<div class="aspect-square bg-surface-container mb-4 overflow-hidden">
+<img alt="Single ceramic vessel" class="w-full h-full object-cover grayscale opacity-80 hover:opacity-100 transition-opacity" data-alt="lone artisanal ceramic vase on a rough concrete pedestal in a dark void" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrIriIcVxMSQL5NwmR2pkhGG92zqM3dyVotX5tFxGxfsDm7QVUFLmtvNFTBPdyvbikxhGEtWmjecAzF9q-SHC--JI6sHKMpgRx6WHM1sUz4BTA-b2UvPWbHqfC0orNeuTbUQiTSkFT_V5MA_KNOkjrMk7H-Wt9BKrHW1K0T84J8F0MNqO1y7k7KgSG2fI77KOWG4fRXlOT5vS3hYXIA5UydbAZp6gdRpJtFoKjIdoiTTAgf_SsRdcTG2rUYQawhQs-5qHyI_6918JC"/>
+</div>
+<p class="font-manrope text-[9px] tracking-widest uppercase text-outline">STUDY 03 / OBJECT</p>
+</div>
+</section>
+<!-- Structured Archival List -->
+<section class="mb-32">
+<div class="mb-12 flex justify-between items-end border-b-[0.5px] border-[#AFB3B0]/20 pb-4">
+<h3 class="font-manrope text-[11px] tracking-[0.3em] uppercase text-on-surface">ARCHIVE LIST</h3>
+<span class="font-manrope text-[10px] text-outline">TOTAL 12 ENTRIES</span>
+</div>
+<div class="divide-y divide-[#AFB3B0]/20">
+<!-- Entry 01 -->
+<div class="group grid grid-cols-12 py-8 items-center hover:bg-surface-container-low transition-colors px-4 -mx-4">
+<div class="col-span-1 font-manrope text-[10px] text-outline">NO. 084</div>
+<div class="col-span-2 font-manrope text-[10px] tracking-widest text-[#6B705C] uppercase">ESSAY</div>
+<div class="col-span-7 md:col-span-8">
+<a class="font-noto-serif text-xl md:text-2xl text-on-surface hover:text-secondary transition-colors" href="#">물성의 재해석: 흙이 조각이 되기까지</a>
+</div>
+<div class="col-span-2 md:col-span-1 text-right font-manrope text-[10px] text-outline">2024</div>
+</div>
+<!-- Entry 02 -->
+<div class="group grid grid-cols-12 py-8 items-center hover:bg-surface-container-low transition-colors px-4 -mx-4">
+<div class="col-span-1 font-manrope text-[10px] text-outline">NO. 081</div>
+<div class="col-span-2 font-manrope text-[10px] tracking-widest text-[#6B705C] uppercase">INTERVIEW</div>
+<div class="col-span-7 md:col-span-8">
+<a class="font-noto-serif text-xl md:text-2xl text-on-surface hover:text-secondary transition-colors" href="#">디자이너 안도: 선의 엄격함에 대하여</a>
+</div>
+<div class="col-span-2 md:col-span-1 text-right font-manrope text-[10px] text-outline">2024</div>
+</div>
+<!-- Entry 03 -->
+<div class="group grid grid-cols-12 py-8 items-center hover:bg-surface-container-low transition-colors px-4 -mx-4">
+<div class="col-span-1 font-manrope text-[10px] text-outline">NO. 079</div>
+<div class="col-span-2 font-manrope text-[10px] tracking-widest text-[#6B705C] uppercase">CRITIC</div>
+<div class="col-span-7 md:col-span-8">
+<a class="font-noto-serif text-xl md:text-2xl text-on-surface hover:text-secondary transition-colors" href="#">디지털 아카이브가 잃어버린 촉각적 경험</a>
+</div>
+<div class="col-span-2 md:col-span-1 text-right font-manrope text-[10px] text-outline">2023</div>
+</div>
+<!-- Entry 04 -->
+<div class="group grid grid-cols-12 py-8 items-center hover:bg-surface-container-low transition-colors px-4 -mx-4">
+<div class="col-span-1 font-manrope text-[10px] text-outline">NO. 075</div>
+<div class="col-span-2 font-manrope text-[10px] tracking-widest text-[#6B705C] uppercase">ESSAY</div>
+<div class="col-span-7 md:col-span-8">
+<a class="font-noto-serif text-xl md:text-2xl text-on-surface hover:text-secondary transition-colors" href="#">기능이라는 이름의 장식</a>
+</div>
+<div class="col-span-2 md:col-span-1 text-right font-manrope text-[10px] text-outline">2023</div>
+</div>
+</div>
+<div class="mt-16 flex justify-center">
+<button class="bg-on-surface text-surface px-12 py-4 font-manrope text-[10px] tracking-[0.3em] uppercase hover:bg-secondary transition-colors duration-300">
+                    VIEW ALL ARCHIVES
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#F3F4F1] dark:bg-[#1A1C1B] border-t-[0.5px] border-[#AFB3B0]/20 w-full px-12 py-16 flex flex-col md:flex-row justify-between items-center">
+<div class="mb-8 md:mb-0">
+<div class="font-noto-serif text-lg tracking-tighter text-[#2F3331] dark:text-[#FAF9F7]">BARE LINE ARCHIVE</div>
+<p class="font-manrope text-[10px] tracking-widest uppercase text-[#777C79] mt-2">© 2024 BARE LINE ARCHIVE. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="flex gap-12">
+<a class="font-manrope text-[10px] tracking-widest uppercase text-[#777C79] hover:underline hover:text-[#8B4F3F] opacity-80 hover:opacity-100 transition-all" href="#">Privacy Policy</a>
+<a class="font-manrope text-[10px] tracking-widest uppercase text-[#777C79] hover:underline hover:text-[#8B4F3F] opacity-80 hover:opacity-100 transition-all" href="#">Terms of Service</a>
+<a class="font-manrope text-[10px] tracking-widest uppercase text-[#777C79] hover:underline hover:text-[#8B4F3F] opacity-80 hover:opacity-100 transition-all" href="#">Instagram</a>
+</div>
+</footer>
+</body></html>

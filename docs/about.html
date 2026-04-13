@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#fff7f6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#fff7f7",
+                        "error-dim": "#4f0116",
+                        "primary": "#5f5e5e",
+                        "primary-container": "#e5e2e1",
+                        "error": "#9e3f4e",
+                        "tertiary-dim": "#535353",
+                        "on-secondary-fixed": "#653023",
+                        "on-tertiary": "#faf8f8",
+                        "primary-fixed-dim": "#d6d4d3",
+                        "error-container": "#ff8b9a",
+                        "surface-container-low": "#f3f4f1",
+                        "on-primary": "#faf7f6",
+                        "on-tertiary-container": "#5b5c5c",
+                        "on-error-container": "#782232",
+                        "surface-container": "#edeeeb",
+                        "outline": "#777c79",
+                        "secondary-fixed-dim": "#ffc8ba",
+                        "tertiary-fixed-dim": "#e6e5e5",
+                        "surface-container-highest": "#e0e3e0",
+                        "tertiary": "#5f5f5f",
+                        "on-primary-fixed": "#403f3f",
+                        "on-surface-variant": "#5c605d",
+                        "tertiary-fixed": "#f5f3f3",
+                        "on-tertiary-fixed": "#494a4a",
+                        "secondary-container": "#ffdad2",
+                        "tertiary-container": "#f5f3f3",
+                        "inverse-on-surface": "#9d9d9b",
+                        "on-primary-container": "#525151",
+                        "secondary-fixed": "#ffdad2",
+                        "inverse-primary": "#ffffff",
+                        "on-surface": "#2f3331",
+                        "on-secondary-container": "#7b4233",
+                        "on-primary-fixed-variant": "#5c5b5b",
+                        "on-secondary-fixed-variant": "#874b3c",
+                        "surface-bright": "#faf9f7",
+                        "surface-container-high": "#e6e9e6",
+                        "secondary": "#8b4f3f",
+                        "surface-dim": "#d6dbd7",
+                        "surface-variant": "#e0e3e0",
+                        "surface-tint": "#5f5e5e",
+                        "outline-variant": "#afb3b0",
+                        "primary-dim": "#535252",
+                        "on-tertiary-fixed-variant": "#666666",
+                        "inverse-surface": "#0d0e0e",
+                        "background": "#faf9f7",
+                        "secondary-dim": "#7d4335",
+                        "surface": "#faf9f7",
+                        "on-background": "#2f3331",
+                        "primary-fixed": "#e5e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #FAF9F7;
+            color: #2F3331;
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar: Execution of Shared Component JSON 1 -->
+<nav class="bg-[#FAF9F7] dark:bg-[#2F3331] text-[#2F3331] dark:text-[#FAF9F7] font-['Noto_Serif'] tracking-[0.02em] uppercase text-sm docked full-width top-0 z-50 border-b border-[#AFB3B0]/20 flex justify-between items-center w-full px-8 py-6 max-w-none transition-transform">
+<div class="text-2xl font-normal tracking-[0.1em] text-[#2F3331] dark:text-[#FAF9F7]">BARE LINE</div>
+<div class="hidden md:flex gap-8">
+<a class="text-[#2F3331]/60 dark:text-[#FAF9F7]/60 hover:text-[#8B4F3F] transition-colors duration-300 scale-100 active:scale-[0.99] transition-transform" href="#">Home</a>
+<a class="text-[#2F3331]/60 dark:text-[#FAF9F7]/60 hover:text-[#8B4F3F] transition-colors duration-300 scale-100 active:scale-[0.99] transition-transform" href="#">Archive</a>
+<a class="text-[#8B4F3F] font-medium hover:text-[#8B4F3F] transition-colors duration-300 scale-100 active:scale-[0.99] transition-transform" href="#">About</a>
+<a class="text-[#2F3331]/60 dark:text-[#FAF9F7]/60 hover:text-[#8B4F3F] transition-colors duration-300 scale-100 active:scale-[0.99] transition-transform" href="#">Contact</a>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined cursor-pointer" data-icon="menu">menu</span>
+</div>
+</nav>
+<!-- Sub Navigation: Execution of Shared Component JSON 2 -->
+<nav class="bg-[#FAF9F7] dark:bg-[#2F3331] text-[#8B4F3F] font-['Manrope'] uppercase tracking-[0.05em] text-[10px] font-semibold full-width border-b border-[#AFB3B0]/10 flex justify-center items-center w-full gap-12 py-4">
+<a class="text-[#777C79] hover:text-[#8B4F3F] transition-all duration-200 opacity-100 hover:opacity-80" href="#">Fashion</a>
+<a class="text-[#777C79] hover:text-[#8B4F3F] transition-all duration-200 opacity-100 hover:opacity-80" href="#">Space</a>
+<a class="text-[#777C79] hover:text-[#8B4F3F] transition-all duration-200 opacity-100 hover:opacity-80" href="#">Designers</a>
+<a class="text-[#777C79] hover:text-[#8B4F3F] transition-all duration-200 opacity-100 hover:opacity-80" href="#">Objects</a>
+<a class="text-[#777C79] hover:text-[#8B4F3F] transition-all duration-200 opacity-100 hover:opacity-80" href="#">Editorial</a>
+</nav>
+<!-- Archival Header (Design System Signature) -->
+<div class="flex justify-between w-full px-12 pt-12">
+<span class="font-label text-[10px] tracking-[0.2em] uppercase text-outline">Volume No. 04 / Archive / 2024</span>
+<span class="font-label text-[10px] tracking-[0.2em] uppercase text-outline">The Curated Silence</span>
+</div>
+<main class="max-w-7xl mx-auto px-8 md:px-12">
+<!-- Section 1: Concept Intro -->
+<section class="py-24 md:py-32 grid grid-cols-12 gap-6">
+<div class="col-span-12 md:col-span-8">
+<h1 class="font-headline text-5xl md:text-8xl leading-none tracking-tight mb-12">
+                    BARE <br/>
+<span class="text-secondary italic">&amp;</span> LINE.
+                </h1>
+<p class="font-headline text-xl md:text-2xl italic text-on-surface-variant max-w-2xl leading-relaxed mb-8">
+                    "Bare" is the essential truth of an object. "Line" is the architectural boundary we impose upon it.
+                </p>
+</div>
+<div class="col-span-12 md:col-span-4 self-end md:pb-8">
+<div class="w-full aspect-square bg-surface-container overflow-hidden">
+<img alt="Abstract texture" class="w-full h-full object-cover grayscale opacity-60 mix-blend-multiply" data-alt="Minimalist abstract texture of fine white plaster with subtle shadows and organic grain, architectural aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD0qDHenHoDRPY5Yo3IzNGfODMWoe6GhXclICIlumqejwum5piZg4DpUVjCEDHjWRyz6lEXnb25-RWMDjsTcKiYelSWZE5AF53D1qJkDCHxJeQBooCYJaq56Z-B6GizVkB5X2YlXxkx--4BWxqeEC--bEys-f2n9G4HuOgqPQ9CGekrI5oQ0Am8J1oLNX7jF5PT16v3EEQiYlpGwjdIVrL0viYp5gbp-Y6YKCZkwFZn5OyRURfmhiQ8bzvxlSmVF5jCngdXd_dLyOh"/>
+</div>
+</div>
+<div class="col-span-12 border-t border-outline-variant/20 pt-16 mt-16 grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-6">
+<span class="font-label text-[10px] tracking-[0.15em] uppercase text-secondary">Concept / 01</span>
+<p class="font-body text-lg leading-relaxed text-on-surface">
+                        BARE LINE is a vessel for high-end design content. We reject the noise of traditional magazine templates in favor of structural minimalism. Every piece curated here must exist within the tension between raw material and deliberate form.
+                    </p>
+</div>
+<div class="space-y-6">
+<span class="font-label text-[10px] tracking-[0.15em] uppercase text-secondary">Concept / 02</span>
+<p class="font-body text-lg leading-relaxed text-on-surface">
+                        We prioritize typographic precision over decorative elements. In our gallery space, the void is as significant as the content. We curate not for the trend, but for the silence that remains after the trend has passed.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Section 2: Curation Criteria -->
+<section class="py-24 border-t border-outline-variant/20">
+<div class="grid grid-cols-12 gap-6">
+<div class="col-span-12 md:col-span-3">
+<h2 class="font-label text-xs tracking-[0.2em] uppercase text-outline sticky top-32">The Manifesto</h2>
+</div>
+<div class="col-span-12 md:col-span-9">
+<div class="flex flex-col">
+<div class="group py-12 border-b border-outline-variant/20 flex flex-col md:flex-row md:items-baseline justify-between gap-6 hover:bg-surface-container-low transition-colors duration-500 px-4 -mx-4">
+<h3 class="font-headline text-3xl md:text-5xl text-on-surface">What we keep</h3>
+<p class="font-body text-sm md:text-base text-outline uppercase tracking-wider max-w-sm text-left md:text-right">
+                                Material Integrity, Structural Sincerity, The Hand-Made, Timeless Geometry.
+                            </p>
+</div>
+<div class="group py-12 border-b border-outline-variant/20 flex flex-col md:flex-row md:items-baseline justify-between gap-6 hover:bg-surface-container-low transition-colors duration-500 px-4 -mx-4">
+<h3 class="font-headline text-3xl md:text-5xl text-on-surface">What we remove</h3>
+<p class="font-body text-sm md:text-base text-outline uppercase tracking-wider max-w-sm text-left md:text-right">
+                                Superfluous Ornamentation, Visual Noise, Disposable Narrative, Synthetic Mimicry.
+                            </p>
+</div>
+<div class="group py-12 flex flex-col md:flex-row md:items-baseline justify-between gap-6 hover:bg-surface-container-low transition-colors duration-500 px-4 -mx-4">
+<h3 class="font-headline text-3xl md:text-5xl text-secondary">What remains</h3>
+<p class="font-body text-sm md:text-base text-outline uppercase tracking-wider max-w-sm text-left md:text-right">
+                                The Pure Line. The Silent Object. The Curated Void.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Vision -->
+<section class="py-32">
+<div class="grid grid-cols-12 gap-6 items-start">
+<div class="col-span-12 md:col-span-6 md:col-start-7">
+<h2 class="font-headline text-4xl md:text-6xl leading-tight mb-12">
+                        Cross-disciplinary <span class="italic text-secondary">Convergence.</span>
+</h2>
+<div class="space-y-8">
+<p class="font-body text-xl leading-relaxed text-on-surface-variant">
+                            Design is not a siloed practice. A chair shares the same DNA as a coat; a room breathes the same air as a ceramic vessel. 
+                        </p>
+<p class="font-body text-lg leading-relaxed text-on-surface-variant">
+                            By curating fashion, space, and objects together, BARE LINE reveals the underlying threads of human craftsmanship. We look for the "Line" that connects the silhouette of a shoulder to the shadow of a Brutalist pillar.
+                        </p>
+<div class="pt-8">
+<a class="inline-flex items-center group font-label text-xs tracking-widest uppercase border-b border-outline hover:border-secondary transition-colors py-2" href="#">
+                                Read our Journal 
+                                <span class="material-symbols-outlined ml-4 text-[16px] group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer: Execution of Shared Component JSON 3 -->
+<footer class="bg-[#FAF9F7] dark:bg-[#2F3331] text-[#2F3331] dark:text-[#FAF9F7] font-['Manrope'] text-[11px] leading-relaxed tracking-wider uppercase full-width mt-20 border-t border-[#AFB3B0]/20 grid grid-cols-1 md:grid-cols-3 gap-12 w-full px-12 py-16 transition-opacity duration-500">
+<div>
+<div class="text-lg font-['Noto_Serif'] tracking-widest mb-6 uppercase">BARE LINE</div>
+<p class="max-w-xs opacity-60">Architectural perspectives on the objects we live with and the spaces we inhabit.</p>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-outline-variant mb-2">Connect</span>
+<a class="text-[#777C79] hover:text-[#2F3331] dark:hover:text-[#FAF9F7] underline decoration-[#8B4F3F]" href="#">Instagram</a>
+<a class="text-[#777C79] hover:text-[#2F3331] dark:hover:text-[#FAF9F7] underline decoration-[#8B4F3F]" href="#">LinkedIn</a>
+<a class="text-[#777C79] hover:text-[#2F3331] dark:hover:text-[#FAF9F7] underline decoration-[#8B4F3F]" href="#">Journal</a>
+<a class="text-[#777C79] hover:text-[#2F3331] dark:hover:text-[#FAF9F7] underline decoration-[#8B4F3F]" href="#">Contact</a>
+</div>
+<div class="flex flex-col justify-between items-start md:items-end">
+<div class="text-right hidden md:block">
+<span class="text-outline-variant">© 2024 BARE LINE. THE CURATED SILENCE.</span>
+</div>
+<div class="flex gap-4 mt-8 md:mt-0">
+<span class="material-symbols-outlined text-outline" data-icon="mail">mail</span>
+<span class="material-symbols-outlined text-outline" data-icon="rss_feed">rss_feed</span>
+</div>
+<div class="mt-4 md:hidden">
+<span class="text-outline-variant">© 2024 BARE LINE.</span>
+</div>
+</div>
+</footer>
+</body></html>

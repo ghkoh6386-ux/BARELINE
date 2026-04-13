@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BARE LINE ARCHIVE — 공간의 침묵</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+        
+        body {
+            font-family: 'Pretendard', 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .font-noto-serif { font-family: 'Noto Serif', serif; }
+        .font-manrope { font-family: 'Manrope', sans-serif; }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        /* Hide scrollbar for clean aesthetic */
+        ::-webkit-scrollbar { display: none; }
+        * { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Custom border utility from Design System */
+        .border-ghost { border-color: rgba(175, 179, 176, 0.2); }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#e5e2e1",
+                    "surface-container-low": "#f3f4f1",
+                    "secondary-fixed-dim": "#ffc8ba",
+                    "outline": "#777c79",
+                    "primary-fixed-dim": "#d6d4d3",
+                    "on-primary": "#faf7f6",
+                    "on-tertiary-fixed": "#494a4a",
+                    "tertiary-container": "#f5f3f3",
+                    "on-surface": "#2f3331",
+                    "tertiary-fixed-dim": "#e6e5e5",
+                    "surface-variant": "#e0e3e0",
+                    "surface-tint": "#5f5e5e",
+                    "error-dim": "#4f0116",
+                    "background": "#faf9f7",
+                    "secondary-fixed": "#ffdad2",
+                    "on-primary-container": "#525151",
+                    "on-secondary-fixed": "#653023",
+                    "surface-bright": "#faf9f7",
+                    "surface-container-high": "#e6e9e6",
+                    "error-container": "#ff8b9a",
+                    "inverse-primary": "#ffffff",
+                    "inverse-on-surface": "#9d9d9b",
+                    "secondary-container": "#ffdad2",
+                    "on-error": "#fff7f7",
+                    "primary-container": "#e5e2e1",
+                    "on-tertiary-fixed-variant": "#666666",
+                    "primary": "#5f5e5e",
+                    "tertiary-fixed": "#f5f3f3",
+                    "surface-container-highest": "#e0e3e0",
+                    "tertiary-dim": "#535353",
+                    "inverse-surface": "#0d0e0e",
+                    "primary-dim": "#535252",
+                    "tertiary": "#5f5f5f",
+                    "on-tertiary": "#faf8f8",
+                    "secondary-dim": "#7d4335",
+                    "surface": "#faf9f7",
+                    "surface-dim": "#d6dbd7",
+                    "on-secondary-container": "#7b4233",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#403f3f",
+                    "outline-variant": "#afb3b0",
+                    "surface-container": "#edeeeb",
+                    "on-secondary-fixed-variant": "#874b3c",
+                    "on-secondary": "#fff7f6",
+                    "on-surface-variant": "#5c605d",
+                    "on-background": "#2f3331",
+                    "on-primary-fixed-variant": "#5c5b5b",
+                    "on-tertiary-container": "#5b5c5c",
+                    "on-error-container": "#782232",
+                    "secondary": "#8b4f3f",
+                    "error": "#9e3f4e",
+                    "brand-olive": "#6B705C",
+                    "brand-navy": "#2F3A44"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif", "serif"],
+                    "body": ["Pretendard", "Manrope", "sans-serif"],
+                    "label": ["Manrope", "Pretendard", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar Shell -->
+<header class="bg-[#FAF9F7]/85 backdrop-blur-xl border-b border-[#AFB3B0]/20 docked full-width top-0 z-50 fixed w-full">
+<nav class="flex justify-between items-center px-8 py-6 w-full">
+<div class="flex items-center gap-12">
+<a class="text-xl font-medium tracking-[0.05em] text-[#2F3331] font-noto-serif" href="#">BARE LINE</a>
+<div class="hidden md:flex gap-8">
+<a class="font-noto-serif tracking-[0.02em] uppercase text-[12px] text-[#8B4F3F] border-b border-[#8B4F3F] transition-colors duration-300" href="#">ARCHIVE</a>
+<a class="font-noto-serif tracking-[0.02em] uppercase text-[12px] text-[#2F3331]/60 hover:text-[#8B4F3F] transition-colors duration-300" href="#">COLLECTIONS</a>
+<a class="font-noto-serif tracking-[0.02em] uppercase text-[12px] text-[#2F3331]/60 hover:text-[#8B4F3F] transition-colors duration-300" href="#">ESSAYS</a>
+<a class="font-noto-serif tracking-[0.02em] uppercase text-[12px] text-[#2F3331]/60 hover:text-[#8B4F3F] transition-colors duration-300" href="#">ABOUT</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#2F3331]">menu</span>
+</div>
+</nav>
+</header>
+<main class="pt-32 pb-24">
+<!-- Archival Header (Signature Component) -->
+<div class="px-8 flex justify-between items-start mb-20">
+<div class="text-[10px] font-manrope uppercase tracking-[0.2em] text-outline">
+                VOLUME NO. 04 / ARCHIVE
+            </div>
+<div class="text-[10px] font-manrope uppercase tracking-[0.2em] text-outline text-right">
+                2024 EDITION<br/>ISSN 2951-4428
+            </div>
+</div>
+<!-- Breadcrumb -->
+<nav class="px-8 mb-12">
+<ul class="flex items-center gap-3 text-[11px] font-manrope tracking-widest text-outline uppercase">
+<li>아카이브</li>
+<li>/</li>
+<li>공간</li>
+<li>/</li>
+<li class="text-secondary">공간의 침묵</li>
+</ul>
+</nav>
+<!-- Hero Section -->
+<section class="px-8 grid grid-cols-12 gap-8 mb-32">
+<div class="col-span-12 lg:col-span-5 flex flex-col justify-end">
+<span class="text-brand-olive text-sm font-semibold tracking-widest mb-4">공간 — SPACE</span>
+<h1 class="text-5xl lg:text-7xl font-noto-serif font-bold leading-tight mb-8 tracking-[0.02em]">
+                    공간의 침묵: <br/>
+<span class="italic text-on-surface/80 font-normal">여백의 건축</span>
+</h1>
+<p class="text-lg leading-relaxed text-on-surface-variant max-w-md mb-8">
+                    비어 있는 공간은 부재가 아니라 충만함의 시작입니다. 침묵을 통해 소리를 듣고, 여백을 통해 형태를 인지하는 건축적 사유를 탐구합니다.
+                </p>
+<div class="text-brand-navy font-manrope tracking-tighter text-4xl mb-4">2024</div>
+</div>
+<div class="col-span-12 lg:col-span-7">
+<div class="aspect-[4/5] lg:aspect-[3/2] overflow-hidden bg-surface-container">
+<img alt="Architectural space with light and shadow" class="w-full h-full object-cover" data-alt="Minimalist concrete interior with a single beam of light falling on a smooth grey floor creating deep cinematic shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe8AObj87_9UbRwEVshMQmD8bUhNd2TJZ0nLpt2vD_W1kvzIzOe59g1JPiIO0-UGigD92E8kQHNm7zdwJf1lceFI0LZg5Vlh40kmQfex6Ptfrca3pbdndB8cqCEB26pdNiWYcykAlEj1yni3WuLM1XfN9kDJMRCglGnncal4xwivZf8q9yDuuwwVBXUwUwWY8cTRPQnjpH2NuuA7MY6DPN5vfbgWMuWS2YTx87jZLURxPEP6C2fSacz0SyJNWMGCeatmTtHx3Dr-8L"/>
+</div>
+</div>
+</section>
+<!-- Meta Info Block -->
+<section class="px-8 mb-40">
+<div class="grid grid-cols-2 md:grid-cols-5 border-t border-outline-variant/20">
+<div class="py-8 border-r border-outline-variant/20 pr-4">
+<span class="block text-[10px] font-manrope tracking-[0.1em] text-outline uppercase mb-2">Category</span>
+<span class="text-sm font-medium">건축 / 공간 디자인</span>
+</div>
+<div class="py-8 border-r border-outline-variant/20 px-4">
+<span class="block text-[10px] font-manrope tracking-[0.1em] text-outline uppercase mb-2">Year</span>
+<span class="text-sm font-medium">2024</span>
+</div>
+<div class="py-8 border-r border-outline-variant/20 px-4">
+<span class="block text-[10px] font-manrope tracking-[0.1em] text-outline uppercase mb-2">Keywords</span>
+<ul class="text-[11px] leading-relaxed">
+<li>#MINIMALISM</li>
+<li>#SILENCE</li>
+<li>#ARCHITECTURE</li>
+</ul>
+</div>
+<div class="py-8 border-r border-outline-variant/20 px-4">
+<span class="block text-[10px] font-manrope tracking-[0.1em] text-outline uppercase mb-2">Material</span>
+<span class="text-sm font-medium">CONCRETE, STONE, LIGHT</span>
+</div>
+<div class="py-8 px-4">
+<span class="block text-[10px] font-manrope tracking-[0.1em] text-outline uppercase mb-2">Curator</span>
+<span class="text-sm font-medium italic font-noto-serif">Bare Line Editorial Team</span>
+</div>
+</div>
+</section>
+<!-- Content Area with Sticky Meta -->
+<section class="px-8 grid grid-cols-12 gap-16 relative">
+<!-- Sticky Side Meta (Desktop) -->
+<aside class="hidden lg:block lg:col-span-3 sticky top-32 h-fit">
+<div class="border-l border-brand-olive/30 pl-6 py-4">
+<h4 class="text-[10px] font-manrope tracking-[0.2em] text-brand-olive uppercase mb-8">Table of Contents</h4>
+<ul class="space-y-6 text-[12px] font-medium text-on-surface-variant">
+<li class="text-secondary">01. 철학적 서문</li>
+<li class="hover:text-on-surface cursor-pointer transition-colors">02. 재료와 빛의 조화</li>
+<li class="hover:text-on-surface cursor-pointer transition-colors">03. 구조적 여백</li>
+<li class="hover:text-on-surface cursor-pointer transition-colors">04. 아카이브 노트</li>
+</ul>
+<div class="mt-20">
+<h4 class="text-[10px] font-manrope tracking-[0.2em] text-brand-olive uppercase mb-6">Archive Tags</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 border border-outline-variant/30 text-[9px] tracking-widest font-manrope uppercase">Structural</span>
+<span class="px-3 py-1 border border-outline-variant/30 text-[9px] tracking-widest font-manrope uppercase">Monotone</span>
+<span class="px-3 py-1 border border-outline-variant/30 text-[9px] tracking-widest font-manrope uppercase">Zen</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Editorial Content -->
+<div class="col-span-12 lg:col-span-7 lg:col-start-5">
+<!-- Introduction -->
+<article class="mb-32">
+<h2 class="text-3xl font-noto-serif mb-12 italic text-brand-navy">01. 침묵의 본질</h2>
+<p class="text-lg leading-[1.8] text-on-surface-variant mb-8 text-justify">
+                        진정한 건축적 침묵은 단순히 소리가 없는 상태가 아닙니다. 그것은 사물이 존재하기 위해 필요한 최소한의 배경이며, 거주하는 이가 자신의 내면을 마주할 수 있도록 돕는 정서적 장치입니다. BARE LINE이 주목하는 '공간의 침묵'은 장식적 요소를 덜어내는 것에서 시작하여, 빛과 재질만으로 감각을 깨우는 고요한 혁명을 지향합니다.
+                    </p>
+<p class="text-lg leading-[1.8] text-on-surface-variant text-justify">
+                        우리는 이번 아카이브를 통해 물성이 사라진 자리에 남겨지는 공기의 흐름과, 시간에 따라 변화하는 그림자의 궤적을 기록합니다.
+                    </p>
+</article>
+<!-- Quote Block -->
+<div class="py-24 border-y border-outline-variant/20 mb-32 relative overflow-hidden">
+<div class="absolute -top-10 -left-10 text-[160px] text-brand-olive/5 font-noto-serif italic select-none">"</div>
+<blockquote class="text-3xl lg:text-4xl font-noto-serif leading-snug text-on-surface relative z-10 text-center px-12">
+                        “건축은 돌로 쌓는 것이 아니라, <br/>
+                        돌과 돌 사이에 남겨진 <span class="text-secondary italic">공간</span>으로 짓는 것이다.”
+                    </blockquote>
+<cite class="block text-center mt-8 text-[11px] font-manrope tracking-widest text-outline uppercase">— Editorial Note</cite>
+</div>
+<!-- Two Column Image/Text -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-32">
+<div>
+<div class="aspect-[3/4] bg-surface-container overflow-hidden mb-6">
+<img alt="Textural detail of stone" class="w-full h-full object-cover" data-alt="Close-up of raw gray granite texture with soft daylight revealing tiny crystalline details and subtle shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiF1Dw9mx3Dh98wbOXyTuSFV92uM-Cln4E86qa459VTVHxyeThPvz6ZDD07EmGOezgBtJq42M7rsiDAXMQMUvGpCqMZHI3q4Io4ikpHLmopE3qYa1h-WFkVOtjJDeJ3mM2sxh4imjgXXuuJsneXLjCIjeP_jOXSeeUAOKCxvX0y-HQ-skHScHXyOvqGD6voflpMD9oDIiWUAsC1UHvClT2Cgbm4FI4LpZscBdSlUgBiclEp45Mas4hbrexhcnRhZKvIgP-xUHkAAGH"/>
+</div>
+<h3 class="font-noto-serif text-xl mb-4 text-brand-olive">02. 재료와 빛</h3>
+<p class="text-sm leading-relaxed text-on-surface-variant text-justify">
+                            빛은 재료의 거친 표면을 매끄러운 감각으로 치환합니다. 노출 콘크리트와 자연석이 만나는 지점에서 발생하는 미세한 틈새는 빛이 머무는 자리가 됩니다.
+                        </p>
+</div>
+<div class="pt-24">
+<div class="aspect-[3/4] bg-surface-container overflow-hidden mb-6">
+<img alt="Architectural light void" class="w-full h-full object-cover" data-alt="Minimalist architectural void in a ceiling letting a sharp beam of light create a geometric triangle on a white wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATU4VXXsmlce8DSURLcug2_Por5jaIgz7lkJUW4lRukfkSDsk5L_1gKd0HRhDOBXLDPq2RfoNcfzIIxPnIzHRFFlxs6vr3ZpQPqt83cKSO9xEpopx6WYqMl_q9yk2nDo01cA5O9aWXph-wTmRIufsnTMheTEXoDHMGSonDvLjd9sDdR58NrDbBGr4ZJEq7eXbgXhDHV_O9UcoqfBsBUw_Re02w8kcH0ZEZr5SNg0_9n2pSyNq6PM6m7rxORSIQj09ir1_Hgzfz__Lu"/>
+</div>
+<h3 class="font-noto-serif text-xl mb-4 text-brand-olive">03. 구조적 여백</h3>
+<p class="text-sm leading-relaxed text-on-surface-variant text-justify">
+                            구조가 명확해질수록 여백은 더 큰 힘을 발휘합니다. 불필요한 기둥을 제거하고 면과 면이 만나는 선을 정교하게 다듬음으로써 공간은 비로소 숨을 쉬기 시작합니다.
+                        </p>
+</div>
+</div>
+<!-- Full Width Image -->
+<figure class="mb-32">
+<div class="aspect-video w-full overflow-hidden bg-surface-container mb-4">
+<img alt="Wide view of a gallery space" class="w-full h-full object-cover" data-alt="Ultra-wide cinematic shot of a vast empty art gallery with polished concrete floors and high ceilings in soft neutral tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAir4g94nLve0yC0mQYZMGU8WfE5nHiVLFzfJBZL1aHuBEC-Kn3b8ZhqAQGvCcaHxUgbEM4ol9RAOtVzMInljjVDoedYDuhiz1JTCQLJ4MbnrpfUpiZOWe7j-oJ5-hLdGidYD_uaCgHUnweQqDTdqz6scX2q8CWkorWy9UsxSM17aUBJoOsZnujErvmyTPgX09uQDhZon56TXmme7k_htyCts0nnKGbQqfSic77Y9AxESiTiUTqIJKiRoL4R0W0mVMGsi2Pt1-WdG8P"/>
+</div>
+<figcaption class="text-[10px] font-manrope text-outline tracking-widest uppercase italic">
+                        Gallery 04 — Study on Volume and Emptiness
+                    </figcaption>
+</figure>
+<!-- Key Notes -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-16 border-t border-outline-variant/20 mb-32">
+<div>
+<span class="block text-[10px] font-manrope tracking-widest text-secondary uppercase mb-4">Form</span>
+<h5 class="text-lg font-bold">형태</h5>
+<p class="text-[12px] text-on-surface-variant mt-2 leading-relaxed">기하학적 질서와 선의 정밀함.</p>
+</div>
+<div>
+<span class="block text-[10px] font-manrope tracking-widest text-secondary uppercase mb-4">Material</span>
+<h5 class="text-lg font-bold">재질</h5>
+<p class="text-[12px] text-on-surface-variant mt-2 leading-relaxed">촉각적 경험을 강조하는 물성.</p>
+</div>
+<div>
+<span class="block text-[10px] font-manrope tracking-widest text-secondary uppercase mb-4">Structure</span>
+<h5 class="text-lg font-bold">구조</h5>
+<p class="text-[12px] text-on-surface-variant mt-2 leading-relaxed">무게를 견디는 우아한 골조.</p>
+</div>
+<div>
+<span class="block text-[10px] font-manrope tracking-widest text-secondary uppercase mb-4">Void</span>
+<h5 class="text-lg font-bold">여백</h5>
+<p class="text-[12px] text-on-surface-variant mt-2 leading-relaxed">비워냄으로써 완성되는 서사.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Related Entries -->
+<section class="px-8 mt-40">
+<div class="flex justify-between items-end mb-12 border-b border-outline-variant/20 pb-4">
+<h3 class="text-2xl font-noto-serif">Related Entries</h3>
+<a class="text-[10px] font-manrope tracking-widest uppercase text-outline hover:text-secondary transition-colors" href="#">View Index →</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Related Item 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[16/10] bg-surface-container overflow-hidden mb-6">
+<img alt="Brutalist Architecture" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close up of a brutalist concrete building facade with repetitive geometric patterns and sharp edges against a clear sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGYCp-3qNYEHjGQgrm8hs0H5Kvk_tVzOvK0-7Ttn69C5MUBDGZsQk9vMuenKbEOFWMV12CrBKlk3CTnPhOO_RnVeu8qJiDTisFbZvHJbETFwmI98adki6HGEVHcAJBaHGSHg7ZFlFCsv9s5p3dkMzthSXs83m9DJ_oI40EO_-ThybSt-aDsVe3vnpkgknxwvXI7zIHxw-PRqmGKPRI8iAyFwGKBVfe337B6YadxNVo8o93DnuxknmtaMhh4-CTiN7aZS1FKRvxR9Vp"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<span class="text-[10px] font-manrope tracking-widest text-outline uppercase mb-2 block">Archive 02</span>
+<h4 class="text-lg font-noto-serif group-hover:text-secondary transition-colors">Brutalist Poetry</h4>
+</div>
+<span class="material-symbols-outlined text-outline-variant">arrow_outward</span>
+</div>
+</div>
+<!-- Related Item 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[16/10] bg-surface-container overflow-hidden mb-6">
+<img alt="Shadow Library" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Interior of a library with dark wooden shelves and soft ambient light creating long dramatic shadows across the floor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrnTIwnXFLReyeHLd91HdDOV2kGhn3fKhGviWoud9o-_kpTSdBHqRnlwEdF2aS91GrqU-MinloDpAWCp19n9nPpDlmpfq5ZBePMIhatDB_6Rj76qpERaJBX3BBFWoJgGhG6ZJyAlUWBD1scDZ1cp9AClXuLX3xzQ2ovJ0p15due-iW01V2eyS26XN1I8R5v2xLFFFjTu5safMC72eDt6qXlgmJC1Sm3T9slNVTVJmnwIhkn4fUBzeU-qaTu9DbUNjmHy2NQ3G-d1u4"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<span class="text-[10px] font-manrope tracking-widest text-outline uppercase mb-2 block">Archive 03</span>
+<h4 class="text-lg font-noto-serif group-hover:text-secondary transition-colors">Shadow Library</h4>
+</div>
+<span class="material-symbols-outlined text-outline-variant">arrow_outward</span>
+</div>
+</div>
+<!-- Related Item 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[16/10] bg-surface-container overflow-hidden mb-6">
+<img alt="Modern Minimal House" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Exterior of a modern minimalist house with large glass windows and clean white lines at twilight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3NE7Jx0tpWhUxP4FVuqf_uXMxbg3EzyAeSrDrNNhuqRpkayl3QmGQv9FbkuJNGKNlT_UCN1uR6Nnx57rQpOmDT8tCMoQAZDVirIHX1m4tvUmXNg1iTgMHsh9Mbg9Je7ayztQ6XZhC66Ax_cYcNjt_CatJQuyK87DIA2iQOw80dXf7KIe-nDwhbch7DbjJOUfxPWEINMwTkCUcYDLZ2CXbZ2z-SBnZUH-Q6zDw6vJBsoe8dYssSb0MhtDzEh-j22yHiTGBl-FrbxH3"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<span class="text-[10px] font-manrope tracking-widest text-outline uppercase mb-2 block">Archive 01</span>
+<h4 class="text-lg font-noto-serif group-hover:text-secondary transition-colors">Monochrome Habitats</h4>
+</div>
+<span class="material-symbols-outlined text-outline-variant">arrow_outward</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full py-12 px-8 flex justify-between items-center mt-20 border-t border-[#AFB3B0]/20 bg-[#FAF9F7]">
+<div class="flex items-center gap-12">
+<span class="text-[10px] font-manrope uppercase tracking-[0.05em] text-[#2F3331]/40">© 2024 BARE LINE MAGAZINE — ALL RIGHTS RESERVED</span>
+</div>
+<div class="flex gap-8">
+<a class="font-manrope text-[10px] uppercase tracking-[0.05em] text-[#2F3331]/40 hover:text-[#8B4F3F] hover:underline transition-colors duration-300" href="#">TERMS</a>
+<a class="font-manrope text-[10px] uppercase tracking-[0.05em] text-[#2F3331]/40 hover:text-[#8B4F3F] hover:underline transition-colors duration-300" href="#">PRIVACY</a>
+<a class="font-manrope text-[10px] uppercase tracking-[0.05em] text-[#2F3331]/40 hover:text-[#8B4F3F] hover:underline transition-colors duration-300" href="#">INSTAGRAM</a>
+<a class="font-manrope text-[10px] uppercase tracking-[0.05em] text-[#2F3331]/40 hover:text-[#8B4F3F] hover:underline transition-colors duration-300" href="#">NEWSLETTER</a>
+</div>
+</footer>
+</body></html>

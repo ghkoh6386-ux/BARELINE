@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BARE LINE ARCHIVE - 오브제</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#9d9d9b",
+                        "error-container": "#ff8b9a",
+                        "primary-fixed": "#e5e2e1",
+                        "tertiary-container": "#f5f3f3",
+                        "surface-dim": "#d6dbd7",
+                        "secondary-dim": "#7d4335",
+                        "on-error": "#fff7f7",
+                        "on-surface-variant": "#5c605d",
+                        "on-surface": "#2f3331",
+                        "surface-variant": "#e0e3e0",
+                        "on-primary-fixed": "#403f3f",
+                        "inverse-surface": "#0d0e0e",
+                        "on-tertiary": "#faf8f8",
+                        "surface-container-low": "#f3f4f1",
+                        "surface-container-high": "#e6e9e6",
+                        "surface-container-highest": "#e0e3e0",
+                        "secondary-fixed-dim": "#ffc8ba",
+                        "tertiary-fixed": "#f5f3f3",
+                        "error": "#9e3f4e",
+                        "tertiary": "#5f5f5f",
+                        "inverse-primary": "#ffffff",
+                        "surface-container": "#edeeeb",
+                        "on-secondary-fixed-variant": "#874b3c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#666666",
+                        "surface-bright": "#faf9f7",
+                        "primary-fixed-dim": "#d6d4d3",
+                        "on-tertiary-fixed": "#494a4a",
+                        "secondary-container": "#ffdad2",
+                        "background": "#faf9f7",
+                        "on-tertiary-container": "#5b5c5c",
+                        "on-secondary": "#fff7f6",
+                        "on-primary-fixed-variant": "#5c5b5b",
+                        "tertiary-dim": "#535353",
+                        "surface-tint": "#5f5e5e",
+                        "secondary-fixed": "#ffdad2",
+                        "primary-container": "#e5e2e1",
+                        "on-error-container": "#782232",
+                        "on-secondary-fixed": "#653023",
+                        "on-primary": "#faf7f6",
+                        "error-dim": "#4f0116",
+                        "outline": "#777c79",
+                        "on-secondary-container": "#7b4233",
+                        "outline-variant": "#afb3b0",
+                        "on-primary-container": "#525151",
+                        "primary-dim": "#535252",
+                        "surface": "#faf9f7",
+                        "tertiary-fixed-dim": "#e6e5e5",
+                        "primary": "#5f5e5e",
+                        "on-background": "#2f3331",
+                        "secondary": "#8b4f3f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #FAF9F7; }
+        .font-noto-serif { font-family: 'Noto Serif', serif; }
+        .font-manrope { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- TopAppBar -->
+<nav class="fixed top-0 left-0 flex justify-between items-center w-full px-12 py-6 max-w-[100vw] z-50 bg-[#FAF9F7] dark:bg-[#2F3331] border-b-[0.5px] border-[#AFB3B0]/20">
+<div class="flex items-center gap-8">
+<span class="font-noto-serif text-2xl font-light tracking-[0.1em] text-[#2F3331] dark:text-[#FAF9F7]">BARE LINE</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-noto-serif tracking-[0.02em] uppercase text-sm text-[#2F3331] dark:text-[#FAF9F7] hover:text-[#8B4F3F] transition-colors duration-300" href="#">Home</a>
+<a class="font-noto-serif tracking-[0.02em] uppercase text-sm text-[#2F3331] dark:text-[#FAF9F7] hover:text-[#8B4F3F] transition-colors duration-300" href="#">Archive</a>
+<a class="font-noto-serif tracking-[0.02em] uppercase text-sm text-[#2F3331] dark:text-[#FAF9F7] hover:text-[#8B4F3F] transition-colors duration-300" href="#">About</a>
+<a class="font-noto-serif tracking-[0.02em] uppercase text-sm text-[#2F3331] dark:text-[#FAF9F7] hover:text-[#8B4F3F] transition-colors duration-300" href="#">Contact</a>
+</div>
+</div>
+<div class="flex items-center gap-6 text-[#2F3331] dark:text-[#FAF9F7]">
+<span class="material-symbols-outlined cursor-pointer hover:scale-95 duration-200" data-icon="search">search</span>
+<span class="material-symbols-outlined cursor-pointer hover:scale-95 duration-200" data-icon="menu">menu</span>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-24 w-48 h-[calc(100vh-6rem)] flex flex-col px-8 py-12 bg-transparent border-r-[0.5px] border-[#AFB3B0]/20 z-40">
+<div class="mb-12">
+<p class="font-manrope text-[11px] font-medium tracking-[0.05em] uppercase text-[#6B705C]">INDEX</p>
+<p class="font-manrope text-[9px] tracking-widest text-[#2F3331]/40">VOLUME NO. 04 / 2024</p>
+</div>
+<ul class="flex flex-col gap-6">
+<li>
+<a class="group flex items-center gap-3 font-manrope text-[11px] font-medium tracking-[0.05em] uppercase text-[#2F3331]/60 hover:text-[#6B705C] transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[6px]" data-icon="fiber_manual_record">fiber_manual_record</span>
+                    패션
+                </a>
+</li>
+<li>
+<a class="group flex items-center gap-3 font-manrope text-[11px] font-medium tracking-[0.05em] uppercase text-[#2F3331]/60 hover:text-[#6B705C] transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[6px]" data-icon="fiber_manual_record">fiber_manual_record</span>
+                    공간
+                </a>
+</li>
+<li>
+<a class="group flex items-center gap-3 font-manrope text-[11px] font-medium tracking-[0.05em] uppercase text-[#2F3331]/60 hover:text-[#6B705C] transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[6px]" data-icon="fiber_manual_record">fiber_manual_record</span>
+                    디자이너
+                </a>
+</li>
+<li>
+<a class="group flex items-center gap-3 font-manrope text-[11px] font-medium tracking-[0.05em] uppercase text-[#6B705C] border-b border-[#6B705C] pb-0.5 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[6px]" data-icon="fiber_manual_record" style="font-variation-settings: 'FILL' 1;">fiber_manual_record</span>
+                    오브제
+                </a>
+</li>
+<li>
+<a class="group flex items-center gap-3 font-manrope text-[11px] font-medium tracking-[0.05em] uppercase text-[#2F3331]/60 hover:text-[#6B705C] transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[6px]" data-icon="fiber_manual_record">fiber_manual_record</span>
+                    에디토리얼
+                </a>
+</li>
+</ul>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-48 pt-24 pb-24 min-h-screen">
+<!-- Archival Header (Signature Component) -->
+<div class="px-12 py-8 flex justify-between items-start border-b-[0.5px] border-outline-variant/20">
+<div>
+<p class="font-manrope text-[10px] tracking-widest uppercase text-outline">카테고리</p>
+<h1 class="font-noto-serif text-5xl font-light tracking-[0.02em] mt-2">오브제</h1>
+</div>
+<div class="text-right">
+<p class="font-manrope text-[10px] tracking-widest uppercase text-outline">VOLUME NO. 04 / ARCHIVE / 2024</p>
+<p class="font-manrope text-sm font-light mt-4 text-on-surface-variant max-w-[280px]">
+                    기능과 형태 사이에서 균형을 이루는 물성의 기록
+                </p>
+</div>
+</div>
+<!-- Hero Featured Section -->
+<section class="px-12 py-16 grid grid-cols-12 gap-0">
+<div class="col-span-12 lg:col-span-8 bg-surface-container-low aspect-[16/9] relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up of a minimalist sculptural lounge chair with soft grey fabric and architectural metal frame in a sunlit gallery space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeh_Li6bR1hwP-6y_3JHri6_h7oBiwdgXqLhcQKgqZTOmGFsa0tQkabY-uYW9tNsrmP9MypekVdVNcEbVtWko-yIk3z8YnliqjY6DJKyruCJyormqjKrTtO7GYoHiHYxFWSVncnTi3zhk6CjOEzkS6Ewg619E8ilJCDtk3rvUXTbsErxLff8O76Ru1kvZU4eWu6dhxIzWRKLEE3BE6vYdgSLPTe_PUQPNrldhIiXcr8-6utnfffJiaIEI_H6Km4OAZPI5WifmsK9Jd"/>
+</div>
+<div class="col-span-12 lg:col-span-4 p-12 flex flex-col justify-end border-r-[0.5px] border-b-[0.5px] border-outline-variant/20">
+<p class="font-manrope text-[10px] tracking-[0.2em] uppercase text-secondary mb-4">FEATURED OBJECT</p>
+<h2 class="font-noto-serif text-3xl font-light leading-snug mb-6 tracking-tight">The Silence of Form: <br/>Series 01</h2>
+<p class="font-manrope text-sm text-on-surface-variant leading-relaxed mb-8">
+                    단순함이 주는 시각적 평온함과 구조적 완결성. 이름 없는 조각가에 의해 설계된 이 오브제는 일상의 공간을 갤러리로 전환합니다.
+                </p>
+<a class="inline-flex items-center font-manrope text-[11px] tracking-widest uppercase border-b border-on-surface w-fit pb-1 hover:text-secondary hover:border-secondary transition-colors" href="#">
+                    READ THE STORY
+                </a>
+</div>
+</section>
+<!-- Image Grid (Asymmetric) -->
+<section class="px-12 py-24 border-t-[0.5px] border-outline-variant/20">
+<div class="grid grid-cols-12 gap-8 items-end">
+<div class="col-span-5">
+<p class="font-manrope text-[10px] tracking-widest uppercase text-outline mb-12">01 — ESSENTIAL LIGHTING</p>
+<div class="aspect-[3/4] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Modern geometric pendant light in brass finish hanging against a clean white wall with dramatic shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiEb7sjQf1BtDQUTsK6pFwgkeRNCeSD2__zNBbxHa4Fiyu_09iR7GPDXy-iqNaxmQUCkyeHYyLNrwP8HVF--8DVXd6kh2HKOkpyUbhKyIKNLHB0jTHl2RlFe21zJJ5urG1KUPEeq2tuwH0uTmZAmr6kY5eH8JFSENbMERT2uPh3yG1dtl0PF-dLRRbVfTR_MtBuDR3ZRR3PU33vFJBnLDjIR8IRpxcclD_cIuBZqlY3iJzzqfciwujVxOkjMbeRgzPkBwK2CTDgVeQ"/>
+</div>
+</div>
+<div class="col-span-6 col-start-7">
+<div class="aspect-square bg-surface-container overflow-hidden mb-8">
+<img class="w-full h-full object-cover" data-alt="Minimalist ceramic vases on a textured concrete shelf with soft natural side lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLDF1iHdAJKIw25CJbQzzYZDDco3wOkQGbeUlOk8Vi0EbVukRIWb2_VttpYYEoqRU4UiGAR88D-JH-WBEaP0zWAEQQ-26uu7ls8AYT8qpALdo7J8VO0Lg3E3JHsZBeaT2EUkZ2HHuCioRqWBIVq0fXgVtpiAgc-EzgYozxYwITz-1L7HIeTQm3a6SGDPSZBHKq_HftLV2S1y55QAyxlqTSxxdsPsbdC2_EFsXGhuLrIGUuoEON-DutVZsGtzjfyF-hJhwAwpWCgnDp"/>
+</div>
+<div class="max-w-xs">
+<h3 class="font-noto-serif text-xl mb-4">Tactile Minimalism</h3>
+<p class="font-manrope text-sm text-on-surface-variant font-light">
+                            우리가 만지고 느끼는 모든 사물에는 제작자의 철학이 담겨 있습니다. 표면의 질감과 무늬가 전하는 이야기를 기록합니다.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Content List (Archival Layout) -->
+<section class="px-12 py-24 bg-surface-container-low">
+<div class="flex justify-between items-end mb-16">
+<h2 class="font-noto-serif text-3xl font-light">Archive List</h2>
+<span class="font-manrope text-[10px] tracking-widest uppercase text-outline">TOTAL ENTRIES: 124</span>
+</div>
+<div class="border-t border-on-surface/10">
+<!-- List Item -->
+<div class="group py-6 grid grid-cols-12 gap-4 border-b border-on-surface/10 items-center hover:bg-surface transition-colors cursor-pointer px-4">
+<div class="col-span-1 font-manrope text-[10px] text-outline">NO. 084</div>
+<div class="col-span-2 font-manrope text-[10px] uppercase tracking-widest text-secondary">CERAMICS</div>
+<div class="col-span-7 font-noto-serif text-lg group-hover:translate-x-2 transition-transform duration-300">Raw Clay Vessel — Sand Edition</div>
+<div class="col-span-2 text-right font-manrope text-[10px] text-outline">2024</div>
+</div>
+<!-- List Item -->
+<div class="group py-6 grid grid-cols-12 gap-4 border-b border-on-surface/10 items-center hover:bg-surface transition-colors cursor-pointer px-4">
+<div class="col-span-1 font-manrope text-[10px] text-outline">NO. 081</div>
+<div class="col-span-2 font-manrope text-[10px] uppercase tracking-widest text-secondary">FURNITURE</div>
+<div class="col-span-7 font-noto-serif text-lg group-hover:translate-x-2 transition-transform duration-300">Oak Wood Modular Shelving</div>
+<div class="col-span-2 text-right font-manrope text-[10px] text-outline">2023</div>
+</div>
+<!-- List Item active style example -->
+<div class="group py-6 grid grid-cols-12 gap-4 border-b border-on-surface/10 items-center hover:bg-surface transition-colors cursor-pointer px-4">
+<div class="col-span-1 font-manrope text-[10px] text-outline">NO. 079</div>
+<div class="col-span-2 font-manrope text-[10px] uppercase tracking-widest text-secondary">LIGHTING</div>
+<div class="col-span-7 font-noto-serif text-lg group-hover:translate-x-2 transition-transform duration-300">Brushed Aluminum Desk Lamp</div>
+<div class="col-span-2 text-right font-manrope text-[10px] text-outline">2023</div>
+</div>
+<!-- List Item -->
+<div class="group py-6 grid grid-cols-12 gap-4 border-b border-on-surface/10 items-center hover:bg-surface transition-colors cursor-pointer px-4">
+<div class="col-span-1 font-manrope text-[10px] text-outline">NO. 075</div>
+<div class="col-span-2 font-manrope text-[10px] uppercase tracking-widest text-secondary">GLASSWARE</div>
+<div class="col-span-7 font-noto-serif text-lg group-hover:translate-x-2 transition-transform duration-300">Borosilicate Stackable Tumbler</div>
+<div class="col-span-2 text-right font-manrope text-[10px] text-outline">2022</div>
+</div>
+</div>
+<div class="mt-16 flex justify-center">
+<button class="bg-on-surface text-surface px-12 py-4 font-manrope text-[11px] tracking-widest uppercase hover:opacity-90 transition-opacity">
+                    Load More Entries
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-12 py-16 flex flex-col md:flex-row justify-between items-center bg-[#F3F4F1] dark:bg-[#1A1C1B] border-t-[0.5px] border-[#AFB3B0]/20">
+<div class="mb-8 md:mb-0">
+<span class="font-noto-serif text-lg tracking-tighter text-[#2F3331] dark:text-[#FAF9F7]">BARE LINE</span>
+<p class="font-manrope text-[10px] tracking-widest uppercase mt-4 text-[#777C79]">© 2024 BARE LINE ARCHIVE. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-manrope text-[10px] tracking-widest uppercase text-[#777C79] hover:underline hover:text-[#8B4F3F] transition-colors" href="#">Privacy Policy</a>
+<a class="font-manrope text-[10px] tracking-widest uppercase text-[#777C79] hover:underline hover:text-[#8B4F3F] transition-colors" href="#">Terms of Service</a>
+<a class="font-manrope text-[10px] tracking-widest uppercase text-[#777C79] hover:underline hover:text-[#8B4F3F] transition-colors" href="#">Instagram</a>
+</div>
+</footer>
+</body></html>
