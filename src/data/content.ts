@@ -8,7 +8,7 @@
 
 export const categoryItems = [
   { id: 'fashion', title: '패션', caption: '구조적인 재단과 절제된 소재의 기록.' },
-  { id: 'space', title: '공간', caption: '빛과 재료, 여백으로 완성되는 공간의 미학.' },
+  { id: 'space', title: '공간', caption: '빛과 재료, 여백이 완성하는 공간의 미학.' },
   { id: 'designers', title: '디자이너', caption: '형태를 설계하는 사람들의 시선과 태도.' },
   { id: 'objects', title: '오브제', caption: '단순한 물성 안에 남는 존재감과 균형.' },
   { id: 'editorial', title: '에디토리얼', caption: '편집과 글쓰기로 정리한 감각의 기록.' },
