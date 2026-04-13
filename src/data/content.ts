@@ -357,7 +357,7 @@ export const archivePageContent = {
 export const categoryNavContent = {
   allItem: {
     id: 'all',
-    title: '인기',
+    title: '전체',
   },
 };
 
