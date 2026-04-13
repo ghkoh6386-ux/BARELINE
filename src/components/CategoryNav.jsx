@@ -1,12 +1,16 @@
 ﻿import { useSearchParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { selectCategoryItems } from '../store/selectors/contentSelectors';
+import {
+  selectCategoryItems,
+  selectCategoryNavContent,
+} from '../store/selectors/contentSelectors';
 
 export default function CategoryNav() {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeCategory = searchParams.get('category') ?? 'all';
   const categoryItems = useSelector(selectCategoryItems);
-  const navItems = [{ id: 'all', title: '인기' }, ...categoryItems];
+  const categoryNavContent = useSelector(selectCategoryNavContent);
+  const navItems = [categoryNavContent.allItem, ...categoryItems];
 
   return (
     <nav className="overflow-x-auto border-b border-outline-variant/20 bg-surface py-4 text-xs uppercase tracking-[0.16em] text-on-surface/80">

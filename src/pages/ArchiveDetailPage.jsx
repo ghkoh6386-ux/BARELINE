@@ -14,7 +14,7 @@ export default function ArchiveDetailPage() {
     return (
       <div className="px-6 py-20 md:px-8">
         <p className="text-[10px] uppercase tracking-[0.3em] text-outline">Archive Detail</p>
-        <h1 className="mt-6 text-4xl font-semibold">존재하지 않는 아카이브입니다.</h1>
+        <h1 className="mt-6 text-3xl font-semibold">존재하지 않는 아카이브입니다.</h1>
         <Link
           to="/archive"
           className="mt-8 inline-flex border border-outline-variant/30 px-6 py-3 text-xs uppercase tracking-[0.28em] text-on-surface transition-colors hover:border-accent hover:text-accent"
@@ -49,7 +49,7 @@ export default function ArchiveDetailPage() {
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-5">
             <span className="text-sm font-semibold uppercase tracking-[0.24em] text-accent">{entry.eyebrow}</span>
-            <h1 className="mt-5 text-5xl font-semibold leading-[0.95] tracking-tight md:text-7xl">
+            <h1 className="mt-5 text-3xl font-semibold leading-[0.95] tracking-tight md:text-5xl">
               {entry.title}
             </h1>
             <p className="mt-6 text-2xl italic text-on-surface/70">{entry.subtitle}</p>
@@ -59,7 +59,7 @@ export default function ArchiveDetailPage() {
 
           <div className="lg:col-span-7">
             <div className="aspect-[4/5] overflow-hidden bg-surface-container md:aspect-[3/2]">
-              <img src={entry.images?.hero ?? entry.heroImage} alt={entry.title} className="h-full w-full object-cover" />
+              <img src={entry.images?.hero ?? entry.heroImage} alt={entry.title} className="h-full w-full object-cover object-center" />
             </div>
           </div>
         </div>
@@ -124,7 +124,7 @@ export default function ArchiveDetailPage() {
             {entry.quote}
           </blockquote>
 
-          <div className="mb-16 flex justify-center">
+          <div className="mb-24 flex justify-center">
             <Link
               to="/archive#archive-list"
               className="inline-flex border border-outline-variant/30 px-5 py-2 text-[12px] uppercase tracking-[0.28em] text-on-surface transition-colors hover:border-accent hover:text-accent"

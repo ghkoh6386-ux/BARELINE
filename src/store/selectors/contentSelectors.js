@@ -1,4 +1,4 @@
-import { createSelector } from '@reduxjs/toolkit';
+﻿import { createSelector } from '@reduxjs/toolkit';
 
 export const selectContentState = (state) => state.content;
 
@@ -22,11 +22,6 @@ export const selectArchiveCategoryContentById = createSelector(
   (categoryContent, categoryId) => (categoryId ? categoryContent[categoryId] ?? null : null),
 );
 
-export const selectFeaturedCards = createSelector(
-  [selectContentState],
-  (content) => content.featuredCards,
-);
-
 export const selectArchiveEntries = createSelector(
   [selectContentState],
   (content) => content.archiveEntries,
@@ -45,4 +40,29 @@ export const selectAboutSections = createSelector(
 export const selectAboutPageContent = createSelector(
   [selectContentState],
   (content) => content.aboutPageContent,
+);
+
+export const selectHomePageContent = createSelector(
+  [selectContentState],
+  (content) => content.homePageContent,
+);
+
+export const selectArchivePageContent = createSelector(
+  [selectContentState],
+  (content) => content.archivePageContent,
+);
+
+export const selectCategoryNavContent = createSelector(
+  [selectContentState],
+  (content) => content.categoryNavContent,
+);
+
+export const selectFooterContent = createSelector(
+  [selectContentState],
+  (content) => content.footerContent,
+);
+
+export const selectContactPageContent = createSelector(
+  [selectContentState],
+  (content) => content.contactPageContent,
 );

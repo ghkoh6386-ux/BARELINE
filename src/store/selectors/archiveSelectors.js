@@ -1,8 +1,9 @@
-import { createSelector } from '@reduxjs/toolkit';
+﻿import { createSelector } from '@reduxjs/toolkit';
 import {
   selectArchiveCategoryContentById,
   selectArchiveEntries,
   selectArchiveList,
+  selectArchivePageContent,
   selectContentState,
 } from './contentSelectors';
 
@@ -108,6 +109,44 @@ export const selectEnrichedArchiveList = createSelector(
   },
 );
 
+export const selectFilteredArchiveList = createSelector(
+  [selectEnrichedArchiveList, (_, __, searchQuery) => searchQuery],
+  (enrichedArchiveList, searchQuery) => {
+    const normalizedQuery = searchQuery.trim().toLowerCase();
+
+    if (!normalizedQuery) {
+      return enrichedArchiveList;
+    }
+
+    return enrichedArchiveList.filter((item) => {
+      const searchTarget = [
+        item.title,
+        item.category,
+        item.creator,
+        item.year,
+        item.subtitle,
+        item.description,
+        item.ref,
+      ]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase();
+
+      return searchTarget.includes(normalizedQuery);
+    });
+  },
+);
+
+export const selectFeaturedArchiveCards = createSelector(
+  [selectEnrichedArchiveList],
+  (enrichedArchiveList) => enrichedArchiveList.slice(0, 2).map((item) => ({
+    intro: `Entry #${item.ref}`,
+    title: item.title,
+    description: item.description,
+    to: item.to,
+  })),
+);
+
 export const selectFeaturedArchiveItems = createSelector(
   [
     selectArchiveEntries,
@@ -154,4 +193,23 @@ export const selectFeaturedArchiveItems = createSelector(
       description: item.description,
     }));
   },
+);
+
+export const selectArchivePageData = createSelector(
+  [
+    selectArchiveCategoryContentById,
+    selectFilteredArchiveList,
+    selectFeaturedArchiveItems,
+    selectArchivePageContent,
+    (_, categoryId) => categoryId,
+  ],
+  (categoryContent, filteredArchiveList, featuredItems, pageContent, categoryId) => ({
+    pageContent,
+    categoryContent,
+    filteredArchiveList,
+    featuredItems,
+    totalLabel: `Total (${filteredArchiveList.length})`,
+    listTitle: categoryContent?.listLabel ?? 'Archives',
+    listCaption: categoryId ? '?좏깮??移댄뀒怨좊━ 湲곕줉' : '紐⑤뱺 湲곕줉 ?섎윭蹂닿린',
+  }),
 );
