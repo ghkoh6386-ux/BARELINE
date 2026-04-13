@@ -210,6 +210,6 @@ export const selectArchivePageData = createSelector(
     featuredItems,
     totalLabel: `Total (${filteredArchiveList.length})`,
     listTitle: categoryContent?.listLabel ?? 'Archives',
-    listCaption: categoryId ? '?좏깮??移댄뀒怨좊━ 湲곕줉' : '紐⑤뱺 湲곕줉 ?섎윭蹂닿린',
+    listCaption: categoryId ? '선택한 카테고리 기록' : '전체 목록',
   }),
 );
