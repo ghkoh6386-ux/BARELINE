@@ -121,7 +121,7 @@ export default function ArchiveDetailPage() {
               >
                 <div className={`${
                   mobileMetaItems.length % 2 === 1 && index === mobileMetaItems.length - 1
-                    ? 'flex items-center gap-3'
+                    ? 'flex items-center justify-center gap-3 text-center'
                     : ''
                 }`}>
                   <span className="block text-[0.82rem] uppercase tracking-[0.12em] text-outline">{label}</span>
