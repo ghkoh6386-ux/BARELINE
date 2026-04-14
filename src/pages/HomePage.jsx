@@ -174,7 +174,9 @@ export default function HomePage() {
                     </p>
                   ) : null}
                 </div>
-                <div className="mt-3 hidden text-base uppercase tracking-[0.18em] text-outline md:col-span-2 md:mt-0 md:text-right">{item.year}</div>
+                <div className="mt-3 hidden text-base uppercase tracking-[0.18em] text-outline md:col-span-2 md:mt-0 md:flex md:justify-end md:text-right">
+                  {item.year}
+                </div>
               </Link>
             ))}
           </div>

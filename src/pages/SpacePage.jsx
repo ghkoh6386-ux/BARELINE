@@ -186,10 +186,12 @@ export default function SpacePage() {
         </div>
       </div>
 
-      <section className="bg-surface-container-low px-6 py-16 md:px-8">
+      <section className="bg-transparent px-6 py-16 md:bg-surface-container-low md:px-8">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-12 text-base uppercase tracking-[0.22em] text-accent">{content.relatedTitle}</p>
-          <div className="grid gap-10 md:grid-cols-3">
+          <div className="mb-10 flex items-end justify-between border-b border-outline-variant/20 pb-4">
+            <h2 className="text-base uppercase tracking-[0.22em] text-accent">{content.relatedTitle}</h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3 md:gap-8">
             {relatedEntries.map((item) => {
               const isActive = item.id === activeEntryId;
 
@@ -198,17 +200,30 @@ export default function SpacePage() {
                   key={item.id}
                   type="button"
                   onClick={() => handleSelectEntry(item.id)}
-                  className={`group space-y-4 text-left transition ${isActive ? 'opacity-100' : 'opacity-90 hover:opacity-100'}`}
+                  className={`group block text-left transition ${
+                    isActive
+                      ? 'opacity-100'
+                      : 'opacity-90 hover:opacity-100'
+                  }`}
                 >
-                  <div className="aspect-[16/10] overflow-hidden bg-surface-container-highest">
+                  <div className="overflow-hidden border border-outline-variant/20 bg-background md:border-0 md:bg-transparent">
+                    <div className="aspect-[16/10] overflow-hidden bg-surface-container md:bg-surface-container-highest">
                     <img src={item.image} alt={item.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                  </div>
-                  <div>
-                    <p className="mb-3 text-base uppercase tracking-[0.2em] text-outline/70">{item.label}</p>
-                    <h4 className={`text-xl font-semibold tracking-tight transition-colors ${isActive ? 'text-accent' : 'group-hover:text-accent'}`}>
-                      {item.title}
-                    </h4>
-                    <p className="mt-3 text-base leading-7 text-on-surface-variant">{item.description}</p>
+                    </div>
+                    <div className="px-5 py-5 md:px-0 md:py-5">
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <p className="text-base uppercase tracking-[0.2em] text-outline/70">{item.label}</p>
+                          <h4 className={`mt-2 text-lg font-semibold tracking-tight transition-colors md:text-xl ${isActive ? 'text-accent' : 'group-hover:text-accent'}`}>
+                            {item.title}
+                          </h4>
+                        </div>
+                        <span className={`material-symbols-outlined mt-0.5 shrink-0 text-[18px] transition-colors ${isActive ? 'text-accent' : 'text-outline/60 group-hover:text-accent'}`}>
+                          arrow_outward
+                        </span>
+                      </div>
+                      <p className="mt-3 text-base leading-7 text-on-surface-variant">{item.description}</p>
+                    </div>
                   </div>
                 </button>
               );
