@@ -16,10 +16,12 @@ export default function HomePage() {
   return (
     <div className="space-y-0">
       <section className="grid min-h-[60vh] grid-cols-1 border-b border-outline-variant/20 md:min-h-[72vh] md:grid-cols-12">
-        <div className="flex flex-col justify-end gap-6 px-6 py-10 md:col-span-6 md:gap-8 md:px-12 md:py-20">
+        <div className="flex flex-col justify-end gap-6 px-6 py-10 sm:px-8 md:col-span-6 md:gap-8 md:px-12 md:py-20">
           <span className="text-sm uppercase tracking-[0.28em] text-outline">{homePageContent.hero.eyebrow}</span>
-          <h1 className="text-5xl font-semibold leading-[0.9] tracking-tight sm:text-6xl md:text-[5.5rem]">{homePageContent.hero.title}</h1>
-          <p className="max-w-xl text-lg leading-relaxed text-on-surface-variant md:text-xl">
+          <h1 className="max-w-[10ch] text-4xl font-semibold leading-[0.92] tracking-tight sm:text-5xl md:max-w-none md:text-[5.5rem]">
+            {homePageContent.hero.title}
+          </h1>
+          <p className="max-w-xl text-base leading-relaxed text-on-surface-variant sm:text-lg md:text-xl">
             {homePageContent.hero.description}
           </p>
           <Link
@@ -38,30 +40,38 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="grid grid-cols-1 border-b border-outline-variant/20 md:grid-cols-5">
+      <section className="grid grid-cols-1 border-b border-outline-variant/20 sm:grid-cols-2 md:grid-cols-5">
         {categoryItems.map((item, index) => (
           <article
             key={item.id}
-            className="group border-b border-outline-variant/10 p-6 transition-colors hover:bg-surface-container-low last:border-b-0 md:border-r md:p-8 md:last:border-b-0 md:last:border-r-0"
+            className="group border-b border-outline-variant/10 px-6 py-6 transition-colors hover:bg-surface-container-low sm:px-8 sm:py-7 sm:[&:nth-last-child(-n+2)]:border-b-0 md:border-b-0 md:border-r md:p-8 md:last:border-r-0"
           >
-            <div className="mb-4 text-sm uppercase tracking-[0.35em] text-accent">0{index + 1}</div>
-            <h3 className="mb-2 text-lg font-semibold uppercase tracking-[0.16em]">{item.title}</h3>
-            <p className="text-sm leading-relaxed text-on-surface-variant">{item.caption}</p>
+            <div className="flex items-start justify-between gap-4">
+              <div className="min-w-0">
+                <h3 className="text-lg font-semibold uppercase tracking-[0.16em]">{item.title}</h3>
+                <p className="mt-3 max-w-[26ch] text-sm leading-relaxed text-on-surface-variant">{item.caption}</p>
+              </div>
+              <div className="shrink-0 text-sm uppercase tracking-[0.35em] text-accent">0{index + 1}</div>
+            </div>
           </article>
         ))}
       </section>
 
-      <Section title={homePageContent.featuredSection.title} caption={homePageContent.featuredSection.caption} className="pt-24">
+      <Section title={homePageContent.featuredSection.title} caption={homePageContent.featuredSection.caption} className="px-6 pt-20 sm:px-8 md:px-0 md:pt-24">
         <div className="grid grid-cols-1 gap-0 md:grid-cols-12">
-          <div className="border-b border-outline-variant/20 md:col-span-8 md:border-b-0 md:border-r">
-            <div className="relative h-[360px] overflow-hidden bg-surface sm:h-[460px] md:h-[700px]">
-              <img src={homePageContent.featuredSection.image} alt={homePageContent.featuredSection.imageAlt} className="h-full w-full object-contain object-left" />
+          <div className="order-2 border-b border-outline-variant/20 md:order-1 md:col-span-8 md:border-b-0 md:border-r">
+            <div className="relative h-[320px] overflow-hidden bg-surface sm:h-[460px] md:h-[700px]">
+              <img
+                src={homePageContent.featuredSection.image}
+                alt={homePageContent.featuredSection.imageAlt}
+                className="h-full w-full object-cover object-center md:object-contain md:object-left"
+              />
             </div>
           </div>
-          <div className="flex flex-col justify-between gap-8 p-6 sm:p-8 md:col-span-4 md:gap-10 md:p-10">
+          <div className="order-1 flex flex-col justify-between gap-8 px-6 py-8 sm:px-8 sm:py-10 md:order-2 md:col-span-4 md:gap-10 md:p-10">
             <div className="space-y-8 md:space-y-10">
               <p className="text-sm uppercase tracking-[0.35em] text-accent">{homePageContent.featuredSection.label}</p>
-              <div className="space-y-8">
+              <div className="space-y-7 sm:space-y-8">
                 {featuredCards.map((item) => (
                   <Link
                     key={item.title}
@@ -82,11 +92,11 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section title={homePageContent.spaceSection.title} caption={homePageContent.spaceSection.caption} className="pt-24">
+      <Section title={homePageContent.spaceSection.title} caption={homePageContent.spaceSection.caption} className="px-6 pt-20 sm:px-8 md:px-0 md:pt-24">
         <div className="grid gap-10 md:grid-cols-12 md:items-center md:gap-16">
-          <div className="order-2 md:order-1 md:col-span-5 text-center md:text-left">
+          <div className="order-2 max-w-2xl md:order-1 md:col-span-5 md:max-w-none md:text-left">
             <h2 className="mb-6 text-4xl font-semibold leading-tight sm:text-5xl md:mb-8 md:text-7xl">{homePageContent.spaceSection.heading}</h2>
-            <p className="mb-8 text-lg leading-relaxed text-on-surface-variant md:mb-12">
+            <p className="mb-8 max-w-xl text-base leading-relaxed text-on-surface-variant sm:text-lg md:mb-12 md:max-w-none">
               {homePageContent.spaceSection.description}
             </p>
             <Link
@@ -106,12 +116,12 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section title={homePageContent.latestSection.title} className="pt-0 px-6 md:px-0">
+      <Section title={homePageContent.latestSection.title} className="px-6 pt-2 sm:px-8 md:px-0">
         <div className="mb-12 flex flex-col gap-4 border-b border-on-surface/10 pb-8 md:flex-row md:items-end md:justify-between">
           <p className="text-sm uppercase tracking-[0.22em] text-outline">{homePageContent.latestSection.caption}</p>
         </div>
         <div className="overflow-x-auto">
-          <div className="hidden grid-cols-12 gap-4 border-b border-on-surface/10 pb-4 px-4 text-sm uppercase tracking-[0.3em] text-outline md:grid md:px-6">
+          <div className="hidden grid-cols-12 gap-4 border-b border-on-surface/10 px-6 pb-4 text-sm uppercase tracking-[0.3em] text-outline md:grid">
             <div className="col-span-1">{homePageContent.latestSection.columns[0]}</div>
             <div className="col-span-4">{homePageContent.latestSection.columns[1]}</div>
             <div className="col-span-2">{homePageContent.latestSection.columns[2]}</div>
@@ -123,10 +133,10 @@ export default function HomePage() {
               <Link
                 key={item.ref}
                 to={item.to}
-                className="block px-4 py-6 transition-colors hover:bg-surface-container-low md:grid md:grid-cols-12 md:items-center md:gap-4 md:px-6"
+                className="block px-6 py-6 transition-colors hover:bg-surface-container-low sm:px-8 md:grid md:grid-cols-12 md:items-center md:gap-4 md:px-6"
               >
                 <div className="text-sm uppercase tracking-[0.24em] text-outline md:col-span-1">{item.ref}</div>
-                <div className="mt-3 flex items-center gap-4 md:col-span-4 md:mt-0">
+                <div className="mt-3 flex items-start gap-4 md:col-span-4 md:mt-0 md:items-center">
                   <div className="h-16 w-16 overflow-hidden bg-surface-container">
                     <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
                   </div>

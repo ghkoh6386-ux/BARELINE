@@ -31,6 +31,7 @@ import redSubMain02 from './space/red/red-sub-main02.jpg';
 import redSub01 from './space/red/red-sub01.jpg';
 import redSub02 from './space/red/red-sub02.jpg';
 import redSub03 from './space/red/red-sub03.jpg';
+import fashion01 from './archive/fashion01.jpg';
 
 export {
   clothHome,
@@ -66,4 +67,5 @@ export {
   redSub01,
   redSub02,
   redSub03,
+  fashion01
 };

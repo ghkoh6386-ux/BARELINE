@@ -100,10 +100,10 @@ export default function ArchivePage() {
                 {listCaption}
               </p>
             </div>
-            <div className="flex w-full flex-col gap-3 sm:max-w-sm sm:flex-row sm:items-center md:w-auto">
-              <div className="relative flex-1">
+            <div className="flex w-full items-stretch gap-2 sm:max-w-md md:w-auto md:gap-3">
+              <div className="relative min-w-0 flex-1">
                 <input
-                  className="w-full border-b border-outline-variant/30 bg-transparent py-3 text-sm outline-none transition-colors placeholder:text-outline-variant/60"
+                  className="h-full min-h-[48px] w-full border-b border-outline-variant/30 bg-transparent px-1 py-3 text-sm outline-none transition-colors placeholder:text-outline-variant/60 focus:border-on-surface"
                   placeholder={pageContent.list.searchPlaceholder}
                   type="text"
                   value={query}
@@ -117,7 +117,7 @@ export default function ArchivePage() {
               </div>
               <button
                 type="button"
-                className="bg-surface px-4 py-3 text-sm uppercase tracking-[0.24em] text-outline transition hover:text-black sm:w-auto"
+                className="shrink-0 whitespace-nowrap border border-outline-variant/20 bg-surface px-4 py-3 text-sm uppercase tracking-[0.2em] text-outline transition-colors hover:border-outline hover:text-on-surface sm:px-5"
                 onClick={handleSearchSubmit}
               >
                 {pageContent.list.searchButtonLabel}

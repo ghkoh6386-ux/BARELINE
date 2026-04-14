@@ -6,19 +6,22 @@ export default function ContactPage() {
   const contactPageContent = useSelector(selectContactPageContent);
 
   return (
-    <div className="space-y-16 px-6 py-12 md:px-8 md:py-16">
+    <div className="space-y-14 px-6 py-12 sm:px-8 md:space-y-16 md:px-10 md:py-16">
       <header className="grid gap-10 lg:grid-cols-12 lg:items-end">
         <div className="lg:col-span-7">
           <p className="text-sm uppercase tracking-[0.3em] text-outline">{contactPageContent.hero.eyebrow}</p>
-          <h1 className="mt-6 text-6xl font-semibold tracking-tight md:text-7xl">{contactPageContent.hero.title}</h1>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-on-surface-variant">
+          <h1 className="mt-6 max-w-[10ch] text-4xl font-semibold tracking-tight sm:text-5xl md:max-w-none md:text-7xl">{contactPageContent.hero.title}</h1>
+          <p className="mt-7 max-w-xl text-base leading-relaxed text-on-surface-variant sm:text-lg">
             {contactPageContent.hero.description}
           </p>
         </div>
         <div className="space-y-12 lg:col-span-4 lg:col-start-9">
           <div>
             <p className="mb-4 text-sm uppercase tracking-[0.28em] text-outline">{contactPageContent.contact.label}</p>
-            <a href={`mailto:${contactPageContent.contact.email}`} className="border-b border-outline-variant/30 pb-2 text-3xl font-semibold transition-colors hover:border-accent">
+            <a
+              href={`mailto:${contactPageContent.contact.email}`}
+              className="inline-block max-w-full break-all border-b border-outline-variant/30 pb-2 text-xl font-semibold leading-tight transition-colors hover:border-accent sm:text-2xl md:text-3xl"
+            >
               {contactPageContent.contact.email}
             </a>
           </div>
@@ -45,11 +48,11 @@ export default function ContactPage() {
         </div>
       </header>
 
-      <div className="relative overflow-hidden rounded-none bg-surface-container-low px-0 py-14">
+      <div className="relative overflow-hidden rounded-none bg-surface-container-low px-0 py-12 sm:py-14">
           <img src={contactPageContent.heroCard.image} alt={contactPageContent.heroCard.imageAlt} className="absolute inset-0 h-full w-full object-cover object-bottom" />
-        <div className="relative mx-auto max-w-5xl px-6 py-24 text-center text-on-surface">
-          <div className="mx-auto inline-block rounded-none border border-outline-variant/30 bg-background/85 px-12 py-8 backdrop-blur-sm">
-            <p className="text-xl font-semibold italic">{contactPageContent.heroCard.quote}</p>
+        <div className="relative mx-auto max-w-5xl px-6 py-20 text-center text-on-surface sm:px-8 sm:py-24">
+          <div className="mx-auto inline-block rounded-none border border-outline-variant/30 bg-background/85 px-6 py-6 backdrop-blur-sm sm:px-12 sm:py-8">
+            <p className="text-lg font-semibold italic sm:text-xl">{contactPageContent.heroCard.quote}</p>
           </div>
         </div>
       </div>
