@@ -13,11 +13,11 @@ export default function ArchiveDetailPage() {
   if (!entry) {
     return (
       <div className="px-6 py-20 md:px-8">
-        <p className="text-[10px] uppercase tracking-[0.3em] text-outline">Archive Detail</p>
+        <p className="text-sm uppercase tracking-[0.3em] text-outline">Archive Detail</p>
         <h1 className="mt-6 text-3xl font-semibold">존재하지 않는 아카이브입니다.</h1>
         <Link
           to="/archive"
-          className="mt-8 inline-flex border border-outline-variant/30 px-6 py-3 text-xs uppercase tracking-[0.28em] text-on-surface transition-colors hover:border-accent hover:text-accent"
+          className="mt-8 inline-flex border border-outline-variant/30 px-6 py-3 text-sm uppercase tracking-[0.28em] text-on-surface transition-colors hover:border-accent hover:text-accent"
         >
           Archive Index
         </Link>
@@ -27,7 +27,7 @@ export default function ArchiveDetailPage() {
   return (
     <div className="pb-24">
       <section className="border-b border-outline-variant/20 px-6 py-12 md:px-8 md:py-16">
-        <div className="mb-12 flex flex-col gap-4 text-[10px] uppercase tracking-[0.28em] text-outline md:flex-row md:items-start md:justify-between">
+        <div className="mb-12 flex flex-col gap-4 text-sm uppercase tracking-[0.28em] text-outline md:flex-row md:items-start md:justify-between">
           <span>Volume No. 04 / Archive</span>
           <span className="text-left md:text-right">
             {entry.issue}
@@ -36,7 +36,7 @@ export default function ArchiveDetailPage() {
           </span>
         </div>
 
-        <nav className="mb-12 flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-[0.24em] text-outline">
+        <nav className="mb-12 flex flex-wrap items-center gap-3 text-sm uppercase tracking-[0.24em] text-outline">
           <Link to="/archive" className="transition-colors hover:text-accent">
             Archive
           </Link>
@@ -68,27 +68,27 @@ export default function ArchiveDetailPage() {
       <section className="border-b border-outline-variant/20 px-6 py-12 md:px-8 md:py-16">
         <div className="grid gap-0 border-t border-outline-variant/20 md:grid-cols-5">
           <div className="border-b border-outline-variant/20 py-8 pr-4 md:border-b-0 md:border-r">
-            <span className="block text-[10px] uppercase tracking-[0.16em] text-outline">Category</span>
+            <span className="block text-sm uppercase tracking-[0.16em] text-outline">Category</span>
             <span className="mt-3 block text-sm font-medium">{entry.category}</span>
           </div>
           <div className="border-b border-outline-variant/20 py-8 pr-4 md:border-b-0 md:border-r md:px-4">
-            <span className="block text-[10px] uppercase tracking-[0.16em] text-outline">Year</span>
+            <span className="block text-sm uppercase tracking-[0.16em] text-outline">Year</span>
             <span className="mt-3 block text-sm font-medium">{entry.year}</span>
           </div>
           <div className="border-b border-outline-variant/20 py-8 pr-4 md:border-b-0 md:border-r md:px-4">
-            <span className="block text-[10px] uppercase tracking-[0.16em] text-outline">Keywords</span>
-            <ul className="mt-3 space-y-1 text-[11px] uppercase tracking-[0.16em] text-on-surface-variant">
+            <span className="block text-sm uppercase tracking-[0.16em] text-outline">Keywords</span>
+            <ul className="mt-3 space-y-1 text-sm uppercase tracking-[0.16em] text-on-surface-variant">
               {entry.keywords.map((keyword) => (
                 <li key={keyword}>{keyword}</li>
               ))}
             </ul>
           </div>
           <div className="border-b border-outline-variant/20 py-8 pr-4 md:border-b-0 md:border-r md:px-4">
-            <span className="block text-[10px] uppercase tracking-[0.16em] text-outline">Material</span>
+            <span className="block text-sm uppercase tracking-[0.16em] text-outline">Material</span>
             <span className="mt-3 block text-sm font-medium">{entry.material}</span>
           </div>
           <div className="py-8 md:px-4">
-            <span className="block text-[10px] uppercase tracking-[0.16em] text-outline">Curator</span>
+            <span className="block text-sm uppercase tracking-[0.16em] text-outline">Curator</span>
             <span className="mt-3 block text-sm font-medium italic">{entry.curator}</span>
           </div>
         </div>
@@ -97,12 +97,24 @@ export default function ArchiveDetailPage() {
       <section className="grid gap-16 px-6 py-16 lg:grid-cols-12 lg:px-8">
         <aside className="hidden lg:col-span-3 lg:block">
           <div className="sticky top-32 border-l border-accent/30 pl-6">
-            <h2 className="text-[10px] uppercase tracking-[0.24em] text-accent">Contents</h2>
-            <ul className="mt-8 space-y-5 text-sm text-on-surface-variant">
-              {entry.sections.map((section) => (
-                <li key={section.heading}>{section.heading}</li>
-              ))}
-            </ul>
+            <div className="space-y-12">
+              <div>
+                <h2 className="text-sm uppercase tracking-[0.24em] text-accent">Contents</h2>
+                <ul className="mt-8 space-y-5 text-sm text-on-surface-variant">
+                  {entry.sections.map((section) => (
+                    <li key={section.heading}>{section.heading}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="border-t border-outline-variant/20 pt-6">
+                <Link
+                  to="/archive#archive-list"
+                  className="inline-flex border border-outline-variant/30 px-4 py-3 text-sm uppercase tracking-[0.24em] text-on-surface transition-colors hover:border-accent hover:text-accent"
+                >
+                  목록으로 돌아가기
+                </Link>
+              </div>
+            </div>
           </div>
         </aside>
 
@@ -124,19 +136,10 @@ export default function ArchiveDetailPage() {
             {entry.quote}
           </blockquote>
 
-          <div className="mb-24 flex justify-center">
-            <Link
-              to="/archive#archive-list"
-              className="inline-flex border border-outline-variant/30 px-5 py-2 text-[12px] uppercase tracking-[0.28em] text-on-surface transition-colors hover:border-accent hover:text-accent"
-            >
-              목록으로 돌아가기
-            </Link>
-          </div>
-
           <div className="grid gap-8 border-t border-outline-variant/20 py-16 md:grid-cols-2 xl:grid-cols-4">
             {entry.notes.map((note) => (
               <div key={note.label}>
-                <span className="block text-[10px] uppercase tracking-[0.24em] text-accent">{note.label}</span>
+                <span className="block text-sm uppercase tracking-[0.24em] text-accent">{note.label}</span>
                 <h3 className="mt-4 text-lg font-semibold">{note.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-on-surface-variant">{note.text}</p>
               </div>
@@ -148,7 +151,7 @@ export default function ArchiveDetailPage() {
       <section className="px-6 pt-8 md:px-8">
         <div className="mb-10 flex items-end justify-between border-b border-outline-variant/20 pb-4">
           <h2 className="text-2xl font-semibold">Related Entries</h2>
-          <Link to="/archive" className="text-[10px] uppercase tracking-[0.28em] text-outline transition-colors hover:text-accent">
+          <Link to="/archive" className="text-sm uppercase tracking-[0.28em] text-outline transition-colors hover:text-accent">
             View Index
           </Link>
         </div>
@@ -169,14 +172,14 @@ export default function ArchiveDetailPage() {
               </div>
               <div className="mt-5 flex items-start justify-between gap-4">
                 <div>
-                  <span className="block text-[10px] uppercase tracking-[0.3em] text-outline">
+                  <span className="block text-sm uppercase tracking-[0.3em] text-outline">
                     Archive {relatedEntry.id}
                   </span>
                   <h3 className="mt-2 text-lg font-semibold transition-colors group-hover:text-accent">
                     {relatedEntry.title}
                   </h3>
                 </div>
-                <span className="text-xs uppercase tracking-[0.24em] text-outline">{relatedEntry.year}</span>
+                <span className="text-sm uppercase tracking-[0.24em] text-outline">{relatedEntry.year}</span>
               </div>
             </Link>
           ))}

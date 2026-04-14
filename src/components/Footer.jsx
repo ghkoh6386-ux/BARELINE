@@ -29,7 +29,7 @@ export default function Footer() {
           </div>
 
           <div className="space-y-2">
-            <span className="block text-[10px] font-semibold uppercase tracking-[0.24em] text-on-surface">
+            <span className="block text-sm font-semibold uppercase tracking-[0.24em] text-on-surface">
               {footerContent.socialLabel}
             </span>
             <div className="flex flex-wrap gap-4 text-on-surface/70">
@@ -49,11 +49,11 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col justify-between gap-8 text-sm text-on-surface/70 md:items-end md:text-left">
-          <p className="max-w-[240px] text-xs uppercase leading-6 tracking-[0.18em] text-on-surface">
+          <p className="max-w-[240px] text-sm uppercase leading-6 tracking-[0.18em] text-on-surface">
             {footerContent.quote}
           </p>
           <div>
-            <p className="text-[10px] uppercase tracking-[0.24em] text-outline">
+            <p className="text-sm uppercase tracking-[0.24em] text-outline">
               {footerContent.meta.volume}
             </p>
             <p className="mt-3">{footerContent.meta.copyright}</p>

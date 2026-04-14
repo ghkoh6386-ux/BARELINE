@@ -46,7 +46,7 @@ export default function ArchivePage() {
       <header className="border-b border-outline-variant/20 bg-background/80 px-6 py-10 md:px-8 md:py-12">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-outline">{pageContent.hero.eyebrow}</p>
+            <p className="text-sm uppercase tracking-[0.3em] text-outline">{pageContent.hero.eyebrow}</p>
             <h1 className="mt-6 text-6xl font-semibold tracking-tight md:text-7xl">{pageContent.hero.title}</h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-on-surface-variant">
               {pageContent.hero.description}
@@ -65,7 +65,7 @@ export default function ArchivePage() {
         {categoryContent ? (
           <div className="mb-12 flex flex-col gap-5 border-b border-outline-variant/20 pb-8 md:flex-row md:items-end md:justify-between">
             <p className="max-w-xl text-lg leading-relaxed text-on-surface-variant">{categoryContent.description}</p>
-            <div className="text-[10px] uppercase tracking-[0.3em] text-outline">{totalLabel}</div>
+            <div className="text-sm uppercase tracking-[0.3em] text-outline">{totalLabel}</div>
           </div>
         ) : null}
         <div className="grid gap-8 md:grid-cols-2">
@@ -76,10 +76,10 @@ export default function ArchivePage() {
               </div>
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <span className="text-[10px] uppercase tracking-[0.3em] text-accent">Entry #{entry.id} / {entry.category}</span>
+                  <span className="text-sm uppercase tracking-[0.3em] text-accent">Entry #{entry.id} / {entry.category}</span>
                   <h2 className="mt-3 text-2xl font-semibold">{entry.title}</h2>
                 </div>
-                <span className="text-[10px] uppercase tracking-[0.3em] text-outline">{entry.year}</span>
+                <span className="text-sm uppercase tracking-[0.3em] text-outline">{entry.year}</span>
               </div>
               <p className="max-w-xl text-sm leading-relaxed text-on-surface-variant">
                 {entry.description || categoryContent?.featured.description || '재료와 침묵, 구조와 여백에 대한 짧은 기록을 담은 아카이브 노트.'}
@@ -96,7 +96,7 @@ export default function ArchivePage() {
               <h2 className="text-3xl md:text-5xl font-semibold tracking-tight">
                 {listTitle}
               </h2>
-              <p className="text-xs uppercase tracking-[0.22em] text-outline mb-3 mt-5">
+              <p className="text-sm uppercase tracking-[0.22em] text-outline mb-3 mt-5">
                 {listCaption}
               </p>
             </div>
@@ -125,7 +125,7 @@ export default function ArchivePage() {
             </div>
           </div>
           <div className="overflow-hidden">
-            <div className="hidden grid-cols-12 gap-4 border-b border-on-surface/10 pb-4 px-4 text-[10px] uppercase tracking-[0.3em] text-outline md:grid md:px-6">
+            <div className="hidden grid-cols-12 gap-4 border-b border-on-surface/10 pb-4 px-4 text-sm uppercase tracking-[0.3em] text-outline md:grid md:px-6">
               <div className="col-span-1">{pageContent.list.columns[0]}</div>
               <div className="col-span-4">{pageContent.list.columns[1]}</div>
               <div className="col-span-2">{pageContent.list.columns[2]}</div>
@@ -152,7 +152,7 @@ export default function ArchivePage() {
                               to={item.to}
                               className="grid grid-cols-12 items-center gap-4 px-4 py-6 transition-colors hover:bg-surface-container-low md:px-6"
                             >
-                              <div className="col-span-2 text-[11px] uppercase tracking-[0.24em] text-outline md:col-span-1">{item.ref}</div>
+                              <div className="col-span-2 text-sm uppercase tracking-[0.24em] text-outline md:col-span-1">{item.ref}</div>
                               <div className="col-span-8 flex items-center gap-4 md:col-span-4">
                                 <div className="h-16 w-16 overflow-hidden bg-surface-container">
                                   <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
@@ -164,16 +164,16 @@ export default function ArchivePage() {
                                   ) : null}
                                 </div>
                               </div>
-                              <div className="col-span-2 hidden text-[11px] uppercase tracking-[0.22em] md:block">{item.category}</div>
+                              <div className="col-span-2 hidden text-sm uppercase tracking-[0.22em] md:block">{item.category}</div>
                               <div className="col-span-3 hidden md:block">
-                                <div className="text-[11px] uppercase tracking-[0.22em] text-on-surface-variant">{item.creator}</div>
+                                <div className="text-sm uppercase tracking-[0.22em] text-on-surface-variant">{item.creator}</div>
                                 {item.description ? (
                                   <p className="mt-2 line-clamp-2 text-sm normal-case tracking-normal text-on-surface-variant">
                                     {item.description}
                                   </p>
                                 ) : null}
                               </div>
-                              <div className="col-span-2 text-right text-[11px] uppercase tracking-[0.22em] text-outline">{item.year}</div>
+                              <div className="col-span-2 text-right text-sm uppercase tracking-[0.22em] text-outline">{item.year}</div>
                             </Link>
                           ))}
                         </div>

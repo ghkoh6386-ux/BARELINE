@@ -17,7 +17,7 @@ export default function Section({ title, caption, className = '', children }) {
     >
       {title || caption ? (
         <div className="mb-8">
-          {caption ? <p className="text-xs uppercase tracking-[0.22em] text-outline mb-3">{caption}</p> : null}
+          {caption ? <p className="text-sm uppercase tracking-[0.22em] text-outline mb-3">{caption}</p> : null}
           {title ? <h2 className="text-3xl md:text-5xl font-semibold tracking-tight">{title}</h2> : null}
         </div>
       ) : null}

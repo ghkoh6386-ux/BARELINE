@@ -25,7 +25,7 @@ export default function SpacePage() {
     <article className="space-y-24 px-6 py-12 md:px-8 md:py-16">
       <header className="grid gap-10 lg:grid-cols-12">
         <div className="lg:col-span-6">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-outline">{content.header.eyebrow}</p>
+          <p className="text-sm uppercase tracking-[0.3em] text-outline">{content.header.eyebrow}</p>
           <h1 className="mt-8 text-6xl font-semibold tracking-tight md:text-7xl">{content.header.title}</h1>
           <p className="mt-6 max-w-2xl text-xl leading-relaxed text-on-surface/80">{content.header.description}</p>
         </div>
@@ -54,7 +54,7 @@ export default function SpacePage() {
           <div className="border-l border-accent/30 pl-6">
             <div className="space-y-12">
               <div>
-                <h4 className="mb-4 text-[10px] uppercase tracking-[0.24em] text-accent">{content.sidebar.title}</h4>
+                <h4 className="mb-4 text-sm uppercase tracking-[0.24em] text-accent">{content.sidebar.title}</h4>
                 <ul className="space-y-2 text-sm text-on-surface-variant">
                   {content.sidebar.items.map((item) => (
                     <li key={item}>{item}</li>
@@ -62,8 +62,39 @@ export default function SpacePage() {
                 </ul>
               </div>
               <div>
-                <h4 className="mb-4 text-[10px] uppercase tracking-[0.24em] text-accent">{content.sidebar.curatorLabel}</h4>
+                <h4 className="mb-4 text-sm uppercase tracking-[0.24em] text-accent">{content.sidebar.curatorLabel}</h4>
                 <p className="text-sm text-on-surface-variant">{content.sidebar.curator}</p>
+              </div>
+              <div>
+                <h4 className="mb-4 text-sm uppercase tracking-[0.24em] text-accent">Space List</h4>
+                <div className="space-y-2">
+                  {relatedEntries.map((item) => {
+                    const isActive = item.id === activeEntryId;
+
+                    return (
+                      <button
+                        key={item.id}
+                        type="button"
+                        onClick={() => handleSelectEntry(item.id)}
+                        className={`block w-full border px-4 py-3 text-left transition-colors ${
+                          isActive
+                            ? 'border-accent/30 bg-accent/5 text-accent'
+                            : 'border-outline-variant/20 bg-background/40 text-on-surface-variant hover:border-accent/20 hover:bg-surface hover:text-accent'
+                        }`}
+                      >
+                        <div className="flex items-start justify-between gap-3">
+                          <div>
+                            <p className="text-sm uppercase tracking-[0.24em] text-outline/70">{item.label}</p>
+                            <p className="mt-1 text-sm font-medium">{item.title}</p>
+                          </div>
+                          <span className={`material-symbols-outlined text-[15px] ${isActive ? 'text-accent' : 'text-outline/60'}`}>
+                            arrow_outward
+                          </span>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
@@ -84,14 +115,14 @@ export default function SpacePage() {
                     className={`h-full w-full object-cover ${figure.grayscale ? 'grayscale' : ''}`}
                   />
                 </div>
-                <figcaption className="text-[10px] uppercase tracking-[0.3em] text-outline/60 italic">{figure.caption}</figcaption>
+                <figcaption className="text-sm uppercase tracking-[0.3em] text-outline/60 italic">{figure.caption}</figcaption>
               </figure>
             ))}
           </div>
 
           <blockquote className="border-y border-outline-variant/10 py-16 text-4xl font-semibold italic leading-tight text-accent">
             "{content.blockquote.text}"
-            <cite className="mt-8 block text-xs uppercase tracking-[0.32em] text-outline">{content.blockquote.source}</cite>
+            <cite className="mt-8 block text-sm uppercase tracking-[0.32em] text-outline">{content.blockquote.source}</cite>
           </blockquote>
 
           <div className="max-w-3xl space-y-8">
@@ -103,7 +134,7 @@ export default function SpacePage() {
             <div className="aspect-video overflow-hidden bg-surface-container-low">
               <img src={content.feature.image} alt={content.feature.caption} className="h-full w-full object-cover" />
             </div>
-            <div className="flex items-start justify-between text-[11px] uppercase tracking-[0.28em] text-outline">
+            <div className="flex items-start justify-between text-sm uppercase tracking-[0.28em] text-outline">
               <figcaption>{content.feature.caption}</figcaption>
               <span>{content.feature.location}</span>
             </div>
@@ -133,7 +164,7 @@ export default function SpacePage() {
 
       <section className="bg-surface-container-low px-6 py-16 md:px-8">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-12 text-[10px] uppercase tracking-[0.32em] text-accent">{content.relatedTitle}</p>
+          <p className="mb-12 text-sm uppercase tracking-[0.32em] text-accent">{content.relatedTitle}</p>
           <div className="grid gap-10 md:grid-cols-3">
             {relatedEntries.map((item) => {
               const isActive = item.id === activeEntryId;
@@ -149,7 +180,7 @@ export default function SpacePage() {
                     <img src={item.image} alt={item.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   </div>
                   <div>
-                    <p className="text-[10px] uppercase tracking-[0.28em] text-outline/70">{item.label}</p>
+                    <p className="text-sm uppercase tracking-[0.28em] text-outline/70">{item.label}</p>
                     <h4 className={`text-xl font-semibold tracking-tight transition-colors ${isActive ? 'text-accent' : 'group-hover:text-accent'}`}>
                       {item.title}
                     </h4>

@@ -17,6 +17,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 14px;
 }
 
 body {
@@ -27,6 +28,8 @@ body {
   font-family: 'Pretendard', ui-sans-serif, system-ui, sans-serif;
   letter-spacing: 0.01em;
   line-height: 1.6;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 a {
