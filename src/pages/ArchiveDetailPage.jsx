@@ -188,7 +188,7 @@ export default function ArchiveDetailPage() {
 
       <section className="px-6 pt-8 sm:px-8 md:px-8">
         <div className="mb-10 flex items-end justify-between border-b border-outline-variant/20 pb-4">
-          <h2 className="mb-12 text-sm uppercase tracking-[0.32em] text-accent">다른 아카이브</h2>
+          <h2 className="text-sm uppercase tracking-[0.32em] text-accent">다른 아카이브</h2>
           <Link to="/archive" className="text-sm uppercase tracking-[0.28em] text-outline transition-colors hover:text-accent">
             View Index
           </Link>
