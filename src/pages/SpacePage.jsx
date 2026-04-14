@@ -51,8 +51,8 @@ export default function SpacePage() {
 
       <div className="grid gap-8 lg:grid-cols-12">
         <div className="border-b border-outline-variant/20 pb-8 lg:hidden">
-          <div>
-            <h4 className="mb-4 text-base uppercase tracking-[0.18em] text-accent">{content.sidebar.curatorLabel}</h4>
+          <div className="flex items-center gap-3">
+            <h4 className="text-base uppercase tracking-[0.18em] text-accent">{content.sidebar.curatorLabel}</h4>
             <p className="text-base text-on-surface-variant">{content.sidebar.curator}</p>
           </div>
         </div>
