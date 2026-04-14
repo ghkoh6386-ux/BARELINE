@@ -47,7 +47,7 @@ export default function ArchivePage() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-sm uppercase tracking-[0.3em] text-outline">{pageContent.hero.eyebrow}</p>
-            <h1 className="mt-6 text-6xl font-semibold tracking-tight md:text-7xl">{pageContent.hero.title}</h1>
+            <h1 className="mt-6 text-5xl font-semibold tracking-tight sm:text-6xl md:text-7xl">{pageContent.hero.title}</h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-on-surface-variant">
               {pageContent.hero.description}
             </p>
@@ -74,7 +74,7 @@ export default function ArchivePage() {
               <div className="aspect-[4/5] overflow-hidden bg-surface-container-low">
                 <img src={entry.image} alt={entry.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
-              <div className="flex items-start justify-between gap-4">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <span className="text-sm uppercase tracking-[0.3em] text-accent">Entry #{entry.id} / {entry.category}</span>
                   <h2 className="mt-3 text-2xl font-semibold">{entry.title}</h2>
@@ -100,7 +100,7 @@ export default function ArchivePage() {
                 {listCaption}
               </p>
             </div>
-            <div className="flex w-full max-w-sm items-center gap-2 md:w-auto">
+            <div className="flex w-full flex-col gap-3 sm:max-w-sm sm:flex-row sm:items-center md:w-auto">
               <div className="relative flex-1">
                 <input
                   className="w-full border-b border-outline-variant/30 bg-transparent py-3 text-sm outline-none transition-colors placeholder:text-outline-variant/60"
@@ -117,7 +117,7 @@ export default function ArchivePage() {
               </div>
               <button
                 type="button"
-                className="bg-surface px-4 py-3 text-sm uppercase tracking-[0.24em] text-outline transition hover:text-black"
+                className="bg-surface px-4 py-3 text-sm uppercase tracking-[0.24em] text-outline transition hover:text-black sm:w-auto"
                 onClick={handleSearchSubmit}
               >
                 {pageContent.list.searchButtonLabel}
@@ -150,10 +150,10 @@ export default function ArchivePage() {
                             <Link
                               key={item.ref}
                               to={item.to}
-                              className="grid grid-cols-12 items-center gap-4 px-4 py-6 transition-colors hover:bg-surface-container-low md:px-6"
+                              className="block px-4 py-6 transition-colors hover:bg-surface-container-low md:grid md:grid-cols-12 md:items-center md:gap-4 md:px-6"
                             >
-                              <div className="col-span-2 text-sm uppercase tracking-[0.24em] text-outline md:col-span-1">{item.ref}</div>
-                              <div className="col-span-8 flex items-center gap-4 md:col-span-4">
+                              <div className="text-sm uppercase tracking-[0.24em] text-outline md:col-span-1">{item.ref}</div>
+                              <div className="mt-3 flex items-center gap-4 md:col-span-4 md:mt-0">
                                 <div className="h-16 w-16 overflow-hidden bg-surface-container">
                                   <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
                                 </div>
@@ -164,8 +164,8 @@ export default function ArchivePage() {
                                   ) : null}
                                 </div>
                               </div>
-                              <div className="col-span-2 hidden text-sm uppercase tracking-[0.22em] md:block">{item.category}</div>
-                              <div className="col-span-3 hidden md:block">
+                              <div className="mt-3 text-sm uppercase tracking-[0.22em] text-on-surface-variant md:col-span-2 md:mt-0 md:block">{item.category}</div>
+                              <div className="mt-3 md:col-span-3 md:mt-0">
                                 <div className="text-sm uppercase tracking-[0.22em] text-on-surface-variant">{item.creator}</div>
                                 {item.description ? (
                                   <p className="mt-2 line-clamp-2 text-sm normal-case tracking-normal text-on-surface-variant">
@@ -173,7 +173,7 @@ export default function ArchivePage() {
                                   </p>
                                 ) : null}
                               </div>
-                              <div className="col-span-2 text-right text-sm uppercase tracking-[0.22em] text-outline">{item.year}</div>
+                              <div className="mt-3 text-sm uppercase tracking-[0.22em] text-outline md:col-span-2 md:mt-0 md:text-right">{item.year}</div>
                             </Link>
                           ))}
                         </div>

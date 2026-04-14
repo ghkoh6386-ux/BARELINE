@@ -46,15 +46,15 @@ export default function ArchiveDetailPage() {
           <span className="text-accent">{entry.title}</span>
         </nav>
 
-        <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
+        <div className="grid gap-8 lg:grid-cols-12 lg:items-end lg:gap-10">
           <div className="lg:col-span-5">
             <span className="text-sm font-semibold uppercase tracking-[0.24em] text-accent">{entry.eyebrow}</span>
-            <h1 className="mt-5 text-3xl font-semibold leading-[0.95] tracking-tight md:text-5xl">
+            <h1 className="mt-5 text-3xl font-semibold leading-[0.95] tracking-tight sm:text-4xl md:text-5xl">
               {entry.title}
             </h1>
-            <p className="mt-6 text-2xl italic text-on-surface/70">{entry.subtitle}</p>
+            <p className="mt-4 text-xl italic text-on-surface/70 md:mt-6 md:text-2xl">{entry.subtitle}</p>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-on-surface-variant">{entry.description}</p>
-            <div className="mt-10 text-4xl tracking-tight text-on-surface">{entry.year}</div>
+            <div className="mt-8 text-3xl tracking-tight text-on-surface md:mt-10 md:text-4xl">{entry.year}</div>
           </div>
 
           <div className="lg:col-span-7">
@@ -94,7 +94,21 @@ export default function ArchiveDetailPage() {
         </div>
       </section>
 
-      <section className="grid gap-16 px-6 py-16 lg:grid-cols-12 lg:px-8">
+      <section className="grid gap-12 px-6 py-16 lg:grid-cols-12 lg:gap-16 lg:px-8">
+        <div className="border-b border-outline-variant/20 pb-8 lg:hidden">
+          <h2 className="text-sm uppercase tracking-[0.24em] text-accent">Contents</h2>
+          <ul className="mt-6 space-y-3 text-sm text-on-surface-variant">
+            {entry.sections.map((section) => (
+              <li key={section.heading}>{section.heading}</li>
+            ))}
+          </ul>
+          <Link
+            to="/archive#archive-list"
+            className="mt-6 inline-flex border border-outline-variant/30 px-4 py-3 text-sm uppercase tracking-[0.24em] text-on-surface transition-colors hover:border-accent hover:text-accent"
+          >
+            목록으로 돌아가기
+          </Link>
+        </div>
         <aside className="hidden lg:col-span-3 lg:block">
           <div className="sticky top-32 border-l border-accent/30 pl-6">
             <div className="space-y-12">
@@ -120,7 +134,7 @@ export default function ArchiveDetailPage() {
 
         <div className="lg:col-span-7 lg:col-start-5">
           {entry.sections.map((section) => (
-            <article key={section.heading} className="mb-24 last:mb-0">
+            <article key={section.heading} className="mb-16 md:mb-24 last:mb-0">
               <h2 className="text-3xl italic text-on-surface">{section.heading}</h2>
               <div className="mt-10 space-y-6">
                 {section.body.map((paragraph) => (
@@ -132,7 +146,7 @@ export default function ArchiveDetailPage() {
             </article>
           ))}
 
-          <blockquote className="my-24 border-y border-outline-variant/20 px-4 py-16 text-center text-3xl leading-snug text-on-surface md:px-12 md:text-4xl">
+          <blockquote className="my-16 border-y border-outline-variant/20 px-4 py-12 text-center text-2xl leading-snug text-on-surface sm:text-3xl md:my-24 md:px-12 md:py-16 md:text-4xl">
             {entry.quote}
           </blockquote>
 
@@ -170,7 +184,7 @@ export default function ArchiveDetailPage() {
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="mt-5 flex items-start justify-between gap-4">
+              <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <span className="block text-sm uppercase tracking-[0.3em] text-outline">
                     Archive {relatedEntry.id}

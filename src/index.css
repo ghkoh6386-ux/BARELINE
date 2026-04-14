@@ -43,6 +43,15 @@ textarea {
   font: inherit;
 }
 
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 ::selection {
   background: #8b4f3f;
   color: #faf9f7;

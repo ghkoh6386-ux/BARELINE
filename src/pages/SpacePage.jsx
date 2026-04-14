@@ -22,19 +22,19 @@ export default function SpacePage() {
   };
 
   return (
-    <article className="space-y-24 px-6 py-12 md:px-8 md:py-16">
-      <header className="grid gap-10 lg:grid-cols-12">
+    <article className="space-y-16 px-6 py-12 md:space-y-24 md:px-8 md:py-16">
+      <header className="grid gap-8 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-6">
           <p className="text-sm uppercase tracking-[0.3em] text-outline">{content.header.eyebrow}</p>
-          <h1 className="mt-8 text-6xl font-semibold tracking-tight md:text-7xl">{content.header.title}</h1>
-          <p className="mt-6 max-w-2xl text-xl leading-relaxed text-on-surface/80">{content.header.description}</p>
+          <h1 className="mt-6 text-5xl font-semibold tracking-tight sm:text-6xl md:mt-8 md:text-7xl">{content.header.title}</h1>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-on-surface/80 md:mt-6 md:text-xl">{content.header.description}</p>
         </div>
         <div className="lg:col-span-6">
           <div className="relative aspect-[21/9] overflow-hidden rounded-none bg-surface-container-low">
             <img src={content.header.image} alt={content.header.title} className="h-full w-full object-cover" />
             <div className="absolute inset-0 flex items-center justify-center bg-on-background/10">
-              <div className="rounded-none border border-outline-variant/20 bg-background/40 px-12 py-8 text-center">
-                <p className="text-xl italic">"{content.header.quote}"</p>
+              <div className="mx-4 rounded-none border border-outline-variant/20 bg-background/40 px-6 py-5 text-center md:px-12 md:py-8">
+                <p className="text-lg italic md:text-xl">"{content.header.quote}"</p>
               </div>
             </div>
           </div>
@@ -50,6 +50,30 @@ export default function SpacePage() {
       </Section>
 
       <div className="grid gap-8 lg:grid-cols-12">
+        <div className="border-b border-outline-variant/20 pb-8 lg:hidden">
+          <h4 className="mb-4 text-sm uppercase tracking-[0.24em] text-accent">Space List</h4>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {relatedEntries.map((item) => {
+              const isActive = item.id === activeEntryId;
+
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => handleSelectEntry(item.id)}
+                  className={`block w-full border px-4 py-3 text-left transition-colors ${
+                    isActive
+                      ? 'border-accent/30 bg-accent/5 text-accent'
+                      : 'border-outline-variant/20 bg-background/40 text-on-surface-variant hover:border-accent/20 hover:bg-surface hover:text-accent'
+                  }`}
+                >
+                  <p className="text-sm uppercase tracking-[0.24em] text-outline/70">{item.label}</p>
+                  <p className="mt-1 text-sm font-medium">{item.title}</p>
+                </button>
+              );
+            })}
+          </div>
+        </div>
         <aside className="hidden h-fit lg:sticky lg:top-32 lg:col-span-3 lg:block lg:self-start">
           <div className="border-l border-accent/30 pl-6">
             <div className="space-y-12">
@@ -100,12 +124,12 @@ export default function SpacePage() {
           </div>
         </aside>
         <div className="space-y-24 lg:col-span-8 lg:col-start-5">
-          <div className="space-y-12">
+          <div className="space-y-8 md:space-y-12">
             <p className="text-2xl font-light leading-relaxed text-on-surface/90">{content.lead}</p>
             <div className="h-[1px] w-24 bg-accent/30"></div>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2 md:gap-8">
             {content.figures.map((figure, index) => (
               <figure key={figure.caption} className={`space-y-4 ${index === 1 ? 'md:mt-16' : ''}`}>
                 <div className="aspect-[4/5] overflow-hidden bg-surface-container-low">
@@ -120,7 +144,7 @@ export default function SpacePage() {
             ))}
           </div>
 
-          <blockquote className="border-y border-outline-variant/10 py-16 text-4xl font-semibold italic leading-tight text-accent">
+          <blockquote className="border-y border-outline-variant/10 py-12 text-2xl font-semibold italic leading-tight text-accent sm:text-3xl md:py-16 md:text-4xl">
             "{content.blockquote.text}"
             <cite className="mt-8 block text-sm uppercase tracking-[0.32em] text-outline">{content.blockquote.source}</cite>
           </blockquote>
@@ -149,13 +173,13 @@ export default function SpacePage() {
             </div>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
             {content.gallery.map((item, index) => (
               <img
                 key={item.alt}
                 src={item.image}
                 alt={item.alt}
-                className={`aspect-square h-full w-full object-cover transition-transform duration-700 hover:scale-105 ${item.grayscale ? 'grayscale' : ''} ${index === 2 ? 'hidden md:block' : ''}`}
+                className={`aspect-square h-full w-full object-cover transition-transform duration-700 hover:scale-105 ${item.grayscale ? 'grayscale' : ''} ${index === 2 ? 'sm:col-span-2 md:col-span-1' : ''}`}
               />
             ))}
           </div>
