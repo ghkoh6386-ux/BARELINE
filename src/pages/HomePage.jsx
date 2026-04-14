@@ -16,7 +16,7 @@ export default function HomePage() {
   return (
     <div className="space-y-0">
       <section className="grid min-h-[60vh] grid-cols-1 border-b border-outline-variant/20 md:min-h-[72vh] md:grid-cols-12">
-        <div className="flex flex-col justify-end gap-6 px-6 py-10 sm:px-8 md:col-span-6 md:gap-8 md:px-12 md:py-20">
+        <div className="order-2 flex flex-col justify-end gap-6 px-6 py-10 sm:px-8 md:order-1 md:col-span-6 md:gap-8 md:px-12 md:py-20">
           <span className="text-base uppercase tracking-[0.22em] text-outline">{homePageContent.hero.eyebrow}</span>
           <h1 className="max-w-[10ch] text-4xl font-semibold leading-[0.92] tracking-tight sm:text-5xl md:max-w-none md:text-[5.5rem]">
             {homePageContent.hero.title}
@@ -31,7 +31,7 @@ export default function HomePage() {
             {homePageContent.hero.ctaLabel}
           </Link>
         </div>
-        <div className="relative h-[360px] border-t border-outline-variant/20 sm:h-[420px] md:col-span-6 md:h-auto md:border-l md:border-t-0">
+        <div className="order-1 relative h-[360px] border-b border-outline-variant/20 sm:h-[420px] md:order-2 md:col-span-6 md:h-auto md:border-b-0 md:border-l md:border-t-0">
           <img
             src={homePageContent.hero.image}
             alt={homePageContent.hero.imageAlt}
