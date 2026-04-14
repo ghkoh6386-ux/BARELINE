@@ -13,7 +13,7 @@ export default function AboutPage() {
   const highlightedPrinciple = aboutPageContent.readMore.principles.items[0];
 
   return (
-    <div className="space-y-24 px-6 py-12 md:px-8 md:py-16">
+    <div className="space-y-16 px-6 py-12 md:space-y-20 md:px-8 md:py-16">
       <header className="relative overflow-hidden border border-outline-variant/20 bg-surface-container-low px-6 py-12 md:px-10 md:py-16">
         <div className="absolute inset-y-0 right-0 hidden w-[38%] bg-[linear-gradient(180deg,rgba(191,154,102,0.12),rgba(191,154,102,0.02))] lg:block" />
         <div className="absolute right-10 top-10 hidden h-32 w-32 rounded-full border border-outline-variant/10 lg:block" />
@@ -44,8 +44,8 @@ export default function AboutPage() {
         </div>
       </header>
 
-      <Section title={aboutPageContent.manifestoTitle} className="border-t border-outline-variant/20 pt-16">
-        <div className="grid gap-10 lg:grid-cols-[280px_1fr]">
+      <Section title={aboutPageContent.manifestoTitle} className="border-t border-outline-variant/20 pt-16 md:pt-20">
+        <div className="grid gap-8 md:gap-10 lg:grid-cols-[280px_1fr]">
           <div>
             <h2 className="text-base uppercase tracking-[0.22em] text-outline">Manifesto</h2>
           </div>
@@ -72,8 +72,8 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section title={aboutPageContent.vision.title} caption={aboutPageContent.vision.caption}>
-        <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
+      <Section title={aboutPageContent.vision.title} caption={aboutPageContent.vision.caption} className="pt-16 md:pt-20">
+        <div className="grid gap-8 md:gap-10 lg:grid-cols-12 lg:items-start">
           <div className="border border-outline-variant/20 bg-surface-container-low p-6 md:p-8 lg:col-span-4">
             <p className="text-base uppercase tracking-[0.22em] text-accent">Current Lens</p>
             <p className="mt-5 text-[2rem] font-semibold leading-tight md:text-[2.3rem]">
@@ -87,7 +87,7 @@ export default function AboutPage() {
           </div>
           <div className="lg:col-span-6 lg:col-start-7 lg:pt-4">
             {aboutPageContent.vision.paragraphs.map((paragraph) => (
-              <p key={paragraph} className="mb-8 max-w-2xl text-lg leading-relaxed text-on-surface-variant">
+              <p key={paragraph} className="mb-6 max-w-2xl text-lg leading-relaxed text-on-surface-variant md:mb-8">
                 {paragraph}
               </p>
             ))}
@@ -107,10 +107,10 @@ export default function AboutPage() {
       </Section>
 
       {isExpanded ? (
-        <Section title="About" className="border-t border-outline-variant/20 pt-20">
-          <div className="space-y-24">
+        <Section title="About" className="border-t border-outline-variant/20 pt-16 md:pt-20">
+          <div className="space-y-16 md:space-y-20">
             <div>
-              <div className="mb-14 flex flex-col gap-3 border-b border-outline-variant/20 pb-8 md:flex-row md:items-end md:justify-between">
+              <div className="mb-10 flex flex-col gap-3 border-b border-outline-variant/20 pb-8 md:mb-14 md:flex-row md:items-end md:justify-between">
                 <div>
                   <p className="text-base uppercase tracking-[0.2em] text-outline">
                     {aboutPageContent.readMore.principles.caption}
@@ -136,7 +136,7 @@ export default function AboutPage() {
             </div>
 
             <div>
-              <div className="mb-14 flex flex-col gap-3 border-b border-outline-variant/20 pb-8 md:flex-row md:items-end md:justify-between">
+              <div className="mb-10 flex flex-col gap-3 border-b border-outline-variant/20 pb-8 md:mb-14 md:flex-row md:items-end md:justify-between">
                 <div>
                   <p className="text-base uppercase tracking-[0.2em] text-outline">
                     {aboutPageContent.readMore.process.caption}
@@ -166,7 +166,7 @@ export default function AboutPage() {
             </div>
 
             <div>
-              <div className="mb-14 flex flex-col gap-3 border-b border-outline-variant/20 pb-8 md:flex-row md:items-end md:justify-between">
+              <div className="mb-10 flex flex-col gap-3 border-b border-outline-variant/20 pb-8 md:mb-14 md:flex-row md:items-end md:justify-between">
                 <div>
                   <p className="text-base uppercase tracking-[0.2em] text-outline">
                     {aboutPageContent.readMore.archivePerspective.caption}

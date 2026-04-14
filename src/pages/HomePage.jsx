@@ -135,26 +135,37 @@ export default function HomePage() {
             <div className="col-span-3">{homePageContent.latestSection.columns[3]}</div>
             <div className="col-span-2 text-right">{homePageContent.latestSection.columns[4]}</div>
           </div>
-          <div className="divide-y divide-outline-variant/10">
+          <div className="space-y-3 md:space-y-0 md:divide-y md:divide-outline-variant/10">
             {homeArchiveList.slice(0, homePageContent.latestSection.limit).map((item) => (
               <Link
                 key={item.ref}
                 to={item.to}
-                className="block px-6 py-6 transition-colors hover:bg-surface-container-low sm:px-8 md:grid md:grid-cols-12 md:items-center md:gap-4 md:px-6"
+                className="group block border border-outline-variant/20 bg-background/70 px-6 py-5 transition-colors hover:border-accent/25 hover:bg-surface sm:px-8 md:grid md:grid-cols-12 md:items-center md:gap-4 md:border-0 md:bg-transparent md:px-6 md:py-6 md:hover:bg-surface-container-low"
               >
-                <div className="text-base uppercase tracking-[0.18em] text-outline md:col-span-1">{item.ref}</div>
+                <div className="flex items-start justify-between gap-4 md:contents">
+                  <div className="space-y-2 md:space-y-0">
+                    <div className="text-base uppercase tracking-[0.18em] text-outline md:col-span-1">{item.ref}</div>
+                    <div className="text-base uppercase tracking-[0.16em] text-on-surface-variant md:hidden">{item.category}</div>
+                  </div>
+                  <div className="flex items-center gap-2 md:hidden">
+                    <span className="text-base uppercase tracking-[0.16em] text-outline">{item.year}</span>
+                    <span className="material-symbols-outlined text-[18px] text-outline/60 transition-colors group-hover:text-accent">
+                      arrow_outward
+                    </span>
+                  </div>
+                </div>
                 <div className="mt-3 flex items-start gap-4 md:col-span-4 md:mt-0 md:items-center">
                   <div className="h-16 w-16 overflow-hidden bg-surface-container">
                     <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
                   </div>
                   <div className="min-w-0">
-                    <span className="block text-lg font-semibold transition-colors hover:text-accent">{item.title}</span>
+                    <span className="block text-lg font-semibold transition-colors group-hover:text-accent">{item.title}</span>
                     {item.subtitle ? (
                       <span className="mt-1 block truncate text-base text-on-surface-variant">{item.subtitle}</span>
                     ) : null}
                   </div>
                 </div>
-                <div className="mt-3 text-base uppercase tracking-[0.18em] text-on-surface-variant md:col-span-2 md:mt-0 md:block">{item.category}</div>
+                <div className="mt-3 hidden text-base uppercase tracking-[0.18em] text-on-surface-variant md:col-span-2 md:mt-0 md:block">{item.category}</div>
                 <div className="mt-3 md:col-span-3 md:mt-0">
                   <div className="text-base uppercase tracking-[0.18em] text-on-surface-variant">{item.creator}</div>
                   {item.description ? (
@@ -163,7 +174,7 @@ export default function HomePage() {
                     </p>
                   ) : null}
                 </div>
-                <div className="mt-3 text-base uppercase tracking-[0.18em] text-outline md:col-span-2 md:mt-0 md:text-right">{item.year}</div>
+                <div className="mt-3 hidden text-base uppercase tracking-[0.18em] text-outline md:col-span-2 md:mt-0 md:text-right">{item.year}</div>
               </Link>
             ))}
           </div>
