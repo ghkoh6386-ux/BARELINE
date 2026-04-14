@@ -104,7 +104,7 @@ export const spaceContentById = {
       { alt: 'Shoji detail', image: japanSub02 },
       { alt: 'Japan designer portrait', image: japanSub03 },
     ],
-    relatedTitle: '관련 아카이브',
+    relatedTitle: '다른 공간',
   },
   'minimal-light': {
     header: {
@@ -161,7 +161,7 @@ export const spaceContentById = {
       { alt: 'White projection wall', image: minimalSub02 },
       { alt: 'Minimal designer portrait', image: minimalSub03 },
     ],
-    relatedTitle: '관련 아카이브',
+    relatedTitle: '다른 공간',
   },
   'red-rotunda': {
     header: {
@@ -218,6 +218,6 @@ export const spaceContentById = {
       { alt: 'Soft circular chamber', image: redSub03 },
       { alt: 'Red designer portrait', image: redSub02 },
     ],
-    relatedTitle: '관련 아카이브',
+    relatedTitle: '다른 공간',
   },
 };
