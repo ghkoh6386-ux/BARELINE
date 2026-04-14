@@ -34,7 +34,7 @@ export default function Footer() {
           </div>
 
           <div className="w-full space-y-8 py-8 md:ml-auto md:max-w-[32rem] md:py-0 md:text-left">
-            <div className="border-l border-outline-variant/20 pl-4 md:pl-5">
+            <div className="pl-0 md:border-l md:border-outline-variant/20 md:pl-5">
               <p className="max-w-[32rem] text-base uppercase leading-6 tracking-[0.18em] text-on-surface">
                 {footerContent.quote}
               </p>
