@@ -12,6 +12,11 @@ export const selectCategoryItems = createSelector(
   (content) => content.categoryItems,
 );
 
+export const selectCategoryNavItems = createSelector(
+  [selectCategoryItems],
+  (categoryItems) => [{ id: 'all', title: '전체' }, ...categoryItems],
+);
+
 export const selectArchiveCategoryContent = createSelector(
   [selectContentState],
   (content) => content.archiveCategoryContent,
@@ -50,11 +55,6 @@ export const selectHomePageContent = createSelector(
 export const selectArchivePageContent = createSelector(
   [selectContentState],
   (content) => content.archivePageContent,
-);
-
-export const selectCategoryNavContent = createSelector(
-  [selectContentState],
-  (content) => content.categoryNavContent,
 );
 
 export const selectFooterContent = createSelector(

@@ -31,9 +31,9 @@ export default function SpacePage() {
         </div>
         <div className="lg:col-span-6">
           <div className="relative aspect-[21/9] overflow-hidden rounded-none bg-surface-container-low">
-            <img src="/assets/space-hero.svg" alt="Space hero" className="h-full w-full object-cover" />
+            <img src={content.header.image} alt={content.header.title} className="h-full w-full object-cover" />
             <div className="absolute inset-0 flex items-center justify-center bg-on-background/10">
-              <div className="rounded-none border border-outline-variant/20 bg-background/90 px-12 py-8 text-center">
+              <div className="rounded-none border border-outline-variant/20 bg-background/40 px-12 py-8 text-center">
                 <p className="text-xl italic">"{content.header.quote}"</p>
               </div>
             </div>

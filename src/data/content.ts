@@ -133,7 +133,7 @@ export const archiveList = [
     categoryId: 'designers',
     title: '선 위에 놓인 오브제',
     category: '디자이너',
-    creator: '리나 케이',
+    creator: '지안',
     year: '2026',
     image: '/assets/archive-thumb.svg',
   },
@@ -354,18 +354,11 @@ export const archivePageContent = {
   },
 };
 
-export const categoryNavContent = {
-  allItem: {
-    id: 'all',
-    title: '전체',
-  },
-};
-
 export const footerContent = {
   brand: 'BARE LINE',
   description:
     '구조적 미니멀리즘과 재료의 명료함, 그리고 현대적 형태가 지닌 고요한 리듬을 따라가는 디지털 아카이브이자 저널. 본질을 드러내는 디자인과 절제된 미감을 통해, 형태와 공간에 대한 새로운 시선을 제안한다.',
-  focusTitle: '오래 남는 장면은 크게 말하지 않습니다.',
+  focusTitle: '말없는 장면의 잔상, 남겨진 순간',
   focusItems: ['빛이 머무는 구조', '표면 아래의 질감', '덜어낸 뒤의 비례'],
   socialLabel: 'Social',
   socialLinks: [

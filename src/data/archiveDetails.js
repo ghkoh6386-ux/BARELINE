@@ -19,7 +19,7 @@ export const archiveDetailsMap = {
     issn: 'ISSN 2951-4428',
     keywords: ['#OBJECT', '#LINE', '#TENSION'],
     material: 'WIRE, MATTE BLACK, SKIN TONE',
-    curator: 'Bare Line Designer Desk',
+    curator: '지안',
     sections: [{
         heading: '01. 선으로 만들어진 긴장',
         body: [
