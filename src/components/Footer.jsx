@@ -33,7 +33,7 @@ export default function Footer() {
             </div>
 
             <div className="pt-2">
-              <span className="block text-base font-semibold uppercase tracking-[0.24em] text-on-surface">
+              <span className="block text-xl uppercase tracking-[0.18em]">
                 {footerContent.socialLabel}
               </span>
               <div className="mt-4 flex flex-wrap gap-x-5 gap-y-3 text-on-surface/70">
