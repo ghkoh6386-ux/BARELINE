@@ -40,7 +40,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="grid grid-cols-1 border-b border-outline-variant/20 sm:grid-cols-2 md:grid-cols-5">
+      <section className="hidden border-b border-outline-variant/20 md:grid md:grid-cols-5">
         {categoryItems.map((item, index) => (
           <article
             key={item.id}
