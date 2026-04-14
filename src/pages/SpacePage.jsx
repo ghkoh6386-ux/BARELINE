@@ -50,28 +50,10 @@ export default function SpacePage() {
       </Section>
 
       <div className="grid gap-8 lg:grid-cols-12">
-        <div className="hidden border-b border-outline-variant/20 pb-8 lg:hidden">
-          <h4 className="mb-4 text-base uppercase tracking-[0.18em] text-accent">Space List</h4>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {relatedEntries.map((item) => {
-              const isActive = item.id === activeEntryId;
-
-              return (
-                <button
-                  key={item.id}
-                  type="button"
-                  onClick={() => handleSelectEntry(item.id)}
-                  className={`block w-full border px-4 py-3 text-left transition-colors ${
-                    isActive
-                      ? 'border-accent/30 bg-accent/5 text-accent'
-                      : 'border-outline-variant/20 bg-background/40 text-on-surface-variant hover:border-accent/20 hover:bg-surface hover:text-accent'
-                  }`}
-                >
-                  <p className="text-base uppercase tracking-[0.18em] text-outline/70">{item.label}</p>
-                  <p className="mt-1 text-base font-medium">{item.title}</p>
-                </button>
-              );
-            })}
+        <div className="border-b border-outline-variant/20 pb-8 lg:hidden">
+          <div>
+            <h4 className="mb-4 text-base uppercase tracking-[0.18em] text-accent">{content.sidebar.curatorLabel}</h4>
+            <p className="text-base text-on-surface-variant">{content.sidebar.curator}</p>
           </div>
         </div>
         <aside className="hidden h-fit lg:sticky lg:top-32 lg:col-span-3 lg:block lg:self-start">
