@@ -111,7 +111,7 @@ export default function ArchiveDetailPage() {
                   to="/archive#archive-list"
                   className="inline-flex border border-outline-variant/30 px-4 py-3 text-sm uppercase tracking-[0.24em] text-on-surface transition-colors hover:border-accent hover:text-accent"
                 >
-                  목록으로 돌아가기
+                  목록으로 가기
                 </Link>
               </div>
             </div>
