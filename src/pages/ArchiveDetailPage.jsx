@@ -107,10 +107,10 @@ export default function ArchiveDetailPage() {
         </div>
       </section>
 
-      <section className="grid gap-10 px-6 py-14 sm:px-8 md:gap-12 md:py-16 lg:grid-cols-12 lg:gap-16 lg:px-8">
-          <div className="space-y-5 border-b border-outline-variant/20 pb-8 lg:hidden">
-          <div className="grid grid-cols-2 gap-2.5">
-            {mobileMetaItems.map(([label, value], index) => (
+      <section className="grid gap-10 px-6 py-14 sm:px-8 md:gap-12 md:py-16 xl:grid-cols-12 xl:gap-16 xl:px-8">
+          <div className="space-y-5 border-b border-outline-variant/20 pb-8">
+            <div className="grid grid-cols-2 gap-2.5">
+              {mobileMetaItems.map(([label, value], index) => (
               <div
                 key={label}
                 className={`border border-outline-variant/20 bg-surface-container-low px-4 py-3.5 ${
@@ -137,7 +137,7 @@ export default function ArchiveDetailPage() {
             ))}
           </div>
 
-          <div className="border border-outline-variant/20 bg-background px-5 py-5">
+          <div className="hidden border border-outline-variant/20 bg-background px-5 py-5">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <h2 className="text-base uppercase tracking-[0.18em] text-accent">Contents</h2>
@@ -155,7 +155,7 @@ export default function ArchiveDetailPage() {
           </div>
         </div>
 
-        <aside className="hidden lg:col-span-3 lg:block">
+        <aside className="hidden xl:col-span-3 xl:block">
           <div className="sticky top-32 border-l border-accent/30 pl-6">
             <div className="space-y-12">
               <div>
@@ -178,7 +178,7 @@ export default function ArchiveDetailPage() {
           </div>
         </aside>
 
-        <div className="lg:col-span-7 lg:col-start-5">
+        <div className="xl:col-span-7 xl:col-start-5">
           {entry.sections.map((section) => (
             <article key={section.heading} className="mb-16 md:mb-24 last:mb-0">
               <h2 className="text-2xl text-on-surface sm:text-3xl">{section.heading}</h2>
