@@ -112,19 +112,35 @@ export default function HomePage() {
       <Section title={homePageContent.spaceSection.title} caption={homePageContent.spaceSection.caption} className="px-6 pt-16 sm:px-8 md:px-0 md:pt-24">
         <div className="grid gap-7 md:grid-cols-12 md:items-center md:gap-16">
           <div className="order-2 max-w-2xl md:order-1 md:col-span-5 md:max-w-none md:text-left">
-            <h2 className="mb-6 text-4xl font-semibold leading-tight sm:text-5xl md:mb-8 md:text-7xl">{homePageContent.spaceSection.heading}</h2>
-            <p className="mb-8 max-w-xl text-base leading-7 text-on-surface-variant sm:text-lg md:mb-12 md:max-w-none">
+            <div className="mb-5 hidden items-center gap-4 md:flex">
+              <span className="h-px w-16 bg-accent/60" />
+              <span className="text-sm uppercase tracking-[0.28em] text-accent">Quiet Structure</span>
+            </div>
+            <h2 className="mb-6 text-left text-4xl font-semibold leading-tight sm:text-5xl md:mb-10 md:text-6xl">{homePageContent.spaceSection.heading}</h2>
+            <p className="mb-8 max-w-xl text-base leading-7 text-on-surface-variant sm:text-lg md:mb-6 md:max-w-none">
               {homePageContent.spaceSection.description}
             </p>
+            <div className="hidden border-y border-outline-variant/20 py-6 md:block">
+              <p className="max-w-[30ch] border-l-2 border-accent/70 pl-5 text-left text-2xl font-medium leading-snug text-on-surface">
+                {homePageContent.spaceSection.quote}
+              </p>
+              <div className="mt-6 grid gap-4 lg:grid-cols-3">
+                {homePageContent.spaceSection.details.map((item) => (
+                  <div key={item.label} className="border-l border-outline-variant/20 pl-4">
+                    <p className="text-base uppercase tracking-[0.2em] text-outline">{item.label}</p>
+                    <p className="mt-3 text-base leading-7 text-on-surface-variant">{item.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
             <Link
               to={homePageContent.spaceSection.ctaTo}
-              className="inline-flex w-full items-center justify-center rounded-none border border-outline-variant/30 px-10 py-4 text-base uppercase tracking-[0.22em] text-on-surface transition-colors hover:border-accent sm:w-auto md:py-5"
-            >
-              {homePageContent.spaceSection.ctaLabel}
-            </Link>
+              className="flex w-full items-center justify-center rounded-none border border-outline-variant/30 px-10 py-4 text-base uppercase tracking-[0.22em] text-on-surface transition-colors hover:border-accent sm:w-auto md:mx-auto md:mt-10 md:py-5">
+                {homePageContent.spaceSection.ctaLabel}
+              </Link>
           </div>
           <div className="order-1 md:order-2 md:col-span-7">
-            <div className="aspect-[4/5] overflow-hidden bg-surface">
+            <div className="aspect-[4/5] overflow-hidden bg-surface md:relative">
               <div className="h-[420px] w-full overflow-hidden sm:h-[560px] md:h-[800px]">
                 <img src={homePageContent.spaceSection.image} alt={homePageContent.spaceSection.imageAlt} className="h-full w-full object-cover transition-transform duration-1000 hover:scale-105" />
               </div>

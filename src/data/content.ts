@@ -318,7 +318,13 @@ export const homePageContent = {
     caption: "갤러리 에세이",
     heading: "Space: 공백",
     description:
-      "빛과 그림자가 머무는 장면 속에서,공간은 단순한 형태를 넘어 하나의 감정으로 남습니다.비워낸 구조와 절제된 요소들은 시선을 머물게 하고, 그 사이에 흐르는 분위기와 감각을 천천히 드러냅니다. 남겨진 것들이 어떻게 하나의 인상으로 이어지는지, 그 과정을 따라가 보세요.",
+      "빛과 그림자가 머무는 장면 속에서 공간은 하나의 인상으로 남습니다. 비워낸 구조와 절제된 요소가 만드는 여백, 그 안의 분위기와 감각을 천천히 따라가 보세요.",
+    quote: "비워낸 구조는 더 많은 감각을 머물게 합니다.",
+    details: [
+      { label: "Focus", value: "Light / Silence / Frame" },
+      { label: "Selection", value: "Residential Atmosphere" },
+      { label: "Index", value: "Space Study Archive" },
+    ],
     ctaLabel: "갤러리 탐색",
     ctaTo: "/archive?category=space",
     image: spaceHome,
