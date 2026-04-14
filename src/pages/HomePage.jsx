@@ -71,16 +71,23 @@ export default function HomePage() {
           <div className="order-1 flex flex-col justify-between gap-8 py-8 sm:py-10 md:order-2 md:col-span-4 md:gap-10 md:p-10">
             <div className="space-y-8 md:space-y-10">
               <p className="text-sm uppercase tracking-[0.35em] text-accent">{homePageContent.featuredSection.label}</p>
-              <div className="space-y-7 sm:space-y-8">
+              <div className="space-y-3 sm:space-y-4">
                 {featuredCards.map((item) => (
                   <Link
                     key={item.title}
                     to={item.to}
-                    className="group block space-y-3 cursor-pointer transition-colors"
+                    className="group block cursor-pointer border border-outline-variant/20 bg-background/50 px-4 py-4 transition-colors hover:border-accent/30 hover:bg-surface sm:px-5"
                   >
-                    <span className="text-sm uppercase tracking-[0.32em] text-outline">{item.intro}</span>
-                    <h3 className="text-xl font-semibold transition-colors group-hover:text-accent">{item.title}</h3>
-                    <p className="text-sm leading-relaxed text-on-surface-variant">{item.description}</p>
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="min-w-0">
+                        <span className="text-sm uppercase tracking-[0.32em] text-outline">{item.intro}</span>
+                        <h3 className="mt-3 text-xl font-semibold transition-colors group-hover:text-accent">{item.title}</h3>
+                        <p className="mt-3 text-sm leading-relaxed text-on-surface-variant">{item.description}</p>
+                      </div>
+                      <span className="material-symbols-outlined shrink-0 text-[18px] text-outline/60 transition-colors group-hover:text-accent">
+                        arrow_outward
+                      </span>
+                    </div>
                   </Link>
                 ))}
               </div>
