@@ -141,7 +141,7 @@ export default function ArchivePage() {
             <div className="flex w-full items-stretch gap-2 sm:max-w-md md:w-auto md:gap-3">
               <div className="relative min-w-0 flex-1">
                 <input
-                  className="h-full min-h-[48px] w-full border-b border-outline-variant/30 bg-transparent px-1 py-3 text-base outline-none transition-colors placeholder:text-outline-variant/60 focus:border-on-surface"
+                  className="h-full min-h-[48px] w-full border-b border-outline-variant/30 bg-transparent px-1 py-3 text-[16px] outline-none transition-colors placeholder:text-outline-variant/60 focus:border-on-surface md:text-base"
                   placeholder={pageContent.list.searchPlaceholder}
                   type="text"
                   value={query}
