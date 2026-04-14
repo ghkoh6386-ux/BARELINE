@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-10 md:px-8 md:py-12">
         <div className="grid gap-0 border-y border-outline-variant/20 md:grid-cols-3 md:border-y-0">
           <div className="space-y-6 border-b border-outline-variant/20 py-8 md:border-b-0 md:py-0">
-            <div className="text-xl uppercase tracking-[0.18em]">
+            <div className="text-2xl font-medium tracking-[0.12em] uppercase">
               {footerContent.brand}
             </div>
             <p className="max-w-sm text-base leading-7 text-on-surface-variant">
