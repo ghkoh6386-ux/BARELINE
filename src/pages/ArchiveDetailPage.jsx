@@ -10,6 +10,15 @@ export default function ArchiveDetailPage() {
   const entry = useSelector((state) => selectArchiveDetailById(state, entryId));
   const relatedEntries = useSelector((state) => selectRelatedArchiveDetails(state, entryId));
 
+  const mobileMetaItems = entry
+    ? [
+        ['Category', entry.category],
+        ['Year', entry.year],
+        ['Material', entry.material],
+        ['Curator', entry.curator],
+      ]
+    : [];
+
   if (!entry) {
     return (
       <div className="px-6 py-20 md:px-8">
@@ -98,22 +107,12 @@ export default function ArchiveDetailPage() {
       <section className="grid gap-10 px-6 py-14 sm:px-8 md:gap-12 md:py-16 lg:grid-cols-12 lg:gap-16 lg:px-8">
         <div className="space-y-5 border-b border-outline-variant/20 pb-8 lg:hidden">
           <div className="grid grid-cols-2 gap-3">
-            <div className="border border-outline-variant/20 bg-surface-container-low px-4 py-4">
-              <span className="block text-sm uppercase tracking-[0.16em] text-outline">Category</span>
-              <span className="mt-2 block text-sm font-medium">{entry.category}</span>
-            </div>
-            <div className="border border-outline-variant/20 bg-surface-container-low px-4 py-4">
-              <span className="block text-sm uppercase tracking-[0.16em] text-outline">Year</span>
-              <span className="mt-2 block text-sm font-medium">{entry.year}</span>
-            </div>
-            <div className="border border-outline-variant/20 bg-surface-container-low px-4 py-4">
-              <span className="block text-sm uppercase tracking-[0.16em] text-outline">Material</span>
-              <span className="mt-2 block text-sm font-medium">{entry.material}</span>
-            </div>
-            <div className="border border-outline-variant/20 bg-surface-container-low px-4 py-4">
-              <span className="block text-sm uppercase tracking-[0.16em] text-outline">Curator</span>
-              <span className="mt-2 block text-sm font-medium italic">{entry.curator}</span>
-            </div>
+            {mobileMetaItems.map(([label, value]) => (
+              <div key={label} className="border border-outline-variant/20 bg-surface-container-low px-4 py-4">
+                <span className="block text-sm uppercase tracking-[0.16em] text-outline">{label}</span>
+                <span className={`mt-2 block text-sm font-medium ${label === 'Curator' ? 'italic' : ''}`}>{value}</span>
+              </div>
+            ))}
           </div>
 
           <div className="border border-outline-variant/20 bg-background px-5 py-5">
@@ -131,12 +130,6 @@ export default function ArchiveDetailPage() {
                 </li>
               ))}
             </ul>
-            <Link
-              to="/archive#archive-list"
-              className="mt-6 hidden w-full items-center justify-center border border-outline-variant/30 px-4 py-3 text-sm uppercase tracking-[0.24em] text-on-surface transition-colors hover:border-accent hover:text-accent"
-            >
-              목록으로 돌아가기
-            </Link>
           </div>
         </div>
 
@@ -195,7 +188,7 @@ export default function ArchiveDetailPage() {
 
       <section className="px-6 pt-8 sm:px-8 md:px-8">
         <div className="mb-10 flex items-end justify-between border-b border-outline-variant/20 pb-4">
-          <h2 className="text-2xl font-semibold">Related Entries</h2>
+          <h2 className="mb-12 text-sm uppercase tracking-[0.32em] text-accent">다른 아카이브</h2>
           <Link to="/archive" className="text-sm uppercase tracking-[0.28em] text-outline transition-colors hover:text-accent">
             View Index
           </Link>

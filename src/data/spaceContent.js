@@ -24,6 +24,33 @@
 
 export const spaceDefaultEntryId = 'japan-courtyard';
 
+const createFigures = (items) => items.map(([alt, caption, image]) => ({ alt, caption, image }));
+
+const createGallery = (items) => items.map(([alt, image]) => ({ alt, image }));
+
+const createSpaceContent = ({
+  header,
+  intro,
+  sidebar,
+  lead,
+  figures,
+  blockquote,
+  sections,
+  feature,
+  gallery,
+}) => ({
+  header,
+  intro,
+  sidebar,
+  lead,
+  figures: createFigures(figures),
+  blockquote,
+  sections,
+  feature,
+  gallery: createGallery(gallery),
+  relatedTitle: '다른 공간',
+});
+
 export const spaceEntries = [
   {
     id: 'japan-courtyard',
@@ -49,7 +76,7 @@ export const spaceEntries = [
 ];
 
 export const spaceContentById = {
-  'japan-courtyard': {
+  'japan-courtyard': createSpaceContent({
     header: {
       eyebrow: 'VOLUME 04 / SPACE / JAPAN COURTYARD',
       title: '정원과 맞닿은 침묵',
@@ -75,8 +102,8 @@ export const spaceContentById = {
     lead:
       '좋은 일본식 공간은 무언가를 채워 넣기보다 풍경이 머물 자리를 남겨둡니다. 비워진 실내는 오히려 바깥의 녹음과 빛, 재료의 결을 더 또렷하게 느끼게 합니다.',
     figures: [
-      { alt: 'Garden frame', caption: 'Fig. 01 / Garden Through Screens', image: japanSubMain01 },
-      { alt: 'Tatami room', caption: 'Fig. 02 / Tatami and Moss', image: japanSubMain02 },
+      ['Garden frame', 'Fig. 01 / Garden Through Screens', japanSubMain01],
+      ['Tatami room', 'Fig. 02 / Tatami and Moss', japanSubMain02],
     ],
     blockquote: {
       text: '실내를 완성하는 것은 벽이 아니라 그 너머의 풍경이다.',
@@ -100,13 +127,12 @@ export const spaceContentById = {
       image: japanMain01,
     },
     gallery: [
-      { alt: 'Garden pavilion', image: japanSub01 },
-      { alt: 'Shoji detail', image: japanSub02 },
-      { alt: 'Japan designer portrait', image: japanSub03 },
+      ['Garden pavilion', japanSub01],
+      ['Shoji detail', japanSub02],
+      ['Japan designer portrait', japanSub03],
     ],
-    relatedTitle: '다른 공간',
-  },
-  'minimal-light': {
+  }),
+  'minimal-light': createSpaceContent({
     header: {
       eyebrow: 'VOLUME 04 / SPACE / MINIMAL LIGHT',
       title: '비워둔 빛의 밀도',
@@ -132,8 +158,8 @@ export const spaceContentById = {
     lead:
       '미니멀한 방은 무언가가 부족한 공간이 아니라, 남겨진 요소 각각이 더 크게 읽히는 공간입니다. 빛은 벽에 사각형으로 머물고, 가구는 그 빛을 받는 면으로 존재감을 갖습니다.',
     figures: [
-      { alt: 'Projected images', caption: 'Fig. 01 / Quiet Projection', image: minimalSubMain01 },
-      { alt: 'White room', caption: 'Fig. 02 / Soft Shadow Plane', image: minimalSubMain02 },
+      ['Projected images', 'Fig. 01 / Quiet Projection', minimalSubMain01],
+      ['White room', 'Fig. 02 / Soft Shadow Plane', minimalSubMain02],
     ],
     blockquote: {
       text: '최소한의 배치는 빛이 머무를 자리를 넓힌다.',
@@ -157,13 +183,12 @@ export const spaceContentById = {
       image: minimalMain,
     },
     gallery: [
-      { alt: 'Studio overview', image: minimalSub01 },
-      { alt: 'White projection wall', image: minimalSub02 },
-      { alt: 'Minimal designer portrait', image: minimalSub03 },
+      ['Studio overview', minimalSub01],
+      ['White projection wall', minimalSub02],
+      ['Minimal designer portrait', minimalSub03],
     ],
-    relatedTitle: '다른 공간',
-  },
-  'red-rotunda': {
+  }),
+  'red-rotunda': createSpaceContent({
     header: {
       eyebrow: 'VOLUME 04 / SPACE / RED ROTUNDA',
       title: '붉은 곡선의 집합',
@@ -189,8 +214,8 @@ export const spaceContentById = {
     lead:
       '이 붉은 공간은 강한 색을 사용하지만 무겁지 않습니다. 곡선과 반복되는 좌석, 중앙의 빈 원형 무대가 함께 작동하면서 색은 장식이 아니라 집합의 리듬이 됩니다.',
     figures: [
-      { alt: 'Mirrored red hall', caption: 'Fig. 01 / Reflection Corridor', image: redSubMain01 },
-      { alt: 'Curved stair', caption: 'Fig. 02 / Wrapped Descent', image: redSubMain02 },
+      ['Mirrored red hall', 'Fig. 01 / Reflection Corridor', redSubMain01],
+      ['Curved stair', 'Fig. 02 / Wrapped Descent', redSubMain02],
     ],
     blockquote: {
       text: '사람을 모으는 공간은 중심보다 흐름을 먼저 설계한다.',
@@ -214,10 +239,9 @@ export const spaceContentById = {
       image: redMain,
     },
     gallery: [
-      { alt: 'Red landing', image: redSub01 },
-      { alt: 'Soft circular chamber', image: redSub03 },
-      { alt: 'Red designer portrait', image: redSub02 },
+      ['Red landing', redSub01],
+      ['Soft circular chamber', redSub03],
+      ['Red designer portrait', redSub02],
     ],
-    relatedTitle: '다른 공간',
-  },
+  }),
 };
