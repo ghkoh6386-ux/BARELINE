@@ -50,7 +50,7 @@ export default function SpacePage() {
       </Section>
 
       <div className="grid gap-8 lg:grid-cols-12">
-        <div className="border-b border-outline-variant/20 pb-8 lg:hidden">
+        <div className="hidden border-b border-outline-variant/20 pb-8 lg:hidden">
           <h4 className="mb-4 text-sm uppercase tracking-[0.24em] text-accent">Space List</h4>
           <div className="grid gap-3 sm:grid-cols-2">
             {relatedEntries.map((item) => {

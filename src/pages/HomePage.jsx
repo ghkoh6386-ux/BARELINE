@@ -57,7 +57,7 @@ export default function HomePage() {
         ))}
       </section>
 
-      <Section title={homePageContent.featuredSection.title} caption={homePageContent.featuredSection.caption} className="px-6 pt-20 sm:px-8 md:px-0 md:pt-24">
+      <Section title={homePageContent.featuredSection.title} caption={homePageContent.featuredSection.caption} className="px-6 pt-16 sm:px-8 md:px-0 md:pt-24">
         <div className="grid grid-cols-1 gap-0 md:grid-cols-12">
           <div className="order-2 border-b border-outline-variant/20 md:order-1 md:col-span-8 md:border-b-0 md:border-r">
             <div className="relative h-[320px] overflow-hidden bg-surface sm:h-[460px] md:h-[700px]">
@@ -92,7 +92,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section title={homePageContent.spaceSection.title} caption={homePageContent.spaceSection.caption} className="px-6 pt-20 sm:px-8 md:px-0 md:pt-24">
+      <Section title={homePageContent.spaceSection.title} caption={homePageContent.spaceSection.caption} className="px-6 pt-16 sm:px-8 md:px-0 md:pt-24">
         <div className="grid gap-10 md:grid-cols-12 md:items-center md:gap-16">
           <div className="order-2 max-w-2xl md:order-1 md:col-span-5 md:max-w-none md:text-left">
             <h2 className="mb-6 text-4xl font-semibold leading-tight sm:text-5xl md:mb-8 md:text-7xl">{homePageContent.spaceSection.heading}</h2>
@@ -116,7 +116,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section title={homePageContent.latestSection.title} className="px-6 pt-2 sm:px-8 md:px-0">
+      <Section title={homePageContent.latestSection.title} className="px-6 pt-16 sm:px-8 md:px-0 md:pt-10">
         <div className="mb-12 flex flex-col gap-4 border-b border-on-surface/10 pb-8 md:flex-row md:items-end md:justify-between">
           <p className="text-sm uppercase tracking-[0.22em] text-outline">{homePageContent.latestSection.caption}</p>
         </div>

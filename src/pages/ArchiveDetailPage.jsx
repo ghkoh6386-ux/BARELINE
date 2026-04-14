@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+﻿import { Link, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import {
   selectArchiveDetailById,
@@ -24,6 +24,7 @@ export default function ArchiveDetailPage() {
       </div>
     );
   }
+
   return (
     <div className="pb-20 md:pb-24">
       <section className="border-b border-outline-variant/20 px-6 py-12 sm:px-8 md:px-8 md:py-16">
@@ -65,50 +66,80 @@ export default function ArchiveDetailPage() {
         </div>
       </section>
 
-      <section className="border-b border-outline-variant/20 px-6 py-12 sm:px-8 md:px-8 md:py-16">
-        <div className="grid gap-0 border-t border-outline-variant/20 md:grid-cols-5">
-          <div className="border-b border-outline-variant/20 py-8 pr-4 md:border-b-0 md:border-r">
+      <section className="border-b border-outline-variant/20 px-6 py-10 sm:px-8 md:px-8 md:py-16">
+        <div className="grid gap-3 sm:grid-cols-2 md:gap-0 md:border-t md:border-outline-variant/20 md:grid-cols-5">
+          <div className="border border-outline-variant/20 bg-surface-container-low px-4 py-5 md:border-b-0 md:border-l-0 md:border-r md:border-t-0 md:bg-transparent md:px-0 md:py-8 md:pr-4">
             <span className="block text-sm uppercase tracking-[0.16em] text-outline">Category</span>
             <span className="mt-3 block text-sm font-medium">{entry.category}</span>
           </div>
-          <div className="border-b border-outline-variant/20 py-8 pr-4 md:border-b-0 md:border-r md:px-4">
+          <div className="border border-outline-variant/20 bg-surface-container-low px-4 py-5 md:border-b-0 md:border-l-0 md:border-r md:border-t-0 md:bg-transparent md:px-4 md:py-8">
             <span className="block text-sm uppercase tracking-[0.16em] text-outline">Year</span>
             <span className="mt-3 block text-sm font-medium">{entry.year}</span>
           </div>
-          <div className="border-b border-outline-variant/20 py-8 pr-4 md:border-b-0 md:border-r md:px-4">
+          <div className="border border-outline-variant/20 bg-surface-container-low px-4 py-5 sm:col-span-2 md:col-span-1 md:border-b-0 md:border-l-0 md:border-r md:border-t-0 md:bg-transparent md:px-4 md:py-8">
             <span className="block text-sm uppercase tracking-[0.16em] text-outline">Keywords</span>
-            <ul className="mt-3 space-y-1 text-sm uppercase tracking-[0.16em] text-on-surface-variant">
+            <ul className="mt-3 flex flex-wrap gap-x-3 gap-y-2 text-sm uppercase tracking-[0.16em] text-on-surface-variant md:block md:space-y-1">
               {entry.keywords.map((keyword) => (
                 <li key={keyword}>{keyword}</li>
               ))}
             </ul>
           </div>
-          <div className="border-b border-outline-variant/20 py-8 pr-4 md:border-b-0 md:border-r md:px-4">
+          <div className="border border-outline-variant/20 bg-surface-container-low px-4 py-5 md:border-b-0 md:border-l-0 md:border-r md:border-t-0 md:bg-transparent md:px-4 md:py-8">
             <span className="block text-sm uppercase tracking-[0.16em] text-outline">Material</span>
             <span className="mt-3 block text-sm font-medium">{entry.material}</span>
           </div>
-          <div className="py-8 md:px-4">
+          <div className="border border-outline-variant/20 bg-surface-container-low px-4 py-5 md:border-0 md:bg-transparent md:px-4 md:py-8">
             <span className="block text-sm uppercase tracking-[0.16em] text-outline">Curator</span>
             <span className="mt-3 block text-sm font-medium italic">{entry.curator}</span>
           </div>
         </div>
       </section>
 
-      <section className="grid gap-12 px-6 py-14 sm:px-8 md:py-16 lg:grid-cols-12 lg:gap-16 lg:px-8">
-        <div className="border-b border-outline-variant/20 pb-8 lg:hidden">
-          <h2 className="text-sm uppercase tracking-[0.24em] text-accent">Contents</h2>
-          <ul className="mt-6 space-y-3 text-sm text-on-surface-variant">
-            {entry.sections.map((section) => (
-              <li key={section.heading}>{section.heading}</li>
-            ))}
-          </ul>
-          <Link
-            to="/archive#archive-list"
-            className="mt-6 inline-flex border border-outline-variant/30 px-4 py-3 text-sm uppercase tracking-[0.24em] text-on-surface transition-colors hover:border-accent hover:text-accent"
-          >
-            목록으로 돌아가기
-          </Link>
+      <section className="grid gap-10 px-6 py-14 sm:px-8 md:gap-12 md:py-16 lg:grid-cols-12 lg:gap-16 lg:px-8">
+        <div className="space-y-5 border-b border-outline-variant/20 pb-8 lg:hidden">
+          <div className="grid grid-cols-2 gap-3">
+            <div className="border border-outline-variant/20 bg-surface-container-low px-4 py-4">
+              <span className="block text-sm uppercase tracking-[0.16em] text-outline">Category</span>
+              <span className="mt-2 block text-sm font-medium">{entry.category}</span>
+            </div>
+            <div className="border border-outline-variant/20 bg-surface-container-low px-4 py-4">
+              <span className="block text-sm uppercase tracking-[0.16em] text-outline">Year</span>
+              <span className="mt-2 block text-sm font-medium">{entry.year}</span>
+            </div>
+            <div className="border border-outline-variant/20 bg-surface-container-low px-4 py-4">
+              <span className="block text-sm uppercase tracking-[0.16em] text-outline">Material</span>
+              <span className="mt-2 block text-sm font-medium">{entry.material}</span>
+            </div>
+            <div className="border border-outline-variant/20 bg-surface-container-low px-4 py-4">
+              <span className="block text-sm uppercase tracking-[0.16em] text-outline">Curator</span>
+              <span className="mt-2 block text-sm font-medium italic">{entry.curator}</span>
+            </div>
+          </div>
+
+          <div className="border border-outline-variant/20 bg-background px-5 py-5">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h2 className="text-sm uppercase tracking-[0.24em] text-accent">Contents</h2>
+                <p className="mt-2 max-w-[26ch] text-sm leading-relaxed text-on-surface-variant">이 아카이브의 주요 단락을 먼저 살펴보세요.</p>
+              </div>
+            </div>
+            <ul className="mt-5 space-y-3 text-sm text-on-surface-variant">
+              {entry.sections.map((section, index) => (
+                <li key={section.heading} className="flex items-start gap-3 border-t border-outline-variant/10 pt-3 first:border-t-0 first:pt-0">
+                  <span className="shrink-0 text-sm uppercase tracking-[0.22em] text-outline">0{index + 1}</span>
+                  <span>{section.heading}</span>
+                </li>
+              ))}
+            </ul>
+            <Link
+              to="/archive#archive-list"
+              className="mt-6 hidden w-full items-center justify-center border border-outline-variant/30 px-4 py-3 text-sm uppercase tracking-[0.24em] text-on-surface transition-colors hover:border-accent hover:text-accent"
+            >
+              목록으로 돌아가기
+            </Link>
+          </div>
         </div>
+
         <aside className="hidden lg:col-span-3 lg:block">
           <div className="sticky top-32 border-l border-accent/30 pl-6">
             <div className="space-y-12">
