@@ -100,7 +100,7 @@ export default function HomePage() {
       </Section>
 
       <Section title={homePageContent.spaceSection.title} caption={homePageContent.spaceSection.caption} className="px-6 pt-16 sm:px-8 md:px-0 md:pt-24">
-        <div className="grid gap-10 md:grid-cols-12 md:items-center md:gap-16">
+        <div className="grid gap-7 md:grid-cols-12 md:items-center md:gap-16">
           <div className="order-2 max-w-2xl md:order-1 md:col-span-5 md:max-w-none md:text-left">
             <h2 className="mb-6 text-4xl font-semibold leading-tight sm:text-5xl md:mb-8 md:text-7xl">{homePageContent.spaceSection.heading}</h2>
             <p className="mb-8 max-w-xl text-base leading-7 text-on-surface-variant sm:text-lg md:mb-12 md:max-w-none">
