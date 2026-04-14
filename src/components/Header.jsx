@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { selectNavItems } from '../store/selectors/contentSelectors';
 
 const baseLinkClass =
-  'relative inline-flex pb-1 uppercase text-sm tracking-[0.14em] transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300';
+  'relative inline-flex pb-1 uppercase text-base tracking-[0.14em] transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300';
 const activeClass = 'text-accent font-semibold after:scale-x-100';
 const defaultClass = 'text-on-surface/70 hover:text-accent hover:after:scale-x-100';
 
@@ -22,7 +22,7 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setIsMenuOpen((current) => !current)}
-          className="inline-flex items-center gap-2 border border-outline-variant/20 px-4 py-2 text-sm uppercase tracking-[0.2em] text-on-surface md:hidden"
+          className="inline-flex items-center gap-2 border border-outline-variant/20 px-4 py-2 text-base uppercase tracking-[0.2em] text-on-surface md:hidden"
           aria-expanded={isMenuOpen}
           aria-label="Toggle navigation menu"
         >
@@ -64,7 +64,7 @@ export default function Header() {
                       to={item.path}
                       onClick={() => setIsMenuOpen(false)}
                       className={({ isActive }) =>
-                        `flex items-center justify-between border px-4 py-4 text-sm uppercase tracking-[0.22em] transition-colors ${
+                        `flex items-center justify-between border px-4 py-4 text-base uppercase tracking-[0.22em] transition-colors ${
                           isActive
                             ? 'border-accent/30 bg-accent/5 text-accent'
                             : 'border-outline-variant/20 bg-surface text-on-surface/80'

@@ -17,7 +17,7 @@ export default function HomePage() {
     <div className="space-y-0">
       <section className="grid min-h-[60vh] grid-cols-1 border-b border-outline-variant/20 md:min-h-[72vh] md:grid-cols-12">
         <div className="flex flex-col justify-end gap-6 px-6 py-10 sm:px-8 md:col-span-6 md:gap-8 md:px-12 md:py-20">
-          <span className="text-sm uppercase tracking-[0.28em] text-outline">{homePageContent.hero.eyebrow}</span>
+          <span className="text-base uppercase tracking-[0.22em] text-outline">{homePageContent.hero.eyebrow}</span>
           <h1 className="max-w-[10ch] text-4xl font-semibold leading-[0.92] tracking-tight sm:text-5xl md:max-w-none md:text-[5.5rem]">
             {homePageContent.hero.title}
           </h1>
@@ -26,7 +26,7 @@ export default function HomePage() {
           </p>
           <Link
             to={homePageContent.hero.ctaTo}
-            className="inline-flex w-full items-center justify-center rounded-none bg-on-surface px-8 py-4 text-sm uppercase tracking-[0.32em] text-surface transition hover:bg-accent sm:w-auto"
+            className="inline-flex w-full items-center justify-center rounded-none bg-on-surface px-8 py-4 text-base uppercase tracking-[0.22em] text-surface transition hover:bg-accent sm:w-auto"
           >
             {homePageContent.hero.ctaLabel}
           </Link>
@@ -49,9 +49,9 @@ export default function HomePage() {
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
                 <h3 className="text-lg font-semibold uppercase tracking-[0.16em]">{item.title}</h3>
-                <p className="mt-3 max-w-[26ch] text-sm leading-relaxed text-on-surface-variant">{item.caption}</p>
+                <p className="mt-3 max-w-[26ch] text-base leading-relaxed text-on-surface-variant">{item.caption}</p>
               </div>
-              <div className="shrink-0 text-sm uppercase tracking-[0.35em] text-accent">0{index + 1}</div>
+              <div className="shrink-0 text-base uppercase tracking-[0.24em] text-accent">0{index + 1}</div>
             </div>
           </article>
         ))}
@@ -70,7 +70,7 @@ export default function HomePage() {
           </div>
           <div className="order-1 flex flex-col justify-between gap-8 py-8 sm:py-10 md:order-2 md:col-span-4 md:gap-10 md:p-10">
             <div className="space-y-8 md:space-y-10">
-              <p className="text-sm uppercase tracking-[0.35em] text-accent">{homePageContent.featuredSection.label}</p>
+              <p className="text-base uppercase tracking-[0.24em] text-accent">{homePageContent.featuredSection.label}</p>
               <div className="space-y-3 sm:space-y-4">
                 {featuredCards.map((item) => (
                   <Link
@@ -80,9 +80,9 @@ export default function HomePage() {
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="min-w-0">
-                        <span className="text-sm uppercase tracking-[0.32em] text-outline">{item.intro}</span>
+                        <span className="text-base uppercase tracking-[0.22em] text-outline">{item.intro}</span>
                         <h3 className="mt-3 text-xl font-semibold transition-colors group-hover:text-accent">{item.title}</h3>
-                        <p className="mt-3 text-sm leading-relaxed text-on-surface-variant">{item.description}</p>
+                        <p className="mt-3 text-base leading-7 text-on-surface-variant">{item.description}</p>
                       </div>
                       <span className="material-symbols-outlined shrink-0 text-[18px] text-outline/60 transition-colors group-hover:text-accent">
                         arrow_outward
@@ -92,7 +92,7 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-            <Link to={homePageContent.featuredSection.ctaTo} className="text-sm uppercase tracking-[0.32em] text-outline underline underline-offset-8 transition-colors hover:text-on-surface">
+            <Link to={homePageContent.featuredSection.ctaTo} className="text-base uppercase tracking-[0.22em] text-outline underline underline-offset-8 transition-colors hover:text-on-surface">
               {homePageContent.featuredSection.ctaLabel}
             </Link>
           </div>
@@ -103,12 +103,12 @@ export default function HomePage() {
         <div className="grid gap-10 md:grid-cols-12 md:items-center md:gap-16">
           <div className="order-2 max-w-2xl md:order-1 md:col-span-5 md:max-w-none md:text-left">
             <h2 className="mb-6 text-4xl font-semibold leading-tight sm:text-5xl md:mb-8 md:text-7xl">{homePageContent.spaceSection.heading}</h2>
-            <p className="mb-8 max-w-xl text-base leading-relaxed text-on-surface-variant sm:text-lg md:mb-12 md:max-w-none">
+            <p className="mb-8 max-w-xl text-base leading-7 text-on-surface-variant sm:text-lg md:mb-12 md:max-w-none">
               {homePageContent.spaceSection.description}
             </p>
             <Link
               to={homePageContent.spaceSection.ctaTo}
-              className="inline-flex w-full items-center justify-center rounded-none border border-outline-variant/30 px-10 py-4 text-sm uppercase tracking-[0.32em] text-on-surface transition-colors hover:border-accent sm:w-auto md:py-5"
+              className="inline-flex w-full items-center justify-center rounded-none border border-outline-variant/30 px-10 py-4 text-base uppercase tracking-[0.22em] text-on-surface transition-colors hover:border-accent sm:w-auto md:py-5"
             >
               {homePageContent.spaceSection.ctaLabel}
             </Link>
@@ -125,10 +125,10 @@ export default function HomePage() {
 
       <Section title={homePageContent.latestSection.title} className="px-6 pt-16 sm:px-8 md:px-0 md:pt-10">
         <div className="mb-12 flex flex-col gap-4 border-b border-on-surface/10 pb-8 md:flex-row md:items-end md:justify-between">
-          <p className="text-sm uppercase tracking-[0.22em] text-outline">{homePageContent.latestSection.caption}</p>
+          <p className="text-base uppercase tracking-[0.18em] text-outline">{homePageContent.latestSection.caption}</p>
         </div>
         <div className="overflow-x-auto">
-          <div className="hidden grid-cols-12 gap-4 border-b border-on-surface/10 px-6 pb-4 text-sm uppercase tracking-[0.3em] text-outline md:grid">
+          <div className="hidden grid-cols-12 gap-4 border-b border-on-surface/10 px-6 pb-4 text-base uppercase tracking-[0.2em] text-outline md:grid">
             <div className="col-span-1">{homePageContent.latestSection.columns[0]}</div>
             <div className="col-span-4">{homePageContent.latestSection.columns[1]}</div>
             <div className="col-span-2">{homePageContent.latestSection.columns[2]}</div>
@@ -142,7 +142,7 @@ export default function HomePage() {
                 to={item.to}
                 className="block px-6 py-6 transition-colors hover:bg-surface-container-low sm:px-8 md:grid md:grid-cols-12 md:items-center md:gap-4 md:px-6"
               >
-                <div className="text-sm uppercase tracking-[0.24em] text-outline md:col-span-1">{item.ref}</div>
+                <div className="text-base uppercase tracking-[0.18em] text-outline md:col-span-1">{item.ref}</div>
                 <div className="mt-3 flex items-start gap-4 md:col-span-4 md:mt-0 md:items-center">
                   <div className="h-16 w-16 overflow-hidden bg-surface-container">
                     <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
@@ -150,20 +150,20 @@ export default function HomePage() {
                   <div className="min-w-0">
                     <span className="block text-lg font-semibold transition-colors hover:text-accent">{item.title}</span>
                     {item.subtitle ? (
-                      <span className="mt-1 block truncate text-sm text-on-surface-variant">{item.subtitle}</span>
+                      <span className="mt-1 block truncate text-base text-on-surface-variant">{item.subtitle}</span>
                     ) : null}
                   </div>
                 </div>
-                <div className="mt-3 text-sm uppercase tracking-[0.22em] text-on-surface-variant md:col-span-2 md:mt-0 md:block">{item.category}</div>
+                <div className="mt-3 text-base uppercase tracking-[0.18em] text-on-surface-variant md:col-span-2 md:mt-0 md:block">{item.category}</div>
                 <div className="mt-3 md:col-span-3 md:mt-0">
-                  <div className="text-sm uppercase tracking-[0.22em] text-on-surface-variant">{item.creator}</div>
+                  <div className="text-base uppercase tracking-[0.18em] text-on-surface-variant">{item.creator}</div>
                   {item.description ? (
-                    <p className="mt-2 line-clamp-2 text-sm normal-case tracking-normal text-on-surface-variant">
+                    <p className="mt-2 line-clamp-2 text-base leading-7 normal-case tracking-normal text-on-surface-variant">
                       {item.description}
                     </p>
                   ) : null}
                 </div>
-                <div className="mt-3 text-sm uppercase tracking-[0.22em] text-outline md:col-span-2 md:mt-0 md:text-right">{item.year}</div>
+                <div className="mt-3 text-base uppercase tracking-[0.18em] text-outline md:col-span-2 md:mt-0 md:text-right">{item.year}</div>
               </Link>
             ))}
           </div>

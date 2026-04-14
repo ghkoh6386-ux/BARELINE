@@ -8,7 +8,7 @@ export default function CategoryNav() {
   const navItems = useSelector(selectCategoryNavItems);
 
   return (
-    <nav className="no-scrollbar touch-pan-x overflow-x-auto border-b border-outline-variant/20 bg-surface py-3 text-sm uppercase tracking-[0.16em] text-on-surface/80 md:py-4">
+    <nav className="no-scrollbar touch-pan-x overflow-x-auto border-b border-outline-variant/20 bg-surface py-3 text-base uppercase tracking-[0.16em] text-on-surface/80 md:py-4">
       <div className="mx-auto flex w-max min-w-full gap-8 px-6 md:max-w-7xl md:px-8">
         {navItems.map((item) => (
           <button
