@@ -353,6 +353,19 @@ export const archivePageContent = {
   },
 };
 
+export const uiContent = {
+  responsive: {
+    mobileBreakpoint: 768,
+  },
+  homePage: {
+    mobileLatestLimit: 2,
+  },
+  archivePage: {
+    mobileItemsPerPage: 2,
+    swipeThreshold: 50,
+  },
+};
+
 export const footerContent = {
   brand: "BARE LINE",
   description:

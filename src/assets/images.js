@@ -7,9 +7,6 @@ import objet01 from './archive/objet01.jpg';
 import editorier01 from './archive/editorier01.jpg';
 import space02 from './space/space02.jpg';
 import contactHero from './archive/contactHero.jpg';
-import archiveCard from './space/archive-card.jpg';
-import spaceDetail from './space/space-detail.jpg';
-import spaceHero from './space/space-hero.jpg';
 import japanDesigner from './space/japan/japan-designer.jpg';
 import japanMain01 from './space/japan/japan-main01.jpg';
 import japanSubMain01 from './space/japan/japan-sub-main01.jpg';
@@ -43,9 +40,6 @@ export {
   editorier01,
   space02,
   contactHero,
-  archiveCard,
-  spaceDetail,
-  spaceHero,
   japanDesigner,
   japanMain01,
   japanSubMain01,

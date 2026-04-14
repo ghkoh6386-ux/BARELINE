@@ -10,6 +10,7 @@
   footerContent,
   homePageContent,
   navItems,
+  uiContent,
 } from '../data/content';
 import { archiveDetailsMap } from '../data/archiveDetails';
 import {
@@ -28,6 +29,7 @@ export const initialContentState = {
   aboutPageContent,
   homePageContent,
   archivePageContent,
+  uiContent,
   footerContent,
   contactPageContent,
   spaceEntries,

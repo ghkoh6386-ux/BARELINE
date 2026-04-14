@@ -1,19 +1,27 @@
 ﻿import { Link, useSearchParams } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
+import useIsMobile from '../hooks/useIsMobile';
 import Section from '../components/Section';
 import CategoryNav from '../components/CategoryNav';
 import { selectArchivePageData } from '../store/selectors/archiveSelectors';
+import {
+  selectArchivePageMobileItemsPerPage,
+  selectArchivePageSwipeThreshold,
+  selectMobileBreakpoint,
+} from '../store/selectors/contentSelectors';
 
 export default function ArchivePage() {
   const [searchParams] = useSearchParams();
   const [query, setQuery] = useState('');
   const [submittedQuery, setSubmittedQuery] = useState('');
   const [pageIndex, setPageIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
   const touchStartX = useRef(null);
   const touchDeltaX = useRef(0);
   const activeCategory = searchParams.get('category');
+  const mobileBreakpoint = useSelector(selectMobileBreakpoint);
+  const mobileItemsPerPage = useSelector(selectArchivePageMobileItemsPerPage);
+  const swipeThreshold = useSelector(selectArchivePageSwipeThreshold);
   const {
     pageContent,
     categoryContent,
@@ -24,19 +32,8 @@ export default function ArchivePage() {
     listCaption,
   } = useSelector((state) => selectArchivePageData(state, activeCategory, submittedQuery));
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  const itemsPerPage = isMobile ? 2 : pageContent.list.itemsPerPage;
+  const isMobile = useIsMobile(mobileBreakpoint);
+  const itemsPerPage = isMobile ? mobileItemsPerPage : pageContent.list.itemsPerPage;
   const pageCount = Math.max(1, Math.ceil(filteredArchiveList.length / itemsPerPage));
   const pageGroups = Array.from({ length: pageCount }, (_, index) => (
     filteredArchiveList.slice(index * itemsPerPage, index * itemsPerPage + itemsPerPage)
@@ -70,8 +67,6 @@ export default function ArchivePage() {
   };
 
   const handleTouchEnd = () => {
-    const swipeThreshold = 50;
-
     if (touchDeltaX.current <= -swipeThreshold && pageIndex < pageCount - 1) {
       setPageIndex((current) => Math.min(current + 1, pageCount - 1));
     }

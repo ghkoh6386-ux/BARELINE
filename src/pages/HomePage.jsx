@@ -1,33 +1,27 @@
 ﻿import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import useIsMobile from '../hooks/useIsMobile';
 import Section from '../components/Section';
 import {
   selectCategoryItems,
+  selectHomePageMobileLatestLimit,
   selectHomePageContent,
+  selectMobileBreakpoint,
 } from '../store/selectors/contentSelectors';
 import { selectEnrichedArchiveList, selectFeaturedArchiveCards } from '../store/selectors/archiveSelectors';
 
 export default function HomePage() {
   const categoryItems = useSelector(selectCategoryItems);
   const homePageContent = useSelector(selectHomePageContent);
+  const mobileBreakpoint = useSelector(selectMobileBreakpoint);
+  const mobileLatestLimit = useSelector(selectHomePageMobileLatestLimit);
   const featuredCards = useSelector(selectFeaturedArchiveCards);
   const homeArchiveList = useSelector((state) => selectEnrichedArchiveList(state, null));
-  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  const latestArchiveItems = homeArchiveList.slice(0, isMobile ? 2 : homePageContent.latestSection.limit);
+  const isMobile = useIsMobile(mobileBreakpoint);
+  const latestArchiveItems = homeArchiveList.slice(
+    0,
+    isMobile ? mobileLatestLimit : homePageContent.latestSection.limit,
+  );
 
   return (
     <div className="space-y-0">

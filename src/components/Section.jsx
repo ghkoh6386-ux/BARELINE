@@ -1,5 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
+import useIsMobile from '../hooks/useIsMobile';
+import { selectMobileBreakpoint } from '../store/selectors/contentSelectors';
 
 const fade = {
   hidden: { opacity: 0, y: 18 },
@@ -7,19 +9,8 @@ const fade = {
 };
 
 export default function Section({ title, caption, className = '', children }) {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 767px)');
-    const syncIsMobile = (event) => setIsMobile(event.matches);
-
-    setIsMobile(mediaQuery.matches);
-    mediaQuery.addEventListener('change', syncIsMobile);
-
-    return () => {
-      mediaQuery.removeEventListener('change', syncIsMobile);
-    };
-  }, []);
+  const mobileBreakpoint = useSelector(selectMobileBreakpoint);
+  const isMobile = useIsMobile(mobileBreakpoint);
 
   if (isMobile) {
     return (

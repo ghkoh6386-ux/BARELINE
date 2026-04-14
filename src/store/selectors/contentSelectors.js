@@ -57,6 +57,31 @@ export const selectArchivePageContent = createSelector(
   (content) => content.archivePageContent,
 );
 
+export const selectUiContent = createSelector(
+  [selectContentState],
+  (content) => content.uiContent,
+);
+
+export const selectMobileBreakpoint = createSelector(
+  [selectUiContent],
+  (uiContent) => uiContent.responsive.mobileBreakpoint,
+);
+
+export const selectHomePageMobileLatestLimit = createSelector(
+  [selectUiContent],
+  (uiContent) => uiContent.homePage.mobileLatestLimit,
+);
+
+export const selectArchivePageMobileItemsPerPage = createSelector(
+  [selectUiContent],
+  (uiContent) => uiContent.archivePage.mobileItemsPerPage,
+);
+
+export const selectArchivePageSwipeThreshold = createSelector(
+  [selectUiContent],
+  (uiContent) => uiContent.archivePage.swipeThreshold,
+);
+
 export const selectFooterContent = createSelector(
   [selectContentState],
   (content) => content.footerContent,
