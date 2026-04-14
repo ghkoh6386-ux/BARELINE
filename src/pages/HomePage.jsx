@@ -1,4 +1,5 @@
 ﻿import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Section from '../components/Section';
 import {
@@ -12,6 +13,21 @@ export default function HomePage() {
   const homePageContent = useSelector(selectHomePageContent);
   const featuredCards = useSelector(selectFeaturedArchiveCards);
   const homeArchiveList = useSelector((state) => selectEnrichedArchiveList(state, null));
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const latestArchiveItems = homeArchiveList.slice(0, isMobile ? 2 : homePageContent.latestSection.limit);
 
   return (
     <div className="space-y-0">
@@ -136,7 +152,7 @@ export default function HomePage() {
             <div className="col-span-2 text-right">{homePageContent.latestSection.columns[4]}</div>
           </div>
           <div className="space-y-3 md:space-y-0 md:divide-y md:divide-outline-variant/10">
-            {homeArchiveList.slice(0, homePageContent.latestSection.limit).map((item) => (
+            {latestArchiveItems.map((item) => (
               <Link
                 key={item.ref}
                 to={item.to}

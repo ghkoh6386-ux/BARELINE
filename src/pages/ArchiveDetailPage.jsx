@@ -190,7 +190,7 @@ export default function ArchiveDetailPage() {
         <div className="mb-10 flex items-end justify-between border-b border-outline-variant/20 pb-4">
           <h2 className="text-base uppercase tracking-[0.22em] text-accent">다른 아카이브</h2>
           <Link to="/archive" className="text-base uppercase tracking-[0.2em] text-outline transition-colors hover:text-accent">
-            View Index
+            목록보기
           </Link>
         </div>
 

@@ -25,7 +25,7 @@ export default function ContactPage() {
               {contactPageContent.contact.email}
             </a>
           </div>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+          <div className="grid grid-cols-2 gap-6 sm:gap-8">
             <div>
               <p className="mb-4 text-base uppercase tracking-[0.2em] text-outline">{contactPageContent.address.label}</p>
               <p className="text-base leading-7">

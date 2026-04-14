@@ -10,6 +10,7 @@ export default function ArchivePage() {
   const [query, setQuery] = useState('');
   const [submittedQuery, setSubmittedQuery] = useState('');
   const [pageIndex, setPageIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
   const activeCategory = searchParams.get('category');
   const {
     pageContent,
@@ -21,7 +22,19 @@ export default function ArchivePage() {
     listCaption,
   } = useSelector((state) => selectArchivePageData(state, activeCategory, submittedQuery));
 
-  const itemsPerPage = pageContent.list.itemsPerPage;
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const itemsPerPage = isMobile ? 2 : pageContent.list.itemsPerPage;
   const pageCount = Math.max(1, Math.ceil(filteredArchiveList.length / itemsPerPage));
   const pageGroups = Array.from({ length: pageCount }, (_, index) => (
     filteredArchiveList.slice(index * itemsPerPage, index * itemsPerPage + itemsPerPage)
