@@ -1,5 +1,5 @@
 ﻿import { Link, useSearchParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Section from '../components/Section';
 import CategoryNav from '../components/CategoryNav';
@@ -11,6 +11,8 @@ export default function ArchivePage() {
   const [submittedQuery, setSubmittedQuery] = useState('');
   const [pageIndex, setPageIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+  const touchStartX = useRef(null);
+  const touchDeltaX = useRef(0);
   const activeCategory = searchParams.get('category');
   const {
     pageContent,
@@ -52,6 +54,34 @@ export default function ArchivePage() {
 
   const handleSearchSubmit = () => {
     setSubmittedQuery(query);
+  };
+
+  const handleTouchStart = (event) => {
+    touchStartX.current = event.touches[0].clientX;
+    touchDeltaX.current = 0;
+  };
+
+  const handleTouchMove = (event) => {
+    if (touchStartX.current === null) {
+      return;
+    }
+
+    touchDeltaX.current = event.touches[0].clientX - touchStartX.current;
+  };
+
+  const handleTouchEnd = () => {
+    const swipeThreshold = 50;
+
+    if (touchDeltaX.current <= -swipeThreshold && pageIndex < pageCount - 1) {
+      setPageIndex((current) => Math.min(current + 1, pageCount - 1));
+    }
+
+    if (touchDeltaX.current >= swipeThreshold && pageIndex > 0) {
+      setPageIndex((current) => Math.max(current - 1, 0));
+    }
+
+    touchStartX.current = null;
+    touchDeltaX.current = 0;
   };
 
   return (
@@ -151,7 +181,13 @@ export default function ArchivePage() {
               </div>
             ) : (
               <>
-                <div className="relative overflow-hidden">
+                <div
+                  className="relative overflow-hidden overscroll-x-contain"
+                  style={{ touchAction: isMobile ? 'pan-y' : 'auto' }}
+                  onTouchStart={isMobile ? handleTouchStart : undefined}
+                  onTouchMove={isMobile ? handleTouchMove : undefined}
+                  onTouchEnd={isMobile ? handleTouchEnd : undefined}
+                >
                   <div
                     className="flex transition-transform duration-500"
                     style={{ transform: `translateX(-${pageIndex * 100}%)` }}
