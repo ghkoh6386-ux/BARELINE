@@ -16,7 +16,7 @@ export default function ArchiveDetailPage() {
         ['Year', entry.year],
         ['Keywords', entry.keywords.join(' / ')],
         ['Material', entry.material],
-        ['creater', entry.curator],
+        ['creater', entry.creater],
       ]
     : [];
 
@@ -102,7 +102,7 @@ export default function ArchiveDetailPage() {
           </div>
           <div className="border border-outline-variant/20 bg-surface-container-low px-4 py-4 md:border-0 md:bg-transparent md:px-4 md:py-8">
             <span className="block text-[0.82rem] uppercase tracking-[0.12em] text-outline md:text-base md:tracking-[0.14em]">creater</span>
-            <span className="mt-2 block text-[0.95rem] font-medium md:mt-3 md:text-base">{entry.curator}</span>
+            <span className="mt-2 block text-[0.95rem] font-medium md:mt-3 md:text-base">{entry.creater}</span>
           </div>
         </div>
       </section>

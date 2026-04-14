@@ -20,7 +20,7 @@ export const archiveDetailsMap = {
     issn: 'ISSN 2951-4428',
     keywords: ['#OBJECT', '#LINE', '#TENSION'],
     material: 'WIRE, MATTE BLACK, SKIN TONE',
-    curator: '지안',
+    creater: '지안',
     sections: [{
         heading: '01. 선으로 만들어진 긴장',
         body: [
@@ -79,7 +79,7 @@ export const archiveDetailsMap = {
     issn: 'ISSN 2951-4428',
     keywords: ['#NATURE', '#SILENCE', '#ARCHITECTURE'],
     material: 'WOOD, WATER, STONE',
-    curator: 'Bare Line Editorial Team',
+    creater: '아틀리에 무(無)',
     sections: [{
         heading: '01. 자연과 이어진 구조',
         body: [
@@ -138,7 +138,7 @@ export const archiveDetailsMap = {
     issn: 'ISSN 2951-4428',
     keywords: ['#OBJECT', '#CURVE', '#BALANCE'],
     material: 'ALUMINUM, TRANSLUCENT FINISH, MATTE SURFACE',
-    curator: 'Bare Line Object Desk',
+    creater: 'Lina K',
     sections: [{
         heading: '01. 흐르는 형태',
         body: [
@@ -197,7 +197,7 @@ export const archiveDetailsMap = {
     issn: 'ISSN 2951-4428',
     keywords: ['#EDITORIAL', '#LIGHT', '#COMPOSITION'],
     material: 'LIGHT, FABRIC, WALL',
-    curator: 'Bare Line Editorial Team',
+    creater: 'Noa Frame',
     sections: [{
         heading: '01. 빛이 만드는 구조',
         body: [
@@ -256,7 +256,7 @@ export const archiveDetailsMap = {
     issn: 'ISSN 2951-4428',
     keywords: ['#FASHION', '#STRUCTURE', '#TENSION'],
     material: 'SILK, WOOL, METAL',
-    curator: 'Bare Line Fashion Desk',
+    creater: 'Arin Form',
     sections: [{
         heading: '01. 흐르는 자세',
         body: [
@@ -315,7 +315,7 @@ export const archiveDetailsMap = {
     issn: 'ISSN 2951-4428',
     keywords: ['#GLASS', '#CURVE', '#LIGHT'],
     material: 'GLASS, STEEL, CONCRETE',
-    curator: 'Bare Line Editorial Team',
+    creater: 'Atelier Curve',
     sections: [{
         heading: '01. 곡선이 만드는 흐름',
         body: [
