@@ -51,7 +51,7 @@ export default function ContactPage() {
       <div className="relative overflow-hidden rounded-none bg-surface-container-low px-0 py-12 sm:py-14">
           <img src={contactPageContent.heroCard.image} alt={contactPageContent.heroCard.imageAlt} className="absolute inset-0 h-full w-full object-cover" />
         <div className="relative mx-auto max-w-5xl px-6 py-20 text-center text-on-surface sm:px-8 sm:py-24">
-          <div className="mx-auto inline-block rounded-none border border-outline-variant/30 bg-background/85 px-6 py-6 backdrop-blur-sm sm:px-12 sm:py-8">
+          <div className="mx-auto inline-block rounded-none border border-outline-variant/30 bg-background/40 px-6 py-6 sm:px-12 sm:py-8">
             <p className="text-lg font-semibold sm:text-xl">{contactPageContent.heroCard.quote}</p>
           </div>
         </div>
