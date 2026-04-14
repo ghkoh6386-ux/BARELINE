@@ -121,7 +121,7 @@ export default function HomePage() {
               {homePageContent.spaceSection.description}
             </p>
             <div className="hidden border-y border-outline-variant/20 py-6 md:block">
-              <p className="max-w-[30ch] border-l-2 border-accent/70 pl-5 text-left text-2xl font-medium leading-snug text-on-surface">
+              <p className="max-w-[30ch] text-left text-2xl font-medium leading-snug text-on-surface">
                 {homePageContent.spaceSection.quote}
               </p>
               <div className="mt-6 grid gap-4 lg:grid-cols-3">
