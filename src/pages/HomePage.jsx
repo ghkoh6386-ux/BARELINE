@@ -59,7 +59,7 @@ export default function HomePage() {
 
       <Section title={homePageContent.featuredSection.title} caption={homePageContent.featuredSection.caption} className="px-6 pt-16 sm:px-8 md:px-0 md:pt-24">
         <div className="grid grid-cols-1 gap-0 md:grid-cols-12">
-          <div className="order-2 border-b border-outline-variant/20 md:order-1 md:col-span-8 md:border-b-0 md:border-r">
+          <div className="order-1 border-b border-outline-variant/20 md:order-1 md:col-span-8 md:border-b-0 md:border-r">
             <div className="relative h-[320px] overflow-hidden bg-surface sm:h-[460px] md:h-[700px]">
               <img
                 src={homePageContent.featuredSection.image}
@@ -68,7 +68,7 @@ export default function HomePage() {
               />
             </div>
           </div>
-          <div className="order-1 flex flex-col justify-between gap-8 py-8 sm:py-10 md:order-2 md:col-span-4 md:gap-10 md:p-10">
+          <div className="order-2 flex flex-col justify-between gap-8 py-8 sm:py-10 md:order-2 md:col-span-4 md:gap-10 md:p-10">
             <div className="space-y-8 md:space-y-10">
               <p className="text-base uppercase tracking-[0.24em] text-accent">{homePageContent.featuredSection.label}</p>
               <div className="space-y-3 sm:space-y-4">
