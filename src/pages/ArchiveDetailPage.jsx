@@ -15,7 +15,7 @@ export default function ArchiveDetailPage() {
         ['Category', entry.category],
         ['Year', entry.year],
         ['Material', entry.material],
-        ['Curator', entry.curator],
+        ['creater', entry.curator],
       ]
     : [];
 
@@ -62,7 +62,7 @@ export default function ArchiveDetailPage() {
             <h1 className="mt-5 max-w-[12ch] text-3xl font-semibold leading-[0.95] tracking-tight sm:text-4xl md:max-w-none md:text-5xl">
               {entry.title}
             </h1>
-            <p className="mt-4 text-lg italic text-on-surface/70 sm:text-xl md:mt-6 md:text-2xl">{entry.subtitle}</p>
+            <p className="mt-4 text-lg text-on-surface/70 sm:text-xl md:mt-6 md:text-2xl">{entry.subtitle}</p>
             <p className="mt-8 max-w-xl text-base leading-7 text-on-surface-variant sm:text-lg">{entry.description}</p>
             <div className="mt-8 text-3xl tracking-tight text-on-surface md:mt-10 md:text-4xl">{entry.year}</div>
           </div>
@@ -98,8 +98,8 @@ export default function ArchiveDetailPage() {
             <span className="mt-3 block text-base font-medium">{entry.material}</span>
           </div>
           <div className="border border-outline-variant/20 bg-surface-container-low px-4 py-5 md:border-0 md:bg-transparent md:px-4 md:py-8">
-            <span className="block text-base uppercase tracking-[0.14em] text-outline">Curator</span>
-            <span className="mt-3 block text-base font-medium italic">{entry.curator}</span>
+            <span className="block text-base uppercase tracking-[0.14em] text-outline">creater</span>
+            <span className="mt-3 block text-base font-medium">{entry.curator}</span>
           </div>
         </div>
       </section>
@@ -110,7 +110,7 @@ export default function ArchiveDetailPage() {
             {mobileMetaItems.map(([label, value]) => (
               <div key={label} className="border border-outline-variant/20 bg-surface-container-low px-4 py-4">
                 <span className="block text-base uppercase tracking-[0.14em] text-outline">{label}</span>
-                <span className={`mt-2 block text-base font-medium ${label === 'Curator' ? 'italic' : ''}`}>{value}</span>
+                <span className="mt-2 block text-base font-medium">{value}</span>
               </div>
             ))}
           </div>
@@ -159,7 +159,7 @@ export default function ArchiveDetailPage() {
         <div className="lg:col-span-7 lg:col-start-5">
           {entry.sections.map((section) => (
             <article key={section.heading} className="mb-16 md:mb-24 last:mb-0">
-              <h2 className="text-2xl italic text-on-surface sm:text-3xl">{section.heading}</h2>
+              <h2 className="text-2xl text-on-surface sm:text-3xl">{section.heading}</h2>
               <div className="mt-8 space-y-5 sm:mt-10 sm:space-y-6">
                 {section.body.map((paragraph) => (
                   <p key={paragraph} className="text-base leading-[1.9] text-on-surface-variant sm:text-lg">

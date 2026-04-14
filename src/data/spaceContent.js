@@ -96,7 +96,7 @@ export const spaceContentById = {
     sidebar: {
       title: '주목한 키워드',
       items: ['실내와 정원의 연속성', '목재 프레임의 리듬', '낮은 시선과 여백의 균형'],
-      curatorLabel: '큐레이터',
+      curatorLabel: 'creater',
       curator: '서온',
     },
     lead:
@@ -152,7 +152,7 @@ export const spaceContentById = {
     sidebar: {
       title: '주목한 포인트',
       items: ['낮은 채도의 대비', '빛이 만드는 그림자', '가구 배치의 절제'],
-      curatorLabel: '큐레이터',
+      curatorLabel: 'creater',
       curator: '윤이서',
     },
     lead:
@@ -208,7 +208,7 @@ export const spaceContentById = {
     sidebar: {
       title: '읽어야 할 구조',
       items: ['원형 동선의 흐름', '붉은 톤의 몰입감', '곡선 계단과 좌석의 연결'],
-      curatorLabel: '큐레이터',
+      curatorLabel: 'creater',
       curator: '민정하',
     },
     lead:

@@ -34,7 +34,7 @@ export default function SpacePage() {
             <img src={content.header.image} alt={content.header.title} className="h-full w-full object-cover" />
             <div className="absolute inset-0 flex items-center justify-center bg-on-background/10">
               <div className="mx-4 rounded-none border border-outline-variant/20 bg-background/40 px-6 py-5 text-center md:px-12 md:py-8">
-                <p className="text-lg italic md:text-xl">"{content.header.quote}"</p>
+                <p className="text-lg md:text-xl">"{content.header.quote}"</p>
               </div>
             </div>
           </div>
@@ -139,12 +139,12 @@ export default function SpacePage() {
                     className={`h-full w-full object-cover ${figure.grayscale ? 'grayscale' : ''}`}
                   />
                 </div>
-                <figcaption className="text-base uppercase tracking-[0.2em] text-outline/60 italic">{figure.caption}</figcaption>
+                <figcaption className="text-base uppercase tracking-[0.2em] text-outline/60">{figure.caption}</figcaption>
               </figure>
             ))}
           </div>
 
-          <blockquote className="border-y border-outline-variant/10 py-12 text-2xl font-semibold italic leading-tight text-accent sm:text-3xl md:py-16 md:text-4xl">
+          <blockquote className="border-y border-outline-variant/10 py-12 text-2xl font-semibold leading-tight text-accent sm:text-3xl md:py-16 md:text-4xl">
             "{content.blockquote.text}"
             <cite className="mt-8 block text-base uppercase tracking-[0.22em] text-outline">{content.blockquote.source}</cite>
           </blockquote>
