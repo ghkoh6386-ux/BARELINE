@@ -306,7 +306,7 @@ export const homePageContent = {
   },
   featuredSection: {
     title: "패션: 본질의 실루엣",
-    caption: "추천 콘텐츠",
+    caption: "패션 콘텐츠",
     label: "추천 콘텐츠",
     ctaLabel: "컬렉션 보러가기",
     ctaTo: "/archive?category=fashion",

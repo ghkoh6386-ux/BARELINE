@@ -68,7 +68,7 @@ export default function HomePage() {
               />
             </div>
           </div>
-          <div className="order-1 flex flex-col justify-between gap-8 px-6 py-8 sm:px-8 sm:py-10 md:order-2 md:col-span-4 md:gap-10 md:p-10">
+          <div className="order-1 flex flex-col justify-between gap-8 py-8 sm:py-10 md:order-2 md:col-span-4 md:gap-10 md:p-10">
             <div className="space-y-8 md:space-y-10">
               <p className="text-sm uppercase tracking-[0.35em] text-accent">{homePageContent.featuredSection.label}</p>
               <div className="space-y-7 sm:space-y-8">
