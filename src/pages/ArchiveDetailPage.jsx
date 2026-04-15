@@ -108,7 +108,7 @@ export default function ArchiveDetailPage() {
       </section>
 
       <section className="grid gap-10 px-6 py-14 sm:px-8 md:gap-12 md:py-16 xl:grid-cols-12 xl:gap-16 xl:px-8">
-          <div className="space-y-5 border-b border-outline-variant/20 pb-8">
+          <div className="space-y-5 border-b border-outline-variant/20 pb-8 md:hidden">
             <div className="grid grid-cols-2 gap-2.5">
               {mobileMetaItems.map(([label, value], index) => (
               <div
@@ -135,23 +135,6 @@ export default function ArchiveDetailPage() {
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className="hidden border border-outline-variant/20 bg-background px-5 py-5">
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <h2 className="text-base uppercase tracking-[0.18em] text-accent">Contents</h2>
-                <p className="mt-2 max-w-[26ch] text-base leading-7 text-on-surface-variant">이 아카이브의 주요 단락을 먼저 살펴보세요.</p>
-              </div>
-            </div>
-            <ul className="mt-5 space-y-3 text-base text-on-surface-variant">
-              {entry.sections.map((section, index) => (
-                <li key={section.heading} className="flex items-start gap-3 border-t border-outline-variant/10 pt-3 first:border-t-0 first:pt-0">
-                  <span className="shrink-0 text-base uppercase tracking-[0.18em] text-outline">0{index + 1}</span>
-                  <span>{getSectionLabel(section.heading)}</span>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
 

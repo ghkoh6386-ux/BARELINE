@@ -44,7 +44,7 @@ export const archiveCategoryContent = {
       description:
         "재단과 구조, 텍스처를 통해 패션의 밀도를 기록한 에디토리얼.",
     },
-    listLabel: "저널 엔트리",
+    listLabel: "패션 리스트",
   },
   space: {
     title: "공간",
@@ -52,7 +52,7 @@ export const archiveCategoryContent = {
     featured: {
       description: "비워낸 구조와 재료의 밀도로 공간의 분위기를 읽어낸 기록.",
     },
-    listLabel: "공간 인덱스",
+    listLabel: "공간 리스트",
   },
   designers: {
     title: "디자이너",
@@ -60,7 +60,7 @@ export const archiveCategoryContent = {
     featured: {
       description: "재료의 본질과 절제된 구조를 탐구하는 디자이너 노트.",
     },
-    listLabel: "디자이너 인덱스",
+    listLabel: "디자이너 리스트",
   },
   objects: {
     title: "오브제",
@@ -69,7 +69,7 @@ export const archiveCategoryContent = {
       description:
         "오브제가 공간 안에서 만드는 인상을 물성과 구조로 읽어냅니다.",
     },
-    listLabel: "아카이브 리스트",
+    listLabel: "오브제 리스트",
   },
   editorial: {
     title: "에디토리얼",
@@ -77,7 +77,7 @@ export const archiveCategoryContent = {
     featured: {
       description: "작은 차이와 비례, 여백을 통해 구조를 읽어낸 편집 노트.",
     },
-    listLabel: "아카이브 리스트",
+    listLabel: "에디토리얼 리스트",
   },
 };
 
