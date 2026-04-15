@@ -1,26 +1,10 @@
 ﻿import { Link, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import {
-  selectArchiveDetailById,
-  selectRelatedArchiveDetails,
-} from '../store/selectors/archiveSelectors';
+import { selectArchiveDetailPageData } from '../store/selectors/archiveSelectors';
 
 export default function ArchiveDetailPage() {
   const { entryId } = useParams();
-  const entry = useSelector((state) => selectArchiveDetailById(state, entryId));
-  const relatedEntries = useSelector((state) => selectRelatedArchiveDetails(state, entryId));
-
-  const mobileMetaItems = entry
-    ? [
-        ['Category', entry.category],
-        ['Year', entry.year],
-        ['Keywords', entry.keywords.join(' / ')],
-        ['Material', entry.material],
-        ['creater', entry.creater],
-      ]
-    : [];
-
-  const getSectionLabel = (heading) => heading.replace(/^\d+\.\s*/, '');
+  const { entry, relatedEntries, metaItems } = useSelector((state) => selectArchiveDetailPageData(state, entryId));
 
   if (!entry) {
     return (
@@ -80,57 +64,56 @@ export default function ArchiveDetailPage() {
 
       <section className="hidden border-b border-outline-variant/20 px-6 py-8 sm:px-8 md:block md:px-8 md:py-16">
         <div className="grid gap-2 sm:grid-cols-2 md:gap-0 md:border-t md:border-outline-variant/20 md:grid-cols-5">
-          <div className="border border-outline-variant/20 bg-surface-container-low px-4 py-4 md:border-b-0 md:border-l-0 md:border-r md:border-t-0 md:bg-transparent md:px-0 md:py-8 md:pr-4">
-            <span className="block text-[0.82rem] uppercase tracking-[0.12em] text-outline md:text-base md:tracking-[0.14em]">Category</span>
-            <span className="mt-2 block text-[0.95rem] font-medium md:mt-3 md:text-base">{entry.category}</span>
-          </div>
-          <div className="border border-outline-variant/20 bg-surface-container-low px-4 py-4 md:border-b-0 md:border-l-0 md:border-r md:border-t-0 md:bg-transparent md:px-4 md:py-8">
-            <span className="block text-[0.82rem] uppercase tracking-[0.12em] text-outline md:text-base md:tracking-[0.14em]">Year</span>
-            <span className="mt-2 block text-[0.95rem] font-medium md:mt-3 md:text-base">{entry.year}</span>
-          </div>
-          <div className="border border-outline-variant/20 bg-surface-container-low px-4 py-4 sm:col-span-2 md:col-span-1 md:border-b-0 md:border-l-0 md:border-r md:border-t-0 md:bg-transparent md:px-4 md:py-8">
-            <span className="block text-[0.82rem] uppercase tracking-[0.12em] text-outline md:text-base md:tracking-[0.14em]">Keywords</span>
-            <ul className="mt-2 flex flex-wrap gap-x-2 gap-y-1.5 text-[0.88rem] uppercase tracking-[0.12em] text-on-surface-variant md:mt-3 md:block md:space-y-1 md:text-base md:tracking-[0.14em]">
-              {entry.keywords.map((keyword) => (
-                <li key={keyword}>{keyword}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="border border-outline-variant/20 bg-surface-container-low px-4 py-4 md:border-b-0 md:border-l-0 md:border-r md:border-t-0 md:bg-transparent md:px-4 md:py-8">
-            <span className="block text-[0.82rem] uppercase tracking-[0.12em] text-outline md:text-base md:tracking-[0.14em]">Material</span>
-            <span className="mt-2 block text-[0.95rem] font-medium md:mt-3 md:text-base">{entry.material}</span>
-          </div>
-          <div className="border border-outline-variant/20 bg-surface-container-low px-4 py-4 md:border-0 md:bg-transparent md:px-4 md:py-8">
-            <span className="block text-[0.82rem] uppercase tracking-[0.12em] text-outline md:text-base md:tracking-[0.14em]">creater</span>
-            <span className="mt-2 block text-[0.95rem] font-medium md:mt-3 md:text-base">{entry.creater}</span>
-          </div>
+          {metaItems.map((item, index) => (
+            <div
+              key={item.label}
+              className={`border border-outline-variant/20 bg-surface-container-low px-4 py-4 md:border-b-0 md:border-l-0 md:border-t-0 md:bg-transparent md:px-4 md:py-8 ${
+                index === 0 ? 'md:px-0 md:pr-4' : 'md:border-r'
+              } ${index === metaItems.length - 1 ? 'md:border-0' : ''} ${
+                item.isList ? 'sm:col-span-2 md:col-span-1' : ''
+              }`}
+            >
+              <span className="block text-[0.82rem] uppercase tracking-[0.12em] text-outline md:text-base md:tracking-[0.14em]">
+                {item.label}
+              </span>
+              {item.isList ? (
+                <ul className="mt-2 flex flex-wrap gap-x-2 gap-y-1.5 text-[0.88rem] uppercase tracking-[0.12em] text-on-surface-variant md:mt-3 md:block md:space-y-1 md:text-base md:tracking-[0.14em]">
+                  {item.value.map((keyword) => (
+                    <li key={keyword}>{keyword}</li>
+                  ))}
+                </ul>
+              ) : (
+                <span className="mt-2 block text-[0.95rem] font-medium md:mt-3 md:text-base">{item.value}</span>
+              )}
+            </div>
+          ))}
         </div>
       </section>
 
       <section className="grid gap-10 px-6 py-14 sm:px-8 md:gap-12 md:py-16 xl:grid-cols-12 xl:gap-16 xl:px-8">
-          <div className="space-y-5 border-b border-outline-variant/20 pb-8 md:hidden">
-            <div className="grid grid-cols-2 gap-2.5">
-              {mobileMetaItems.map(([label, value], index) => (
+        <div className="space-y-5 border-b border-outline-variant/20 pb-8 md:hidden">
+          <div className="grid grid-cols-2 gap-2.5">
+            {metaItems.map((item, index) => (
               <div
-                key={label}
+                key={item.label}
                 className={`border border-outline-variant/20 bg-surface-container-low px-4 py-3.5 ${
-                  mobileMetaItems.length % 2 === 1 && index === mobileMetaItems.length - 1
+                  metaItems.length % 2 === 1 && index === metaItems.length - 1
                     ? 'col-span-2'
                     : ''
                 }`}
               >
                 <div className={`${
-                  mobileMetaItems.length % 2 === 1 && index === mobileMetaItems.length - 1
+                  metaItems.length % 2 === 1 && index === metaItems.length - 1
                     ? 'flex items-center justify-center gap-3 text-center'
                     : ''
                 }`}>
-                  <span className="block text-[0.82rem] uppercase tracking-[0.12em] text-outline">{label}</span>
+                  <span className="block text-[0.82rem] uppercase tracking-[0.12em] text-outline">{item.label}</span>
                   <span className={`block text-[0.95rem] font-medium leading-6 ${
-                    mobileMetaItems.length % 2 === 1 && index === mobileMetaItems.length - 1
+                    metaItems.length % 2 === 1 && index === metaItems.length - 1
                       ? 'text-on-surface-variant'
                       : 'mt-1.5'
                   }`}>
-                    {value}
+                    {item.mobileValue ?? item.value}
                   </span>
                 </div>
               </div>

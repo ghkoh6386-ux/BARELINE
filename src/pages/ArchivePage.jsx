@@ -5,11 +5,7 @@ import useIsMobile from '../hooks/useIsMobile';
 import Section from '../components/Section';
 import CategoryNav from '../components/CategoryNav';
 import { selectArchivePageData } from '../store/selectors/archiveSelectors';
-import {
-  selectArchivePageMobileItemsPerPage,
-  selectArchivePageSwipeThreshold,
-  selectMobileBreakpoint,
-} from '../store/selectors/contentSelectors';
+import { selectArchivePageUiSettings } from '../store/selectors/contentSelectors';
 
 export default function ArchivePage() {
   const [searchParams] = useSearchParams();
@@ -19,9 +15,7 @@ export default function ArchivePage() {
   const touchStartX = useRef(null);
   const touchDeltaX = useRef(0);
   const activeCategory = searchParams.get('category');
-  const mobileBreakpoint = useSelector(selectMobileBreakpoint);
-  const mobileItemsPerPage = useSelector(selectArchivePageMobileItemsPerPage);
-  const swipeThreshold = useSelector(selectArchivePageSwipeThreshold);
+  const { mobileBreakpoint, mobileItemsPerPage, swipeThreshold } = useSelector(selectArchivePageUiSettings);
   const {
     pageContent,
     categoryContent,

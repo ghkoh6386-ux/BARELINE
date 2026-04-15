@@ -72,14 +72,13 @@ export const selectHomePageMobileLatestLimit = createSelector(
   (uiContent) => uiContent.homePage.mobileLatestLimit,
 );
 
-export const selectArchivePageMobileItemsPerPage = createSelector(
+export const selectArchivePageUiSettings = createSelector(
   [selectUiContent],
-  (uiContent) => uiContent.archivePage.mobileItemsPerPage,
-);
-
-export const selectArchivePageSwipeThreshold = createSelector(
-  [selectUiContent],
-  (uiContent) => uiContent.archivePage.swipeThreshold,
+  (uiContent) => ({
+    mobileBreakpoint: uiContent.responsive.mobileBreakpoint,
+    mobileItemsPerPage: uiContent.archivePage.mobileItemsPerPage,
+    swipeThreshold: uiContent.archivePage.swipeThreshold,
+  }),
 );
 
 export const selectFooterContent = createSelector(

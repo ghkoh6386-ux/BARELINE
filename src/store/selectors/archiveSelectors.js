@@ -37,14 +37,33 @@ const buildArchiveDetail = (entries, list, detailsMap, entryId) => {
     return null;
   }
 
+  const detail = detailsMap[entryId] ?? {};
+  const creator = detail.creator ?? detail.creater ?? entry.creator ?? entry.creater ?? archiveListEntry?.creator ?? '';
+
   return {
     ...entry,
-    ...detailsMap[entryId],
+    ...detail,
+    creator,
+    creater: creator,
     images: {
       ...entry.images,
-      ...detailsMap[entryId]?.images,
+      ...detail.images,
     },
   };
+};
+
+const buildArchiveMetaItems = (entry) => {
+  if (!entry) {
+    return [];
+  }
+
+  return [
+    { label: 'Category', value: entry.category },
+    { label: 'Year', value: entry.year },
+    { label: 'Keywords', value: entry.keywords, mobileValue: entry.keywords.join(' / '), isList: true },
+    { label: 'Material', value: entry.material },
+    { label: 'Creator', value: entry.creator },
+  ];
 };
 
 const buildArchiveNavigationTarget = (entries, detailsMap, item, fallbackQuery = '') => {
@@ -79,6 +98,15 @@ export const selectRelatedArchiveDetails = createSelector(
       .map((relatedId) => buildArchiveDetail(entries, list, detailsMap, relatedId))
       .filter(Boolean);
   },
+);
+
+export const selectArchiveDetailPageData = createSelector(
+  [selectArchiveDetailById, selectRelatedArchiveDetails],
+  (entry, relatedEntries) => ({
+    entry,
+    relatedEntries,
+    metaItems: buildArchiveMetaItems(entry),
+  }),
 );
 
 export const selectEnrichedArchiveList = createSelector(

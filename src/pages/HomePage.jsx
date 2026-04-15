@@ -142,7 +142,7 @@ export default function HomePage() {
           <div className="order-1 md:order-2 md:col-span-7">
             <div className="aspect-[4/5] overflow-hidden bg-surface md:relative">
               <div className="h-[420px] w-full overflow-hidden sm:h-[560px] md:h-[800px]">
-                <img src={homePageContent.spaceSection.image} alt={homePageContent.spaceSection.imageAlt} className="h-full w-full object-cover transition-transform duration-1000 hover:scale-105" />
+                <img src={homePageContent.spaceSection.image} alt={homePageContent.spaceSection.imageAlt} className="h-full w-full object-cover transition-transform duration-1000 md:hover:scale-105" />
               </div>
             </div>
           </div>
