@@ -3,7 +3,7 @@
 export const navItems = [
   { label: "홈", path: "/" },
   { label: "아카이브", path: "/archive" },
-  { label: "공간", path: "/space" },
+  { label: "프로젝트", path: "/space" },
   { label: "소개", path: "/about" },
   { label: "문의", path: "/contact" },
 ];
